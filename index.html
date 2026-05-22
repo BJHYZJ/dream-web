@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="DREAM: Dynamic Resilient Spatio-Semantic Memory with Hybrid Localization for Mobile Manipulation">
+  <meta name="keywords"
+    content="DREAM, mobile manipulation, spatio-semantic memory, hybrid localization, dynamic environments, robotics">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+  <title>DREAM</title>
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <nav class="topbar" aria-label="Main navigation">
+    <a class="topbar-brand" href="#top">DREAM</a>
+    <div class="topbar-links">
+      <a href="#videos">Videos</a>
+      <a href="#method">Method</a>
+      <a href="#results">Results</a>
+      <a href="https://github.com/BJHYZJ/DREAM" target="_blank" rel="noopener">Code</a>
+    </div>
+  </nav>
+
+  <header class="hero paper-hero" id="top">
+    <div class="hero-body">
+      <div class="container is-max-widescreen">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Mobile manipulation in dynamic indoor scenes</p>
+            <h1 class="publication-title">
+              DREAM: Dynamic Resilient Spatio-Semantic Memory with Hybrid Localization for Mobile Manipulation
+            </h1>
+
+            <div class="publication-authors">
+              <span class="author-block">Zhijie Yan<sup>1</sup></span>
+              <span class="author-block">Shufei Li<sup>2</sup></span>
+              <span class="author-block">Ze Zhang<sup>1</sup></span>
+              <span class="author-block">Xin Liu<sup>1</sup></span>
+              <span class="author-block">Yuhang Zheng<sup>3</sup></span>
+              <span class="author-block">Zuoxu Wang<sup>1</sup></span>
+            </div>
+
+            <div class="publication-affiliations">
+              <span><sup>1</sup>Beihang University</span>
+              <span><sup>2</sup>City University of Hong Kong</span>
+              <span><sup>3</sup>National University of Singapore</span>
+            </div>
+
+            <p class="hero-summary">
+              DREAM couples online spatio-semantic memory, hybrid localization, task-oriented navigation, and robust
+              manipulation so a mobile robot can work in previously unseen environments while targets move and the scene
+              changes.
+            </p>
+
+            <div class="publication-links">
+              <a class="button is-dark paper-button" href="pdf/DREAM__Dynamic_Resilient_Spatio_Semantic_Memory_with_Hybrid_Localization_for_Mobile_Manipulation.pdf"
+                target="_blank" rel="noopener">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>PDF</span>
+              </a>
+              <a class="button is-dark paper-button" href="https://github.com/BJHYZJ/DREAM" target="_blank"
+                rel="noopener">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </a>
+              <a class="button is-dark paper-button" href="https://github.com/BJHYZJ/DREAM/tree/realtime/docs"
+                target="_blank" rel="noopener">
+                <span class="icon"><i class="fas fa-cube"></i></span>
+                <span>CAD Model</span>
+              </a>
+              <a class="button is-dark paper-button" href="#videos">
+                <span class="icon"><i class="fas fa-play"></i></span>
+                <span>Videos</span>
+              </a>
+            </div>
+          </div>
+
+          <figure class="hero-figure">
+            <img src="media/figures/teaser.png" alt="DREAM framework executing a dynamic mobile manipulation task">
+            <figcaption>
+              DREAM actively acquires targets, reacquires relocated objects, and updates task-relevant scene memory
+              during long-horizon manipulation.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section abstract-section" id="abstract">
+      <div class="container is-max-desktop">
+        <h2 class="section-title">Abstract</h2>
+        <div class="content paper-text">
+          <p>
+            Reliable mobile manipulation in dynamic indoor environments requires a 3D semantic representation that
+            remains consistent with the evolving real world. Most existing systems rely on pre-built maps, assume static
+            environments, or presuppose highly accurate camera poses; when these assumptions break, navigation and
+            manipulation operate on stale information.
+          </p>
+          <p>
+            DREAM is a mobile manipulation framework for previously unseen indoor environments without any pre-built
+            map. It integrates a lightweight indoor LiDAR-Inertial-Visual SLAM backend with dynamic spatio-semantic
+            memory, Redundancy-Aware Memory Pruning, hybrid localization, task-oriented navigation, and robust grasping
+            and placement strategies.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contribution-section">
+      <div class="container is-max-widescreen">
+        <h2 class="section-title">Highlights</h2>
+        <div class="highlight-grid">
+          <article class="highlight-item">
+            <span class="highlight-index">01</span>
+            <h3>No Pre-Built Map</h3>
+            <p>DREAM operates in dynamic, previously unseen indoor environments from a natural-language instruction.</p>
+          </article>
+          <article class="highlight-item">
+            <span class="highlight-index">02</span>
+            <h3>Dynamic Memory</h3>
+            <p>Online spatio-semantic memory updates voxelized 3D semantics and prunes stale redundant information.</p>
+          </article>
+          <article class="highlight-item">
+            <span class="highlight-index">03</span>
+            <h3>Hybrid Localization</h3>
+            <p>Multi-sensor SLAM and visual loop closure provide temporally consistent poses in dynamic scenes.</p>
+          </article>
+          <article class="highlight-item">
+            <span class="highlight-index">04</span>
+            <h3>Real Robot Tasks</h3>
+            <p>The system is evaluated on navigation, pickup, placement, and long-horizon mobile manipulation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section video-section" id="videos">
+      <div class="container is-max-widescreen">
+        <div class="section-heading">
+          <p class="eyebrow">Primary videos</p>
+          <h2 class="section-title">Combination Demos, Extended Behaviors, and SLAM Test</h2>
+          <p>
+            The two combination videos, the more-videos reel, and the SLAM test are the main viewing layer. Each
+            combination video merges three synchronized perspectives so the full task can be understood at a glance,
+            while the SLAM test shows the localization foundation for memory construction and downstream mobile
+            manipulation.
+          </p>
+        </div>
+
+        <div class="primary-video-grid">
+          <article class="video-card">
+            <div class="video-frame">
+              <video controls muted playsinline preload="metadata" aria-label="DREAM combination demo 01">
+                <source src="media/videos/combination_01.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="video-copy">
+              <p class="video-label">Main demo 01</p>
+              <h3>Combination View: Scenario 01</h3>
+              <p>
+                A compact view of the robot, localization stream, and server-side state for the first long-horizon
+                manipulation sequence.
+              </p>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="video-frame">
+              <video controls muted playsinline preload="metadata" aria-label="DREAM combination demo 02">
+                <source src="media/videos/combination_02.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="video-copy">
+              <p class="video-label">Main demo 02</p>
+              <h3>Combination View: Scenario 02</h3>
+              <p>
+                A second complete run that highlights dynamic scene updates, reacquisition, and manipulation under
+                changing target layouts.
+              </p>
+            </div>
+          </article>
+
+          <article class="video-card video-card-wide">
+            <div class="video-frame">
+              <video controls muted playsinline preload="metadata" aria-label="DREAM additional demonstrations">
+                <source src="media/videos/more_videos.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="video-copy">
+              <p class="video-label">More videos</p>
+              <h3>Additional Dynamic Manipulation Results</h3>
+              <p>
+                Extended behaviors and supplementary runs for understanding how DREAM responds across varied
+                navigation and manipulation conditions.
+              </p>
+            </div>
+          </article>
+
+          <article class="video-card video-card-wide">
+            <div class="video-frame">
+              <video controls muted playsinline preload="metadata" aria-label="DREAM robust SLAM test">
+                <source src="media/videos/slam_test.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="video-copy">
+              <p class="video-label">Robust SLAM</p>
+              <h3>SLAM Test in a 100 x 50 m Scene</h3>
+              <p>
+                With camera, LiDAR, and mobile-base calibration transforms measured only from CAD files, the SLAM system
+                still achieves high localization accuracy. This robust localization is the core support for memory
+                construction and later mobile manipulation.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section subvideo-section">
+      <div class="container is-max-widescreen">
+        <div class="section-heading">
+          <p class="eyebrow">Sub videos</p>
+          <h2 class="section-title">Inside Each Combination Video</h2>
+          <p>
+            These clips are supporting views for the two combination videos. They isolate the third-person recording,
+            SLAM/localization behavior, and server-side interface so each component in the merged demo is easier to
+            inspect.
+          </p>
+        </div>
+
+        <article class="case-block">
+          <div class="case-heading">
+            <span class="case-number">01</span>
+            <div>
+              <h3>Scenario 01 Breakdown</h3>
+              <p>Three source views used to explain the first combination demo.</p>
+            </div>
+          </div>
+          <div class="subvideo-grid">
+            <figure class="subvideo-item">
+              <video controls muted playsinline preload="metadata" aria-label="Scenario 01 third-person view">
+                <source src="media/videos/third_person_01.mp4" type="video/mp4">
+              </video>
+              <figcaption>Third-person robot execution</figcaption>
+            </figure>
+            <figure class="subvideo-item">
+              <video controls muted playsinline preload="metadata" aria-label="Scenario 01 SLAM view">
+                <source src="media/videos/slam_01.mp4" type="video/mp4">
+              </video>
+              <figcaption>SLAM and localization view</figcaption>
+            </figure>
+            <figure class="subvideo-item">
+              <video controls muted playsinline preload="metadata" aria-label="Scenario 01 server view">
+                <source src="media/videos/server_01.mp4" type="video/mp4">
+              </video>
+              <figcaption>Server-side memory and task state</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="case-block">
+          <div class="case-heading">
+            <span class="case-number">02</span>
+            <div>
+              <h3>Scenario 02 Breakdown</h3>
+              <p>Three source views used to explain the second combination demo.</p>
+            </div>
+          </div>
+          <div class="subvideo-grid">
+            <figure class="subvideo-item">
+              <video controls muted playsinline preload="metadata" aria-label="Scenario 02 third-person view">
+                <source src="media/videos/third_peroson_02.mp4" type="video/mp4">
+              </video>
+              <figcaption>Third-person robot execution</figcaption>
+            </figure>
+            <figure class="subvideo-item">
+              <video controls muted playsinline preload="metadata" aria-label="Scenario 02 SLAM view">
+                <source src="media/videos/slam_02.mp4" type="video/mp4">
+              </video>
+              <figcaption>SLAM and localization view</figcaption>
+            </figure>
+            <figure class="subvideo-item">
+              <video controls muted playsinline preload="metadata" aria-label="Scenario 02 server view">
+                <source src="media/videos/server_02.mp4" type="video/mp4">
+              </video>
+              <figcaption>Server-side memory and task state</figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section method-section" id="method">
+      <div class="container is-max-widescreen">
+        <div class="section-heading">
+          <p class="eyebrow">Method</p>
+          <h2 class="section-title">Dynamic Memory, Hybrid Localization, and Task-Oriented Navigation</h2>
+          <p>
+            DREAM is organized around a closed loop across perception, memory, localization, navigation, and
+            manipulation.
+          </p>
+        </div>
+
+        <figure class="figure-showcase figure-showcase-large">
+          <img src="media/figures/main.png" alt="Overview of the DREAM system architecture">
+          <figcaption>
+            System overview. DREAM builds and updates dynamic spatio-semantic memory while planning actions around
+            task-relevant objects. The robot CAD assets are available in the
+            <a href="https://github.com/BJHYZJ/DREAM/tree/realtime/docs" target="_blank" rel="noopener">repository docs
+              directory</a>, including <code>ROBOT.jpg</code> and <code>ROBOT.zip</code> exported from SolidWorks.
+          </figcaption>
+        </figure>
+
+        <div class="method-grid">
+          <figure class="figure-showcase">
+            <img src="media/figures/hybrid_localization.png" alt="Hybrid localization pipeline in DREAM">
+            <figcaption>
+              Hybrid localization reacquires moved targets and keeps robot pose estimates aligned with changing scenes.
+            </figcaption>
+          </figure>
+
+          <figure class="figure-showcase">
+            <img src="media/figures/task_oriented_navigation.png" alt="Task-oriented navigation in DREAM">
+            <figcaption>
+              Task-oriented navigation prioritizes uncertain or task-relevant regions and selects manipulation-aware
+              docking poses.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section results-section" id="results">
+      <div class="container is-max-widescreen">
+        <div class="section-heading">
+          <p class="eyebrow">Experiments</p>
+          <h2 class="section-title">Real-World Dynamic Mobile Manipulation</h2>
+          <p>
+            DREAM is deployed on a real mobile manipulation robot in four dynamic indoor laboratory environments and is
+            evaluated on navigation, pickup, placement, and long-horizon task success.
+          </p>
+        </div>
+
+        <div class="result-grid">
+          <div class="result-metric">
+            <span>83.8-89.2%</span>
+            <p>Navigation success</p>
+          </div>
+          <div class="result-metric">
+            <span>93.8-94.4%</span>
+            <p>Pickup success</p>
+          </div>
+          <div class="result-metric">
+            <span>91.7-93.3%</span>
+            <p>Place success</p>
+          </div>
+          <div class="result-metric">
+            <span>55.0-70.0%</span>
+            <p>Long-horizon success</p>
+          </div>
+        </div>
+
+        <p class="paper-text result-note">
+          Across four scenes, DREAM improves long-horizon success by 10-20 percentage points over the DynaMem baseline
+          while using less spatio-semantic memory and computation.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container is-max-widescreen">
+      <p>
+        DREAM project page. Last updated on May 22, 2026.
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>
