@@ -221,6 +221,19 @@ video {
   margin-bottom: 1rem;
 }
 
+.hardware-note {
+  margin: -8px 0 24px;
+  padding: 14px 16px;
+  color: #33413f;
+  background: rgba(31, 122, 90, 0.08);
+  border: 1px solid rgba(31, 122, 90, 0.18);
+  border-radius: 8px;
+}
+
+.hardware-note strong {
+  color: var(--ink);
+}
+
 .highlight-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
