@@ -440,7 +440,7 @@ video {
   margin-top: 22px;
 }
 
-.bibtex-box {
+.bibtex-section .bibtex-box {
   position: relative;
   margin-top: 18px;
   overflow: hidden;
@@ -450,7 +450,7 @@ video {
   box-shadow: 0 12px 28px rgba(23, 32, 31, 0.08);
 }
 
-.copy-button {
+.bibtex-section .copy-button {
   position: absolute;
   top: 12px;
   right: 12px;
@@ -469,19 +469,19 @@ video {
   font-weight: 800;
 }
 
-.copy-button:hover,
-.copy-button.is-copied {
+.bibtex-section .copy-button:hover,
+.bibtex-section .copy-button.is-copied {
   color: #ffffff;
   background: var(--green);
   border-color: var(--green);
 }
 
-.copy-button .icon {
+.bibtex-section .copy-button .icon {
   width: 14px;
   height: 14px;
 }
 
-.bibtex {
+.bibtex-section .bibtex {
   overflow-x: auto;
   margin: 0;
   padding: 64px 20px 20px;
@@ -491,7 +491,7 @@ video {
   line-height: 1.55;
 }
 
-.bibtex code {
+.bibtex-section .bibtex code {
   color: inherit;
   background: transparent;
 }
