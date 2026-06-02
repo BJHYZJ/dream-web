@@ -24,6 +24,7 @@
       <a href="#videos">Videos</a>
       <a href="#method">Method</a>
       <a href="#results">Results</a>
+      <a href="#bibtex">BibTeX</a>
       <a href="https://github.com/BJHYZJ/DREAM" target="_blank" rel="noopener">Code</a>
     </div>
   </nav>
@@ -60,7 +61,7 @@
             </p>
 
             <div class="publication-links">
-              <a class="button is-dark paper-button" href="https://arxiv.org/pdf/2606.00576"
+              <a class="button is-dark paper-button" href="https://arxiv.org/abs/2606.00576"
                 target="_blank" rel="noopener">
                 <span class="icon"><i class="fas fa-file-pdf"></i></span>
                 <span>arxiv</span>
@@ -78,6 +79,10 @@
               <a class="button is-dark paper-button" href="#videos">
                 <span class="icon"><i class="fas fa-play"></i></span>
                 <span>Videos</span>
+              </a>
+              <a class="button is-dark paper-button" href="#bibtex">
+                <span class="icon"><i class="fas fa-quote-right"></i></span>
+                <span>BibTeX</span>
               </a>
             </div>
           </div>
@@ -357,7 +362,7 @@
 
         <div class="result-grid">
           <div class="result-metric">
-            <span>83.8-89.2%</span>
+            <span>80.0-89.2%</span>
             <p>Navigation success</p>
           </div>
           <div class="result-metric">
@@ -381,6 +386,27 @@
       </div>
     </section>
 
+    <section class="section bibtex-section" id="bibtex">
+      <div class="container is-max-widescreen">
+        <h2 class="section-title">BibTeX</h2>
+        <div class="bibtex-box">
+          <button class="copy-button" type="button" data-copy-target="dream-bibtex" aria-label="Copy BibTeX">
+            <span class="icon"><i class="fas fa-copy"></i></span>
+            <span class="copy-button-text">Copy</span>
+          </button>
+          <pre class="bibtex"><code id="dream-bibtex">@misc{yan2026dynamicresilientspatiosemanticmemory,
+      title={Dynamic Resilient Spatio-Semantic Memory with Hybrid Localization for Mobile Manipulation}, 
+      author={Zhijie Yan and Shufei Li and Ze Zhang and Xin Liu and Yuhang Zheng and Zuoxu Wang},
+      year={2026},
+      eprint={2606.00576},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2606.00576}, 
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -390,6 +416,36 @@
       </p>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll(".copy-button").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const target = document.getElementById(button.dataset.copyTarget);
+        const label = button.querySelector(".copy-button-text");
+
+        if (!target || !label) {
+          return;
+        }
+
+        try {
+          await navigator.clipboard.writeText(target.textContent.trim());
+          label.textContent = "Copied";
+          button.classList.add("is-copied");
+
+          window.setTimeout(() => {
+            label.textContent = "Copy";
+            button.classList.remove("is-copied");
+          }, 1800);
+        } catch (error) {
+          label.textContent = "Failed";
+
+          window.setTimeout(() => {
+            label.textContent = "Copy";
+          }, 1800);
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
