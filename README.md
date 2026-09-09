@@ -17,13 +17,14 @@ HTTP byte ranges. Videos are ordinary repository files under
 `media/simulation/`; no Git LFS setup or external video host is required.
 
 Public videos use the stable names `01.mp4` through `10.mp4`; their matching
-posters use `01.png` through `10.png`. The page presents the video number,
+posters use `01.png` through `10.png` under `media/simulation/posters/`.
+Only the page and its stylesheet remain in `simulation/`. The page presents the video number,
 instruction and playback speed. Reproducibility metadata are not duplicated
 in this website repository. Full scene provenance, configurations, video
 checksums and audit records are maintained in
-[DREAM's gallery manifest and guide](https://github.com/BJHYZJ/DREAM/tree/realtime/simulation/evidence/gallery).
+[DREAM's gallery manifest and guide](https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/gallery).
 Video numbers map directly to the same reproduction profile IDs in the
-[DREAM tutorial](https://github.com/BJHYZJ/DREAM/tree/realtime/simulation).
+[DREAM tutorial](https://github.com/BJHYZJ/DREAM/tree/simulation).
 The source-control and evaluator distinctions for videos 05, 07 and 10 remain
 documented with the code and summarized on the page.
 
@@ -41,5 +42,5 @@ git push origin master
 ```
 
 Do not push before the final media/path checks and author acceptance. Code links
-target `https://github.com/BJHYZJ/DREAM/tree/realtime/simulation`; push the DREAM
+target `https://github.com/BJHYZJ/DREAM/tree/simulation`; push the DREAM
 code repository first so these links exist when the site becomes public.

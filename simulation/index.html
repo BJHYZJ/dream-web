@@ -17,7 +17,7 @@
       <a href="../index.html#videos">Real robot</a>
       <a href="#gallery">Simulation</a>
       <a href="#reproduce">Reproduce</a>
-      <a href="https://github.com/BJHYZJ/DREAM/tree/realtime/simulation" target="_blank" rel="noopener">Code &amp; tutorial</a>
+      <a href="https://github.com/BJHYZJ/DREAM/tree/simulation" target="_blank" rel="noopener">Code &amp; tutorial</a>
     </div>
   </nav>
   <header class="hero paper-hero">
@@ -29,7 +29,7 @@
           exploration, recovery of a relocated object, physical grasp, destination search and placement.</p>
         <div class="publication-links">
           <a class="button is-dark paper-button" href="#gallery">Watch the ten cases</a>
-          <a class="button is-dark paper-button" href="https://github.com/BJHYZJ/DREAM/tree/realtime/simulation">Reproduce the tasks</a>
+          <a class="button is-dark paper-button" href="https://github.com/BJHYZJ/DREAM/tree/simulation">Reproduce the tasks</a>
         </div>
       </div>
     </div>
@@ -52,7 +52,7 @@
         <div class="primary-video-grid simulation-grid">
         <article class="video-card" id="case-01">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="posters/01.png"
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/01.png"
               aria-label="Video 01: Mug → plate, 4× playback">
               <source src="../media/simulation/01.mp4" type="video/mp4">
               Your browser does not support embedded video.
@@ -68,7 +68,7 @@
         </article>
         <article class="video-card" id="case-02">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="posters/02.png"
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/02.png"
               aria-label="Video 02: Mug → plate, 4× playback">
               <source src="../media/simulation/02.mp4" type="video/mp4">
               Your browser does not support embedded video.
@@ -84,7 +84,7 @@
         </article>
         <article class="video-card" id="case-03">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="posters/03.png"
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/03.png"
               aria-label="Video 03: Egg → plate, 4× playback">
               <source src="../media/simulation/03.mp4" type="video/mp4">
               Your browser does not support embedded video.
@@ -100,7 +100,7 @@
         </article>
         <article class="video-card" id="case-04">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="posters/04.png"
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/04.png"
               aria-label="Video 04: Mug → plate, 4× playback">
               <source src="../media/simulation/04.mp4" type="video/mp4">
               Your browser does not support embedded video.
@@ -116,7 +116,7 @@
         </article>
         <article class="video-card" id="case-05">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="posters/05.png"
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/05.png"
               aria-label="Video 05: Bread → plate, 4× playback">
               <source src="../media/simulation/05.mp4" type="video/mp4">
               Your browser does not support embedded video.
@@ -132,7 +132,7 @@
         </article>
         <article class="video-card" id="case-06">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="posters/06.png"
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/06.png"
               aria-label="Video 06: Egg → plate, 4× playback">
               <source src="../media/simulation/06.mp4" type="video/mp4">
               Your browser does not support embedded video.
@@ -148,7 +148,7 @@
         </article>
         <article class="video-card" id="case-07">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="posters/07.png"
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/07.png"
               aria-label="Video 07: Egg → bowl, 4× playback">
               <source src="../media/simulation/07.mp4" type="video/mp4">
               Your browser does not support embedded video.
@@ -164,7 +164,7 @@
         </article>
         <article class="video-card" id="case-08">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="posters/08.png"
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/08.png"
               aria-label="Video 08: Egg → bowl, 4× playback">
               <source src="../media/simulation/08.mp4" type="video/mp4">
               Your browser does not support embedded video.
@@ -180,7 +180,7 @@
         </article>
         <article class="video-card" id="case-09">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="posters/09.png"
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/09.png"
               aria-label="Video 09: Tomato → bowl, 4× playback">
               <source src="../media/simulation/09.mp4" type="video/mp4">
               Your browser does not support embedded video.
@@ -196,7 +196,7 @@
         </article>
         <article class="video-card" id="case-10">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="posters/10.png"
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/10.png"
               aria-label="Video 10: Bread → plate, 4× playback">
               <source src="../media/simulation/10.mp4" type="video/mp4">
               Your browser does not support embedded video.
@@ -218,16 +218,16 @@
         <div class="section-heading">
           <p class="eyebrow">Reproduce the demonstrations</p>
           <h2 class="section-title">Run the corresponding task</h2>
-          <p>The simulation directory is independent of the original ROS hardware workflow. After the documented
+          <p>The simulation branch is independent of the original ROS hardware workflow. After the documented
             environment and asset setup, the unified entrypoint launches learned perception and closed-loop control
             from the exact versioned profile corresponding to each case.</p>
         </div>
-        <pre class="simulation-command"><code>python -m simulation.run --preflight
-python -m simulation.run --case 01 --output simulation/results/my_case01
-python -m simulation.run --all --output simulation/results/my_ten_cases</code></pre>
+        <pre class="simulation-command"><code>python -m dream_sim.run --preflight
+python -m dream_sim.run --case 01 --output results/my_case01
+python -m dream_sim.run --all --output results/my_ten_cases</code></pre>
         <p class="paper-text">Ten selected cross-room dynamic pick-and-place demonstrations in simulation.
           Reproduction instructions and scene details are available in our
-          <a href="https://github.com/BJHYZJ/DREAM/tree/realtime/simulation">code repository</a>.
+          <a href="https://github.com/BJHYZJ/DREAM/tree/simulation">code repository</a>.
           Each video number corresponds to the same numbered reproduction profile.</p>
         <details class="simulation-provenance">
           <summary>What these demonstrations show, and what is adapted</summary>
