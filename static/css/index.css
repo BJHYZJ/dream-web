@@ -45,17 +45,28 @@ video {
   position: sticky;
   top: 0;
   z-index: 20;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   min-height: 64px;
-  padding: 0 32px;
+  padding: 10px 24px;
   background: rgba(247, 250, 248, 0.94);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(14px);
 }
 
+.topbar .container {
+  max-width: 1560px;
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  min-height: 43px;
+}
+
 .topbar-brand {
+  flex-shrink: 0;
   color: var(--ink);
   font-size: 1.05rem;
   font-weight: 800;
@@ -64,14 +75,16 @@ video {
 .topbar-links {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: flex-end;
-  gap: 18px;
+  gap: 8px 18px;
   font-size: 0.95rem;
   font-weight: 650;
 }
 
 .topbar-links a {
   color: var(--muted);
+  white-space: nowrap;
 }
 
 .topbar-links a:hover {
@@ -162,6 +175,17 @@ video {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 28px;
+}
+
+.publication-links--grouped {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.publication-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .paper-button {
@@ -549,10 +573,13 @@ video {
 @media (max-width: 720px) {
   .topbar {
     position: static;
+    padding: 16px 20px;
+  }
+
+  .topbar-inner {
     align-items: flex-start;
     flex-direction: column;
     gap: 8px;
-    padding: 16px 20px;
   }
 
   .topbar-links {
@@ -578,8 +605,26 @@ video {
 
   .publication-authors,
   .publication-affiliations,
-  .publication-links {
+  .publication-links,
+  .publication-link-row {
     gap: 8px 12px;
+  }
+
+  .publication-link-row--simulation {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .paper-button {
+    max-width: 100%;
+    height: auto;
+    white-space: normal;
+  }
+
+  .publication-link-row--simulation .paper-button {
+    padding: 10px 12px;
+    font-size: 0.875rem;
   }
 
   .primary-video-grid,

@@ -22,20 +22,23 @@
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="./static/css/index.css?v=20260602-bibtex">
+  <link rel="stylesheet" href="./static/css/index.css?v=20260909-navigation">
   <script defer src="./static/js/fontawesome.all.min.js"></script>
 </head>
 
 <body>
   <nav class="topbar" aria-label="Main navigation">
-    <a class="topbar-brand" href="#top">DREAM</a>
-    <div class="topbar-links">
-      <a href="#videos">Videos</a>
-      <a href="simulation/index.html">Simulation</a>
-      <a href="#method">Method</a>
-      <a href="#results">Results</a>
-      <a href="#bibtex">BibTeX</a>
-      <a href="https://github.com/BJHYZJ/DREAM" target="_blank" rel="noopener">Code</a>
+    <div class="container is-max-widescreen topbar-inner">
+      <a class="topbar-brand" href="#top">DREAM</a>
+      <div class="topbar-links">
+        <a href="#videos">Videos</a>
+        <a href="simulation/index.html#gallery">Simulation Videos</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#bibtex">BibTeX</a>
+        <a href="https://github.com/BJHYZJ/DREAM/tree/realtime" target="_blank" rel="noopener">Code</a>
+        <a href="https://github.com/BJHYZJ/DREAM/tree/simulation" target="_blank" rel="noopener">Simulation Code</a>
+      </div>
     </div>
   </nav>
 
@@ -70,30 +73,43 @@
               changes.
             </p>
 
-            <div class="publication-links">
-              <a class="button is-dark paper-button" href="https://arxiv.org/abs/2606.00576"
-                target="_blank" rel="noopener">
-                <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                <span>arxiv</span>
-              </a>
-              <a class="button is-dark paper-button" href="https://github.com/BJHYZJ/DREAM" target="_blank"
-                rel="noopener">
-                <span class="icon"><i class="fab fa-github"></i></span>
-                <span>Code</span>
-              </a>
-              <a class="button is-dark paper-button" href="https://github.com/BJHYZJ/DREAM/tree/realtime/docs"
-                target="_blank" rel="noopener">
-                <span class="icon"><i class="fas fa-cube"></i></span>
-                <span>CAD Model</span>
-              </a>
-              <a class="button is-dark paper-button" href="#videos">
-                <span class="icon"><i class="fas fa-play"></i></span>
-                <span>Videos</span>
-              </a>
-              <a class="button is-dark paper-button" href="#bibtex">
-                <span class="icon"><i class="fas fa-quote-right"></i></span>
-                <span>BibTeX</span>
-              </a>
+            <div class="publication-links publication-links--grouped">
+              <div class="publication-link-row" role="group" aria-label="Project resources">
+                <a class="button is-dark paper-button" href="https://arxiv.org/abs/2606.00576"
+                  target="_blank" rel="noopener">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>arxiv</span>
+                </a>
+                <a class="button is-dark paper-button" href="https://github.com/BJHYZJ/DREAM/tree/realtime" target="_blank"
+                  rel="noopener">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+                <a class="button is-dark paper-button" href="https://github.com/BJHYZJ/DREAM/tree/realtime/docs"
+                  target="_blank" rel="noopener">
+                  <span class="icon"><i class="fas fa-cube"></i></span>
+                  <span>CAD Model</span>
+                </a>
+                <a class="button is-dark paper-button" href="#videos">
+                  <span class="icon"><i class="fas fa-play"></i></span>
+                  <span>Videos</span>
+                </a>
+                <a class="button is-dark paper-button" href="#bibtex">
+                  <span class="icon"><i class="fas fa-quote-right"></i></span>
+                  <span>BibTeX</span>
+                </a>
+              </div>
+              <div class="publication-link-row publication-link-row--simulation" role="group" aria-label="Simulation resources">
+                <a class="button is-dark paper-button" href="simulation/index.html#gallery">
+                  <span class="icon"><i class="fas fa-play"></i></span>
+                  <span>Simulation Videos</span>
+                </a>
+                <a class="button is-dark paper-button" href="https://github.com/BJHYZJ/DREAM/tree/simulation"
+                  target="_blank" rel="noopener">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Simulation Code</span>
+                </a>
+              </div>
             </div>
           </div>
 
