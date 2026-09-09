@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="./static/css/index.css?v=20260909-navigation">
   <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script defer src="./static/js/index.js?v=20260910-content"></script>
 </head>
 
 <body>
@@ -163,7 +164,7 @@
           <article class="highlight-item">
             <span class="highlight-index">03</span>
             <h3>Hybrid Localization</h3>
-            <p>Multi-sensor SLAM and visual loop closure provide temporally consistent poses in dynamic scenes.</p>
+            <p>Semantic retrieval and local visual verification help the robot find and reacquire task objects.</p>
           </article>
           <article class="highlight-item">
             <span class="highlight-index">04</span>
@@ -177,13 +178,11 @@
     <section class="section video-section" id="videos">
       <div class="container is-max-widescreen">
         <div class="section-heading">
-          <p class="eyebrow">Primary videos</p>
-          <h2 class="section-title">Combination Demos, Extended Behaviors, and SLAM Test</h2>
+          <p class="eyebrow">Real robot</p>
+          <h2 class="section-title">Real-Robot Demonstrations</h2>
           <p>
-            The two combination videos, the more-videos reel, and the SLAM test are the main viewing layer. Each
-            combination video merges three synchronized perspectives so the full task can be understood at a glance,
-            while the SLAM test shows the localization foundation for memory construction and downstream mobile
-            manipulation.
+            Watch DREAM search for objects, recover moved targets, and complete pick-and-place tasks.
+            Each scenario combines views of the robot, localization, and semantic memory.
           </p>
         </div>
 
@@ -196,10 +195,9 @@
             </div>
             <div class="video-copy">
               <p class="video-label">Main demo 01</p>
-              <h3>Combination View: Scenario 01</h3>
+              <h3>Scenario 01</h3>
               <p>
-                A compact view of the robot, localization stream, and server-side state for the first long-horizon
-                manipulation sequence.
+                Robot motion, localization, and semantic memory during a complete pick-and-place task.
               </p>
             </div>
           </article>
@@ -212,10 +210,9 @@
             </div>
             <div class="video-copy">
               <p class="video-label">Main demo 02</p>
-              <h3>Combination View: Scenario 02</h3>
+              <h3>Scenario 02</h3>
               <p>
-                A second complete run that highlights dynamic scene updates, reacquisition, and manipulation under
-                changing target layouts.
+                Target reacquisition and mobile manipulation as object locations change.
               </p>
             </div>
           </article>
@@ -230,8 +227,7 @@
               <p class="video-label">More videos</p>
               <h3>Additional Dynamic Manipulation Results</h3>
               <p>
-                Extended behaviors and supplementary runs for understanding how DREAM responds across varied
-                navigation and manipulation conditions.
+                Further examples of object search, navigation, and manipulation in dynamic indoor environments.
               </p>
             </div>
           </article>
@@ -246,9 +242,8 @@
               <p class="video-label">Robust SLAM</p>
               <h3>SLAM Test in a 100 x 50 m Scene</h3>
               <p>
-                With camera, LiDAR, and mobile-base calibration transforms measured only from CAD files, the SLAM system
-                still achieves high localization accuracy. This robust localization is the core support for memory
-                construction and later mobile manipulation.
+                Localization and mapping across a 100 × 50 m indoor scene, using camera, LiDAR, and base transforms
+                from the robot's CAD model.
               </p>
             </div>
           </article>
@@ -259,12 +254,10 @@
     <section class="section subvideo-section">
       <div class="container is-max-widescreen">
         <div class="section-heading">
-          <p class="eyebrow">Sub videos</p>
-          <h2 class="section-title">Inside Each Combination Video</h2>
+          <p class="eyebrow">Camera and system views</p>
+          <h2 class="section-title">Individual Views</h2>
           <p>
-            These clips are supporting views for the two combination videos. They isolate the third-person recording,
-            SLAM/localization behavior, and server-side interface so each component in the merged demo is easier to
-            inspect.
+            View each scenario through the external camera, SLAM visualization, and semantic memory interface.
           </p>
         </div>
 
@@ -273,7 +266,7 @@
             <span class="case-number">01</span>
             <div>
               <h3>Scenario 01 Breakdown</h3>
-              <p>Three source views used to explain the first combination demo.</p>
+              <p>Robot, localization, and memory views.</p>
             </div>
           </div>
           <div class="subvideo-grid">
@@ -303,7 +296,7 @@
             <span class="case-number">02</span>
             <div>
               <h3>Scenario 02 Breakdown</h3>
-              <p>Three source views used to explain the second combination demo.</p>
+              <p>Robot, localization, and memory views.</p>
             </div>
           </div>
           <div class="subvideo-grid">
@@ -333,11 +326,10 @@
     <section class="section" id="simulation">
       <div class="container is-max-widescreen">
         <div class="section-heading">
-          <p class="eyebrow">Supplementary simulation</p>
+          <p class="eyebrow">Indoor simulation</p>
           <h2 class="section-title">Cross-Room Dynamic Pick-and-Place</h2>
-          <p>Ten selected ManiSkill demonstrations in ten distinct houses: instruction-driven search,
-            recovery of a relocated object, physical grasp, destination search and released placement.
-            View the current head observation, observed memory and planned route at 4× playback.</p>
+          <p>Ten selected tasks in ManiSkill indoor houses. The robot finds an object, searches again when it is moved,
+            and carries it to the requested plate or bowl. Watch the scene, camera image, memory, and route at 4× speed.</p>
         </div>
         <a class="button is-dark paper-button" href="simulation/index.html">Watch the ten simulation cases</a>
         <a class="button is-dark paper-button" href="https://github.com/BJHYZJ/DREAM/tree/simulation"
@@ -364,10 +356,9 @@
         <figure class="figure-showcase figure-showcase-large">
           <img src="media/figures/main.png" alt="Overview of the DREAM system architecture">
           <figcaption>
-            System overview. DREAM builds and updates dynamic spatio-semantic memory while planning actions around
-            task-relevant objects. The robot CAD assets are available in the
-            <a href="https://github.com/BJHYZJ/DREAM/tree/realtime/docs" target="_blank" rel="noopener">repository docs
-              directory</a>, including <code>ROBOT.jpg</code> and <code>ROBOT.zip</code> exported from SolidWorks.
+            DREAM connects dynamic scene memory with target localization, navigation, and manipulation.
+            The <a href="https://github.com/BJHYZJ/DREAM/tree/realtime/docs" target="_blank" rel="noopener">robot CAD model</a>
+            provides the hardware geometry and sensor layout.
           </figcaption>
         </figure>
 
@@ -377,7 +368,7 @@
               <img src="media/figures/hybrid_localization.png" alt="Hybrid localization pipeline in DREAM">
             </div>
             <figcaption>
-              Hybrid localization reacquires moved targets and keeps robot pose estimates aligned with changing scenes.
+              Semantic memory narrows the search; focused visual observations verify the target and update its location.
             </figcaption>
           </figure>
 
@@ -457,40 +448,11 @@
   <footer class="footer">
     <div class="container is-max-widescreen">
       <p>
-        DREAM project page. Last updated on June 2, 2026.
+        DREAM · Mobile manipulation in dynamic indoor environments.
       </p>
     </div>
   </footer>
 
-  <script>
-    document.querySelectorAll(".copy-button").forEach((button) => {
-      button.addEventListener("click", async () => {
-        const target = document.getElementById(button.dataset.copyTarget);
-        const label = button.querySelector(".copy-button-text");
-
-        if (!target || !label) {
-          return;
-        }
-
-        try {
-          await navigator.clipboard.writeText(target.textContent.trim());
-          label.textContent = "Copied";
-          button.classList.add("is-copied");
-
-          window.setTimeout(() => {
-            label.textContent = "Copy";
-            button.classList.remove("is-copied");
-          }, 1800);
-        } catch (error) {
-          label.textContent = "Failed";
-
-          window.setTimeout(() => {
-            label.textContent = "Copy";
-          }, 1800);
-        }
-      });
-    });
-  </script>
 </body>
 
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="DREAM: reproducible cross-room dynamic pick-and-place demonstrations in ManiSkill.">
+  <meta name="description" content="DREAM: cross-room dynamic pick-and-place demonstrations in ManiSkill.">
   <title>DREAM · Cross-room simulation</title>
   <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="../static/css/bulma.min.css">
@@ -25,13 +25,13 @@
   <header class="hero paper-hero">
     <div class="hero-body">
       <div class="container is-max-widescreen">
-        <p class="eyebrow">Reproducible indoor simulation · ManiSkill / SAPIEN</p>
-        <h1 class="publication-title">Find it again.<br>Deliver it across rooms.</h1>
-        <p class="hero-summary">Ten selected demonstrations in ten distinct native houses. A language instruction drives
-          exploration, recovery of a relocated object, physical grasp, destination search and placement.</p>
+        <p class="eyebrow">Indoor simulation · ManiSkill / SAPIEN</p>
+        <h1 class="publication-title">DREAM in Simulation</h1>
+        <p class="hero-summary">Ten selected demonstrations of a robot finding and moving objects between rooms,
+          including targets relocated during the task.</p>
         <div class="publication-links">
-          <a class="button is-dark paper-button" href="#gallery">Watch the ten cases</a>
-          <a class="button is-dark paper-button" href="https://github.com/BJHYZJ/DREAM/tree/simulation">Reproduce the tasks</a>
+          <a class="button is-dark paper-button" href="#gallery">Watch Videos</a>
+          <a class="button is-dark paper-button" href="https://github.com/BJHYZJ/DREAM/tree/simulation">Simulation Code</a>
         </div>
       </div>
     </div>
@@ -40,17 +40,16 @@
     <section class="section" id="gallery">
       <div class="container is-max-widescreen">
         <div class="section-heading">
-          <p class="eyebrow">From instruction to released placement</p>
+          <p class="eyebrow">Language-guided tasks</p>
           <h2 class="section-title">Cross-room dynamic pick-and-place</h2>
-          <p>The robot starts without an observed map, scans and explores. Only after a verified visual discovery does
-            the environment move the target. Subsequent observations trigger stale-memory updates and rediscovery.
-            After grasping, the robot searches for the instructed receptacle while retaining its memory.</p>
+          <p>The robot explores each house from a language instruction. The target is moved after the robot first
+            finds it. The robot then updates its memory, finds the object again, and delivers it to the requested
+            plate or bowl.</p>
         </div>
         <p class="hardware-note"><strong>How to read the videos.</strong> Left: external simulator view.
           Upper right: current head-camera observation. Lower right: observed semantic memory and navigation map;
-          blue is traveled motion and green is the A* route/goal. Captions distinguish external relocation from the
-          robot's later observation-based update. All videos play at <strong>4×</strong>; the clock shows original
-          simulation time. No task stages or source frames are removed.</p>
+          blue shows traveled motion and green shows the planned A* route. Videos play at <strong>4× speed</strong>;
+          the clock shows simulation time.</p>
         <div class="primary-video-grid simulation-grid">
         <article class="video-card" id="case-01">
           <div class="video-frame">
@@ -64,7 +63,6 @@
             <p class="eyebrow">Video 01 · 4× playback</p>
             <h3>Mug → plate</h3>
             <p>“Please pick up the mug and place it on the plate on the wooden table.”</p>
-            <p class="simulation-detail">Discovery, relocation, memory update and rediscovery, followed by grasp and cross-room delivery.</p>
             <a href="../media/simulation/01.mp4" download>Download 4× video</a>
           </div>
         </article>
@@ -80,7 +78,6 @@
             <p class="eyebrow">Video 02 · 4× playback</p>
             <h3>Mug → plate</h3>
             <p>“Please pick up the mug and place it on the plate on the wooden table.”</p>
-            <p class="simulation-detail">Discovery, relocation, memory update and rediscovery, followed by grasp and cross-room delivery.</p>
             <a href="../media/simulation/02.mp4" download>Download 4× video</a>
           </div>
         </article>
@@ -96,7 +93,6 @@
             <p class="eyebrow">Video 03 · 4× playback</p>
             <h3>Egg → plate</h3>
             <p>“Please pick up the egg and place it on the plate on the wooden table.”</p>
-            <p class="simulation-detail">Discovery, relocation, memory update and rediscovery, followed by grasp and cross-room delivery.</p>
             <a href="../media/simulation/03.mp4" download>Download 4× video</a>
           </div>
         </article>
@@ -112,7 +108,6 @@
             <p class="eyebrow">Video 04 · 4× playback</p>
             <h3>Mug → plate</h3>
             <p>“Please pick up the mug and place it on the plate on the wooden table.”</p>
-            <p class="simulation-detail">Discovery, relocation, memory update and rediscovery, followed by grasp and cross-room delivery.</p>
             <a href="../media/simulation/04.mp4" download>Download 4× video</a>
           </div>
         </article>
@@ -128,7 +123,6 @@
             <p class="eyebrow">Video 05 · 4× playback</p>
             <h3>Bread → plate</h3>
             <p>“Please pick up the bread and put it on the plate on the white table.”</p>
-            <p class="simulation-detail">Discovery, relocation, memory update and rediscovery, followed by grasp and cross-room delivery.</p>
             <a href="../media/simulation/05.mp4" download>Download 4× video</a>
           </div>
         </article>
@@ -144,7 +138,6 @@
             <p class="eyebrow">Video 06 · 4× playback</p>
             <h3>Egg → plate</h3>
             <p>“Please pick up the egg and place it on the plate on the wooden table.”</p>
-            <p class="simulation-detail">Discovery, relocation, memory update and rediscovery, followed by grasp and cross-room delivery.</p>
             <a href="../media/simulation/06.mp4" download>Download 4× video</a>
           </div>
         </article>
@@ -160,7 +153,6 @@
             <p class="eyebrow">Video 07 · 4× playback</p>
             <h3>Egg → bowl</h3>
             <p>“Please pick up the egg and put it in the bowl on the white table.”</p>
-            <p class="simulation-detail">Discovery, relocation, memory update and rediscovery, followed by grasp and cross-room delivery.</p>
             <a href="../media/simulation/07.mp4" download>Download 4× video</a>
           </div>
         </article>
@@ -176,7 +168,6 @@
             <p class="eyebrow">Video 08 · 4× playback</p>
             <h3>Egg → bowl</h3>
             <p>“Please pick up the egg and put it in the bowl on the white table.”</p>
-            <p class="simulation-detail">Discovery, relocation, memory update and rediscovery, followed by grasp and cross-room delivery.</p>
             <a href="../media/simulation/08.mp4" download>Download 4× video</a>
           </div>
         </article>
@@ -192,7 +183,6 @@
             <p class="eyebrow">Video 09 · 4× playback</p>
             <h3>Tomato → bowl</h3>
             <p>“Please pick up the tomato and put it in the bowl on the white table.”</p>
-            <p class="simulation-detail">Discovery, relocation, memory update and rediscovery, followed by grasp and cross-room delivery.</p>
             <a href="../media/simulation/09.mp4" download>Download 4× video</a>
           </div>
         </article>
@@ -208,7 +198,6 @@
             <p class="eyebrow">Video 10 · 4× playback</p>
             <h3>Bread → plate</h3>
             <p>“Please pick up the bread and put it on the plate on the white table.”</p>
-            <p class="simulation-detail">Discovery, relocation, memory update and rediscovery, followed by grasp and cross-room delivery.</p>
             <a href="../media/simulation/10.mp4" download>Download 4× video</a>
           </div>
         </article>
@@ -217,7 +206,7 @@
     </section>
   </main>
   <footer class="footer"><div class="container is-max-widescreen">
-    <p>DREAM · <a href="../index.html">Original real-robot demonstrations and paper</a></p>
+    <p>DREAM · <a href="../index.html">Project Page</a></p>
   </div></footer>
 </body>
 </html>

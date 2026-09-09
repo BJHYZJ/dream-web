@@ -1,5 +1,4 @@
 .simulation-grid { grid-template-columns: minmax(0, 1fr); max-width: 1120px; margin-inline: auto; }
 .simulation-grid .video-frame { aspect-ratio: 12 / 5; }
 .simulation-grid .video-frame video { width: 100%; height: 100%; aspect-ratio: 12 / 5; object-fit: contain; }
-.simulation-detail { color: var(--muted); font-size: .94rem; }
 @media (max-width: 600px) { .simulation-grid .video-copy { padding: 16px; } }
