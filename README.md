@@ -16,11 +16,16 @@ without a JavaScript build step. For browser seeking, use a server that supports
 HTTP byte ranges. Videos are ordinary repository files under
 `media/simulation/`; no Git LFS setup or external video host is required.
 
-`simulation/manifest.json` identifies each video, its original recording,
-playback conversion and checksums. The source-control and evaluator distinctions
-for cases 05, 07 and 10 are documented on the page and in the DREAM tutorial.
-The companion DREAM repository contains simulation code, locked environment
-setup, profiles and reproduction/audit commands.
+Public videos use the stable names `01.mp4` through `10.mp4`; their matching
+posters use `01.png` through `10.png`. The page presents the video number,
+instruction and playback speed. Reproducibility metadata are not duplicated
+in this website repository. Full scene provenance, configurations, video
+checksums and audit records are maintained in
+[DREAM's gallery manifest and guide](https://github.com/BJHYZJ/DREAM/tree/realtime/simulation/evidence/gallery).
+Video numbers map directly to the same reproduction profile IDs in the
+[DREAM tutorial](https://github.com/BJHYZJ/DREAM/tree/realtime/simulation).
+The source-control and evaluator distinctions for videos 05, 07 and 10 remain
+documented with the code and summarized on the page.
 
 ## Publish after author review
 
