@@ -1,0 +1,9 @@
+.simulation-grid { grid-template-columns: minmax(0, 1fr); max-width: 1120px; margin-inline: auto; }
+.simulation-grid .video-frame { aspect-ratio: 12 / 5; }
+.simulation-grid .video-frame video { width: 100%; height: 100%; aspect-ratio: 12 / 5; object-fit: contain; }
+.simulation-detail { color: var(--muted); font-size: .94rem; }
+.simulation-command { margin: 24px 0; padding: 20px; border: 1px solid var(--line); border-radius: 8px; overflow-x: auto; background: var(--panel); }
+.simulation-provenance { margin-top: 28px; color: var(--muted); }
+.simulation-provenance summary { cursor: pointer; color: var(--ink); font-weight: 650; }
+.simulation-provenance p { margin-top: 12px; max-width: 1000px; }
+@media (max-width: 600px) { .simulation-grid .video-copy { padding: 16px; } .simulation-command { font-size: .78rem; } }
