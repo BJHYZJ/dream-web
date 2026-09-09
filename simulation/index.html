@@ -17,7 +17,6 @@
       <div class="topbar-links">
         <a href="../index.html#videos">Videos</a>
         <a href="#gallery" aria-current="location">Simulation Videos</a>
-        <a href="#reproduce">Reproduce</a>
         <a href="https://github.com/BJHYZJ/DREAM/tree/realtime" target="_blank" rel="noopener">Code</a>
         <a href="https://github.com/BJHYZJ/DREAM/tree/simulation" target="_blank" rel="noopener">Simulation Code</a>
       </div>
@@ -214,37 +213,6 @@
           </div>
         </article>
         </div>
-      </div>
-    </section>
-    <section class="section" id="reproduce">
-      <div class="container is-max-widescreen">
-        <div class="section-heading">
-          <p class="eyebrow">Reproduce the demonstrations</p>
-          <h2 class="section-title">Run the corresponding task</h2>
-          <p>The simulation branch is independent of the original ROS hardware workflow. After the documented
-            environment and asset setup, the unified entrypoint launches learned perception and closed-loop control
-            from the exact versioned profile corresponding to each case.</p>
-        </div>
-        <pre class="simulation-command"><code>python -m dream_sim.run --preflight
-python -m dream_sim.run --case 01 --output results/my_case01
-python -m dream_sim.run --all --output results/my_ten_cases</code></pre>
-        <p class="paper-text">Ten selected cross-room dynamic pick-and-place demonstrations in simulation.
-          Reproduction instructions and scene details are available in our
-          <a href="https://github.com/BJHYZJ/DREAM/tree/simulation">code repository</a>.
-          Each video number corresponds to the same numbered reproduction profile.</p>
-        <details class="simulation-provenance">
-          <summary>What these demonstrations show, and what is adapted</summary>
-          <p>These are development-selected executed examples, not a benchmark or an outdoor evaluation.
-            Full provenance and evaluation records are maintained in the code repository.</p>
-          <p>The adapter reuses DREAM's learned semantic voxel memory and A* logic. Simulator odometry replaces the
-            physical SLAM backend, language parsing uses a bounded grammar, and hosted mLLM verification is disabled.
-            Grasp/place poses come from current RGB-D geometry and are executed using feedback-controlled motion
-            templates; this is not AnyGrasp or a learned grasp policy. Robot paths are not prerecorded commands.</p>
-          <p>Video 05 retains its original score and the documented evaluator correction. Videos 07 and 10 use
-            spectator-only views rendered by independently re-executing the same saved controls; these camera changes
-            are not additional learned-policy trials. Their observation and memory panels remain tied to the original
-            run. The code records these distinctions and retains the separate evaluation evidence.</p>
-        </details>
       </div>
     </section>
   </main>
