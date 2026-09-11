@@ -71,9 +71,11 @@ Watch the [real-robot gallery](https://bjhyzj.github.io/dream-web/#videos), incl
 
 ## Indoor Simulation
 
-The [simulation gallery](https://bjhyzj.github.io/dream-web/simulation/) shows **ten selected pick-and-place tasks** in ManiSkill indoor houses. The robot explores, finds an object, updates its memory when the object is moved, and delivers it to the requested plate or bowl in another room.
+The [simulation gallery](https://bjhyzj.github.io/dream-web/simulation/) presents **all 36 successful runs** from a 60-task comparison in ten development houses: **22/30 (73.3%) with dynamic memory** and **14/30 (46.7%) with static memory**. Browse by memory mode or house, and view the complete outcome table. The robot explores, finds an object, reacquires it after it moves, and delivers it to the requested plate or bowl in another room.
 
 Videos play at **4× speed** and show the scene, head-camera image, semantic memory, and planned route. For setup, implementation details, and evaluation records, see the [simulation guide](https://github.com/BJHYZJ/DREAM/blob/simulation/docs/reproduction.md).
+
+The [ten earlier demonstrations](https://bjhyzj.github.io/dream-web/simulation/selected.html) are also available.
 
 ## Code and Getting Started
 

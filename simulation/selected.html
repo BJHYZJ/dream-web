@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DREAM: cross-room dynamic pick-and-place demonstrations in ManiSkill.">
+  <title>DREAM · Earlier simulation demonstrations</title>
+  <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/index.css?v=20260909-navigation">
+  <link rel="stylesheet" href="simulation.css">
+</head>
+<body>
+  <nav class="topbar" aria-label="Main navigation">
+    <div class="container is-max-widescreen topbar-inner">
+      <a class="topbar-brand" href="../index.html">DREAM</a>
+      <div class="topbar-links">
+        <a href="../index.html#videos">Videos</a>
+        <a href="#gallery" aria-current="location">Simulation Videos</a>
+        <a href="https://github.com/BJHYZJ/DREAM/tree/realtime" target="_blank" rel="noopener">Code</a>
+        <a href="https://github.com/BJHYZJ/DREAM/tree/simulation" target="_blank" rel="noopener">Simulation Code</a>
+      </div>
+    </div>
+  </nav>
+  <header class="hero paper-hero">
+    <div class="hero-body">
+      <div class="container is-max-widescreen">
+        <p class="eyebrow">Indoor simulation · ManiSkill / SAPIEN</p>
+        <h1 class="publication-title">Earlier Demonstrations</h1>
+        <p class="hero-summary">Ten selected demonstrations of a robot finding and moving objects between rooms,
+          including targets relocated during the task. These earlier runs are separate from the latest 60-attempt comparison.</p>
+        <div class="publication-links">
+          <a class="button is-dark paper-button" href="index.html">View all 36 recent successes</a>
+          <a class="button is-dark paper-button" href="#gallery">Watch Videos</a>
+          <a class="button is-dark paper-button" href="https://github.com/BJHYZJ/DREAM/tree/simulation">Simulation Code</a>
+          <a class="button is-dark paper-button" href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study">Evaluation</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="section" id="gallery">
+      <div class="container is-max-widescreen">
+        <div class="section-heading">
+          <p class="eyebrow">Language-guided tasks</p>
+          <h2 class="section-title">Cross-room dynamic pick-and-place</h2>
+          <p>The robot explores each house from a language instruction. The target is moved after the robot first
+            finds it. The robot then updates its memory, finds the object again, and delivers it to the requested
+            plate or bowl.</p>
+        </div>
+        <p class="hardware-note"><strong>How to read the videos.</strong> Left: external simulator view.
+          Upper right: current head-camera observation. Lower right: observed semantic memory and navigation map;
+          blue shows traveled motion and green shows the planned A* route. Videos play at <strong>4× speed</strong>;
+          the clock shows simulation time.</p>
+        <div class="primary-video-grid simulation-grid">
+        <article class="video-card" id="case-01">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/01.png"
+              aria-label="Video 01: Mug → plate, 4× playback">
+              <source src="../media/simulation/01.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+          </div>
+          <div class="video-copy">
+            <p class="eyebrow">Video 01 · 4× playback</p>
+            <h3>Mug → plate</h3>
+            <p>“Please pick up the mug and place it on the plate on the wooden table.”</p>
+            <a href="../media/simulation/01.mp4" download>Download 4× video</a>
+          </div>
+        </article>
+        <article class="video-card" id="case-02">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/02.png"
+              aria-label="Video 02: Mug → plate, 4× playback">
+              <source src="../media/simulation/02.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+          </div>
+          <div class="video-copy">
+            <p class="eyebrow">Video 02 · 4× playback</p>
+            <h3>Mug → plate</h3>
+            <p>“Please pick up the mug and place it on the plate on the wooden table.”</p>
+            <a href="../media/simulation/02.mp4" download>Download 4× video</a>
+          </div>
+        </article>
+        <article class="video-card" id="case-03">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/03.png"
+              aria-label="Video 03: Egg → plate, 4× playback">
+              <source src="../media/simulation/03.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+          </div>
+          <div class="video-copy">
+            <p class="eyebrow">Video 03 · 4× playback</p>
+            <h3>Egg → plate</h3>
+            <p>“Please pick up the egg and place it on the plate on the wooden table.”</p>
+            <a href="../media/simulation/03.mp4" download>Download 4× video</a>
+          </div>
+        </article>
+        <article class="video-card" id="case-04">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/04.png"
+              aria-label="Video 04: Mug → plate, 4× playback">
+              <source src="../media/simulation/04.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+          </div>
+          <div class="video-copy">
+            <p class="eyebrow">Video 04 · 4× playback</p>
+            <h3>Mug → plate</h3>
+            <p>“Please pick up the mug and place it on the plate on the wooden table.”</p>
+            <a href="../media/simulation/04.mp4" download>Download 4× video</a>
+          </div>
+        </article>
+        <article class="video-card" id="case-05">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/05.png"
+              aria-label="Video 05: Bread → plate, 4× playback">
+              <source src="../media/simulation/05.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+          </div>
+          <div class="video-copy">
+            <p class="eyebrow">Video 05 · 4× playback</p>
+            <h3>Bread → plate</h3>
+            <p>“Please pick up the bread and put it on the plate on the white table.”</p>
+            <a href="../media/simulation/05.mp4" download>Download 4× video</a>
+          </div>
+        </article>
+        <article class="video-card" id="case-06">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/06.png"
+              aria-label="Video 06: Egg → plate, 4× playback">
+              <source src="../media/simulation/06.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+          </div>
+          <div class="video-copy">
+            <p class="eyebrow">Video 06 · 4× playback</p>
+            <h3>Egg → plate</h3>
+            <p>“Please pick up the egg and place it on the plate on the wooden table.”</p>
+            <a href="../media/simulation/06.mp4" download>Download 4× video</a>
+          </div>
+        </article>
+        <article class="video-card" id="case-07">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/07.png"
+              aria-label="Video 07: Egg → bowl, 4× playback">
+              <source src="../media/simulation/07.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+          </div>
+          <div class="video-copy">
+            <p class="eyebrow">Video 07 · 4× playback</p>
+            <h3>Egg → bowl</h3>
+            <p>“Please pick up the egg and put it in the bowl on the white table.”</p>
+            <a href="../media/simulation/07.mp4" download>Download 4× video</a>
+          </div>
+        </article>
+        <article class="video-card" id="case-08">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/08.png"
+              aria-label="Video 08: Egg → bowl, 4× playback">
+              <source src="../media/simulation/08.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+          </div>
+          <div class="video-copy">
+            <p class="eyebrow">Video 08 · 4× playback</p>
+            <h3>Egg → bowl</h3>
+            <p>“Please pick up the egg and put it in the bowl on the white table.”</p>
+            <a href="../media/simulation/08.mp4" download>Download 4× video</a>
+          </div>
+        </article>
+        <article class="video-card" id="case-09">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/09.png"
+              aria-label="Video 09: Tomato → bowl, 4× playback">
+              <source src="../media/simulation/09.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+          </div>
+          <div class="video-copy">
+            <p class="eyebrow">Video 09 · 4× playback</p>
+            <h3>Tomato → bowl</h3>
+            <p>“Please pick up the tomato and put it in the bowl on the white table.”</p>
+            <a href="../media/simulation/09.mp4" download>Download 4× video</a>
+          </div>
+        </article>
+        <article class="video-card" id="case-10">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/posters/10.png"
+              aria-label="Video 10: Bread → plate, 4× playback">
+              <source src="../media/simulation/10.mp4" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+          </div>
+          <div class="video-copy">
+            <p class="eyebrow">Video 10 · 4× playback</p>
+            <h3>Bread → plate</h3>
+            <p>“Please pick up the bread and put it on the plate on the white table.”</p>
+            <a href="../media/simulation/10.mp4" download>Download 4× video</a>
+          </div>
+        </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container is-max-widescreen">
+    <p>DREAM · <a href="../index.html">Project Page</a></p>
+  </div></footer>
+</body>
+</html>

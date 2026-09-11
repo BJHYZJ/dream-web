@@ -3,20 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="DREAM: cross-room dynamic pick-and-place demonstrations in ManiSkill.">
-  <title>DREAM · Cross-room simulation</title>
+  <meta name="description" content="All 36 successful DREAM simulation runs, with dynamic and static memory results across ten indoor houses.">
+  <title>DREAM · Simulation results</title>
   <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="../static/css/bulma.min.css">
   <link rel="stylesheet" href="../static/css/index.css?v=20260909-navigation">
-  <link rel="stylesheet" href="simulation.css">
+  <link rel="stylesheet" href="simulation.css?v=20260911-results">
+  <script src="simulation.js?v=20260911-results" defer></script>
 </head>
-<body>
+<body class="results-page">
   <nav class="topbar" aria-label="Main navigation">
     <div class="container is-max-widescreen topbar-inner">
       <a class="topbar-brand" href="../index.html">DREAM</a>
       <div class="topbar-links">
         <a href="../index.html#videos">Videos</a>
-        <a href="#gallery" aria-current="location">Simulation Videos</a>
+        <a href="#gallery" aria-current="page">Simulation Videos</a>
         <a href="https://github.com/BJHYZJ/DREAM/tree/realtime" target="_blank" rel="noopener">Code</a>
         <a href="https://github.com/BJHYZJ/DREAM/tree/simulation" target="_blank" rel="noopener">Simulation Code</a>
       </div>
@@ -25,189 +26,802 @@
   <header class="hero paper-hero">
     <div class="hero-body">
       <div class="container is-max-widescreen">
-        <p class="eyebrow">Indoor simulation · ManiSkill / SAPIEN</p>
+        <p class="eyebrow">Mobile manipulation · ManiSkill / SAPIEN</p>
         <h1 class="publication-title">DREAM in Simulation</h1>
-        <p class="hero-summary">Ten selected demonstrations of a robot finding and moving objects between rooms,
-          including targets relocated during the task.</p>
+        <p class="hero-summary">Finding objects, adapting when they move, and delivering them across rooms.
+          Explore every successful run from our comparison of dynamic and static spatio-semantic memory.</p>
         <div class="publication-links">
-          <a class="button is-dark paper-button" href="#gallery">Watch Videos</a>
+          <a class="button is-dark paper-button" href="#gallery">Watch all 36 runs</a>
+          <a class="button is-dark paper-button" href="#results">Explore results</a>
           <a class="button is-dark paper-button" href="https://github.com/BJHYZJ/DREAM/tree/simulation">Simulation Code</a>
-          <a class="button is-dark paper-button" href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study">Evaluation</a>
         </div>
+        <dl class="results-stats">
+          <div class="result-stat"><dt>Dynamic memory</dt><dd><strong>73.3%</strong><span>22 / 30 tasks completed</span></dd></div>
+          <div class="result-stat static"><dt>Static memory</dt><dd><strong>46.7%</strong><span>14 / 30 tasks completed</span></dd></div>
+          <div class="result-stat"><dt>Successful runs to explore</dt><dd><strong>36</strong><span>from 60 paired attempts</span></dd></div>
+        </dl>
       </div>
     </div>
   </header>
   <main>
+    <section class="section" id="results">
+      <div class="container is-max-widescreen">
+        <div class="section-heading">
+          <p class="eyebrow">Ten houses · Three seeds · Two memory modes</p>
+          <h2 class="section-title">Cross-room pick-and-place results</h2>
+          <p>Both memory modes use the same controller and task settings. The object is relocated after its first discovery;
+            the robot must find it again and complete a stable placement in another room.
+            All 60 attempts contribute to the rates above, and each of the 36 successful runs passed independent physical replay and record checks.</p>
+          <p>These results cover ten development houses. See the <a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study">full evaluation</a> for the protocol, confidence intervals, and individual outcomes.</p>
+        </div>
+        <details class="outcome-details" open>
+          <summary>All 60 outcomes · select a success to watch its video</summary>
+          <div class="outcome-scroll" tabindex="0" role="region" aria-label="Results for each house and seed">
+            <table class="outcome-table">
+              <thead><tr><th rowspan="2" scope="col">House</th><th colspan="3" scope="colgroup">Dynamic memory</th><th colspan="3" scope="colgroup">Static memory</th></tr>
+                <tr><th scope="col">Seed 100</th><th scope="col">Seed 101</th><th scope="col">Seed 102</th><th scope="col">Seed 100</th><th scope="col">Seed 101</th><th scope="col">Seed 102</th></tr></thead>
+              <tbody><tr><th scope="row">ProcTHOR-Train-283</th><td><a class="completed" href="#run-01_ProcTHOR-Train-283_seed100_dynamic" aria-label="ProcTHOR-Train-283, dynamic memory, seed 100: completed, watch video">✓</a></td><td><span class="incomplete" aria-label="ProcTHOR-Train-283, dynamic memory, seed 101: incomplete">—</span></td><td><span class="incomplete" aria-label="ProcTHOR-Train-283, dynamic memory, seed 102: incomplete">—</span></td><td><a class="completed" href="#run-01_ProcTHOR-Train-283_seed100_static" aria-label="ProcTHOR-Train-283, static memory, seed 100: completed, watch video">✓</a></td><td><span class="incomplete" aria-label="ProcTHOR-Train-283, static memory, seed 101: incomplete">—</span></td><td><span class="incomplete" aria-label="ProcTHOR-Train-283, static memory, seed 102: incomplete">—</span></td></tr><tr><th scope="row">ProcTHOR-Train-8361</th><td><span class="incomplete" aria-label="ProcTHOR-Train-8361, dynamic memory, seed 100: incomplete">—</span></td><td><a class="completed" href="#run-02_ProcTHOR-Train-8361_seed101_dynamic" aria-label="ProcTHOR-Train-8361, dynamic memory, seed 101: completed, watch video">✓</a></td><td><a class="completed" href="#run-02_ProcTHOR-Train-8361_seed102_dynamic" aria-label="ProcTHOR-Train-8361, dynamic memory, seed 102: completed, watch video">✓</a></td><td><span class="incomplete" aria-label="ProcTHOR-Train-8361, static memory, seed 100: incomplete">—</span></td><td><a class="completed" href="#run-02_ProcTHOR-Train-8361_seed101_static" aria-label="ProcTHOR-Train-8361, static memory, seed 101: completed, watch video">✓</a></td><td><a class="completed" href="#run-02_ProcTHOR-Train-8361_seed102_static" aria-label="ProcTHOR-Train-8361, static memory, seed 102: completed, watch video">✓</a></td></tr><tr><th scope="row">ProcTHOR-Train-9031</th><td><a class="completed" href="#run-03_ProcTHOR-Train-9031_seed100_dynamic" aria-label="ProcTHOR-Train-9031, dynamic memory, seed 100: completed, watch video">✓</a></td><td><a class="completed" href="#run-03_ProcTHOR-Train-9031_seed101_dynamic" aria-label="ProcTHOR-Train-9031, dynamic memory, seed 101: completed, watch video">✓</a></td><td><a class="completed" href="#run-03_ProcTHOR-Train-9031_seed102_dynamic" aria-label="ProcTHOR-Train-9031, dynamic memory, seed 102: completed, watch video">✓</a></td><td><a class="completed" href="#run-03_ProcTHOR-Train-9031_seed100_static" aria-label="ProcTHOR-Train-9031, static memory, seed 100: completed, watch video">✓</a></td><td><a class="completed" href="#run-03_ProcTHOR-Train-9031_seed101_static" aria-label="ProcTHOR-Train-9031, static memory, seed 101: completed, watch video">✓</a></td><td><a class="completed" href="#run-03_ProcTHOR-Train-9031_seed102_static" aria-label="ProcTHOR-Train-9031, static memory, seed 102: completed, watch video">✓</a></td></tr><tr><th scope="row">ProcTHOR-Train-5318</th><td><a class="completed" href="#run-04_ProcTHOR-Train-5318_seed100_dynamic" aria-label="ProcTHOR-Train-5318, dynamic memory, seed 100: completed, watch video">✓</a></td><td><a class="completed" href="#run-04_ProcTHOR-Train-5318_seed101_dynamic" aria-label="ProcTHOR-Train-5318, dynamic memory, seed 101: completed, watch video">✓</a></td><td><a class="completed" href="#run-04_ProcTHOR-Train-5318_seed102_dynamic" aria-label="ProcTHOR-Train-5318, dynamic memory, seed 102: completed, watch video">✓</a></td><td><a class="completed" href="#run-04_ProcTHOR-Train-5318_seed100_static" aria-label="ProcTHOR-Train-5318, static memory, seed 100: completed, watch video">✓</a></td><td><a class="completed" href="#run-04_ProcTHOR-Train-5318_seed101_static" aria-label="ProcTHOR-Train-5318, static memory, seed 101: completed, watch video">✓</a></td><td><a class="completed" href="#run-04_ProcTHOR-Train-5318_seed102_static" aria-label="ProcTHOR-Train-5318, static memory, seed 102: completed, watch video">✓</a></td></tr><tr><th scope="row">ArchitecTHOR-Test-02</th><td><a class="completed" href="#run-05_ArchitecTHOR-Test-02_seed100_dynamic" aria-label="ArchitecTHOR-Test-02, dynamic memory, seed 100: completed, watch video">✓</a></td><td><span class="incomplete" aria-label="ArchitecTHOR-Test-02, dynamic memory, seed 101: incomplete">—</span></td><td><span class="incomplete" aria-label="ArchitecTHOR-Test-02, dynamic memory, seed 102: incomplete">—</span></td><td><span class="incomplete" aria-label="ArchitecTHOR-Test-02, static memory, seed 100: incomplete">—</span></td><td><span class="incomplete" aria-label="ArchitecTHOR-Test-02, static memory, seed 101: incomplete">—</span></td><td><span class="incomplete" aria-label="ArchitecTHOR-Test-02, static memory, seed 102: incomplete">—</span></td></tr><tr><th scope="row">ProcTHOR-Train-5080</th><td><a class="completed" href="#run-06_ProcTHOR-Train-5080_seed100_dynamic" aria-label="ProcTHOR-Train-5080, dynamic memory, seed 100: completed, watch video">✓</a></td><td><a class="completed" href="#run-06_ProcTHOR-Train-5080_seed101_dynamic" aria-label="ProcTHOR-Train-5080, dynamic memory, seed 101: completed, watch video">✓</a></td><td><a class="completed" href="#run-06_ProcTHOR-Train-5080_seed102_dynamic" aria-label="ProcTHOR-Train-5080, dynamic memory, seed 102: completed, watch video">✓</a></td><td><a class="completed" href="#run-06_ProcTHOR-Train-5080_seed100_static" aria-label="ProcTHOR-Train-5080, static memory, seed 100: completed, watch video">✓</a></td><td><a class="completed" href="#run-06_ProcTHOR-Train-5080_seed101_static" aria-label="ProcTHOR-Train-5080, static memory, seed 101: completed, watch video">✓</a></td><td><a class="completed" href="#run-06_ProcTHOR-Train-5080_seed102_static" aria-label="ProcTHOR-Train-5080, static memory, seed 102: completed, watch video">✓</a></td></tr><tr><th scope="row">ProcTHOR-Test-244</th><td><a class="completed" href="#run-07_ProcTHOR-Test-244_seed100_dynamic" aria-label="ProcTHOR-Test-244, dynamic memory, seed 100: completed, watch video">✓</a></td><td><a class="completed" href="#run-07_ProcTHOR-Test-244_seed101_dynamic" aria-label="ProcTHOR-Test-244, dynamic memory, seed 101: completed, watch video">✓</a></td><td><a class="completed" href="#run-07_ProcTHOR-Test-244_seed102_dynamic" aria-label="ProcTHOR-Test-244, dynamic memory, seed 102: completed, watch video">✓</a></td><td><span class="incomplete" aria-label="ProcTHOR-Test-244, static memory, seed 100: incomplete">—</span></td><td><a class="completed" href="#run-07_ProcTHOR-Test-244_seed101_static" aria-label="ProcTHOR-Test-244, static memory, seed 101: completed, watch video">✓</a></td><td><span class="incomplete" aria-label="ProcTHOR-Test-244, static memory, seed 102: incomplete">—</span></td></tr><tr><th scope="row">ArchitecTHOR-Val-01</th><td><a class="completed" href="#run-08_ArchitecTHOR-Val-01_seed100_dynamic" aria-label="ArchitecTHOR-Val-01, dynamic memory, seed 100: completed, watch video">✓</a></td><td><a class="completed" href="#run-08_ArchitecTHOR-Val-01_seed101_dynamic" aria-label="ArchitecTHOR-Val-01, dynamic memory, seed 101: completed, watch video">✓</a></td><td><a class="completed" href="#run-08_ArchitecTHOR-Val-01_seed102_dynamic" aria-label="ArchitecTHOR-Val-01, dynamic memory, seed 102: completed, watch video">✓</a></td><td><a class="completed" href="#run-08_ArchitecTHOR-Val-01_seed100_static" aria-label="ArchitecTHOR-Val-01, static memory, seed 100: completed, watch video">✓</a></td><td><span class="incomplete" aria-label="ArchitecTHOR-Val-01, static memory, seed 101: incomplete">—</span></td><td><span class="incomplete" aria-label="ArchitecTHOR-Val-01, static memory, seed 102: incomplete">—</span></td></tr><tr><th scope="row">ProcTHOR-Val-632</th><td><a class="completed" href="#run-09_ProcTHOR-Val-632_seed100_dynamic" aria-label="ProcTHOR-Val-632, dynamic memory, seed 100: completed, watch video">✓</a></td><td><a class="completed" href="#run-09_ProcTHOR-Val-632_seed101_dynamic" aria-label="ProcTHOR-Val-632, dynamic memory, seed 101: completed, watch video">✓</a></td><td><a class="completed" href="#run-09_ProcTHOR-Val-632_seed102_dynamic" aria-label="ProcTHOR-Val-632, dynamic memory, seed 102: completed, watch video">✓</a></td><td><span class="incomplete" aria-label="ProcTHOR-Val-632, static memory, seed 100: incomplete">—</span></td><td><span class="incomplete" aria-label="ProcTHOR-Val-632, static memory, seed 101: incomplete">—</span></td><td><span class="incomplete" aria-label="ProcTHOR-Val-632, static memory, seed 102: incomplete">—</span></td></tr><tr><th scope="row">ProcTHOR-Train-7819</th><td><span class="incomplete" aria-label="ProcTHOR-Train-7819, dynamic memory, seed 100: incomplete">—</span></td><td><span class="incomplete" aria-label="ProcTHOR-Train-7819, dynamic memory, seed 101: incomplete">—</span></td><td><span class="incomplete" aria-label="ProcTHOR-Train-7819, dynamic memory, seed 102: incomplete">—</span></td><td><span class="incomplete" aria-label="ProcTHOR-Train-7819, static memory, seed 100: incomplete">—</span></td><td><span class="incomplete" aria-label="ProcTHOR-Train-7819, static memory, seed 101: incomplete">—</span></td><td><span class="incomplete" aria-label="ProcTHOR-Train-7819, static memory, seed 102: incomplete">—</span></td></tr></tbody>
+            </table>
+            <p class="outcome-legend">✓ Completed, with video &nbsp; · &nbsp; — Incomplete</p>
+          </div>
+        </details>
+      </div>
+    </section>
     <section class="section" id="gallery">
       <div class="container is-max-widescreen">
         <div class="section-heading">
-          <p class="eyebrow">Language-guided tasks</p>
-          <h2 class="section-title">Cross-room dynamic pick-and-place</h2>
-          <p>The robot explores each house from a language instruction. The target is moved after the robot first
-            finds it. The robot then updates its memory, finds the object again, and delivers it to the requested
-            plate or bowl.</p>
+          <p class="eyebrow">Complete task recordings</p>
+          <h2 class="section-title">Every successful run</h2>
+          <p>Watch all 22 dynamic-memory and 14 static-memory successes. Each video follows the complete task at 4× speed;
+            the on-screen clock shows simulation time.</p>
         </div>
-        <p class="hardware-note"><strong>How to read the videos.</strong> Left: external simulator view.
-          Upper right: current head-camera observation. Lower right: observed semantic memory and navigation map;
-          blue shows traveled motion and green shows the planned A* route. Videos play at <strong>4× speed</strong>;
-          the clock shows simulation time.</p>
-        <div class="primary-video-grid simulation-grid">
-        <article class="video-card" id="case-01">
+        <p class="hardware-note">Left: simulator view. Upper right: robot camera. Lower right: observed semantic memory and navigation map.
+          Blue marks traveled motion; green marks the planned route. Use full screen for a closer view.</p>
+        <div class="gallery-toolbar" id="gallery-toolbar" hidden>
+          <div class="memory-filters" role="group" aria-label="Filter videos by memory mode">
+            <button class="filter-button" type="button" data-memory-filter="all" aria-pressed="true">All 36</button>
+            <button class="filter-button" type="button" data-memory-filter="dynamic" aria-pressed="false">Dynamic 22</button>
+            <button class="filter-button" type="button" data-memory-filter="static" aria-pressed="false">Static 14</button>
+          </div>
+          <label class="scene-filter" for="scene-filter">House<select id="scene-filter"><option value="all">All ten houses</option><option value="ProcTHOR-Train-283">ProcTHOR-Train-283</option>
+<option value="ProcTHOR-Train-8361">ProcTHOR-Train-8361</option>
+<option value="ProcTHOR-Train-9031">ProcTHOR-Train-9031</option>
+<option value="ProcTHOR-Train-5318">ProcTHOR-Train-5318</option>
+<option value="ArchitecTHOR-Test-02">ArchitecTHOR-Test-02</option>
+<option value="ProcTHOR-Train-5080">ProcTHOR-Train-5080</option>
+<option value="ProcTHOR-Test-244">ProcTHOR-Test-244</option>
+<option value="ArchitecTHOR-Val-01">ArchitecTHOR-Val-01</option>
+<option value="ProcTHOR-Val-632">ProcTHOR-Val-632</option>
+<option value="ProcTHOR-Train-7819">ProcTHOR-Train-7819</option></select></label>
+        </div>
+        <p class="gallery-status" id="gallery-count" role="status" aria-live="polite">36 of 36 successful runs</p>
+        <div class="results-grid">
+        <article class="video-card" id="run-01_ProcTHOR-Train-283_seed100_dynamic" data-attempt="01_ProcTHOR-Train-283_seed100_dynamic" data-memory="dynamic" data-scene="ProcTHOR-Train-283">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="../media/simulation/posters/01.png"
-              aria-label="Video 01: Mug → plate, 4× playback">
-              <source src="../media/simulation/01.mp4" type="video/mp4">
-              Your browser does not support embedded video.
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/01_ProcTHOR-Train-283_seed100_dynamic.jpg" aria-label="Mug → plate, ProcTHOR-Train-283, seed 100, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/01_ProcTHOR-Train-283_seed100_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
             </video>
           </div>
           <div class="video-copy">
-            <p class="eyebrow">Video 01 · 4× playback</p>
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 100 · 2:52 at 4×</span></div>
             <h3>Mug → plate</h3>
-            <p>“Please pick up the mug and place it on the plate on the wooden table.”</p>
-            <a href="../media/simulation/01.mp4" download>Download 4× video</a>
+            <p class="scene-name">ProcTHOR-Train-283</p>
+            <p class="instruction">“Please pick up the mug and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>686.8 s</dd></div>
+              <div><dt>Carried distance</dt><dd>5.05 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.6 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/01_ProcTHOR-Train-283_seed100_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/01_ProcTHOR-Train-283_seed100_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-01_ProcTHOR-Train-283_seed100_dynamic" aria-label="Link to 01_ProcTHOR-Train-283_seed100_dynamic">Link to run</a></div>
           </div>
         </article>
-        <article class="video-card" id="case-02">
+        <article class="video-card" id="run-02_ProcTHOR-Train-8361_seed101_dynamic" data-attempt="02_ProcTHOR-Train-8361_seed101_dynamic" data-memory="dynamic" data-scene="ProcTHOR-Train-8361">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="../media/simulation/posters/02.png"
-              aria-label="Video 02: Mug → plate, 4× playback">
-              <source src="../media/simulation/02.mp4" type="video/mp4">
-              Your browser does not support embedded video.
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/02_ProcTHOR-Train-8361_seed101_dynamic.jpg" aria-label="Mug → plate, ProcTHOR-Train-8361, seed 101, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/02_ProcTHOR-Train-8361_seed101_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
             </video>
           </div>
           <div class="video-copy">
-            <p class="eyebrow">Video 02 · 4× playback</p>
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 101 · 2:32 at 4×</span></div>
             <h3>Mug → plate</h3>
-            <p>“Please pick up the mug and place it on the plate on the wooden table.”</p>
-            <a href="../media/simulation/02.mp4" download>Download 4× video</a>
+            <p class="scene-name">ProcTHOR-Train-8361</p>
+            <p class="instruction">“Please pick up the mug and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>608.4 s</dd></div>
+              <div><dt>Carried distance</dt><dd>3.61 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.5 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/02_ProcTHOR-Train-8361_seed101_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/02_ProcTHOR-Train-8361_seed101_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-02_ProcTHOR-Train-8361_seed101_dynamic" aria-label="Link to 02_ProcTHOR-Train-8361_seed101_dynamic">Link to run</a></div>
           </div>
         </article>
-        <article class="video-card" id="case-03">
+        <article class="video-card" id="run-02_ProcTHOR-Train-8361_seed102_dynamic" data-attempt="02_ProcTHOR-Train-8361_seed102_dynamic" data-memory="dynamic" data-scene="ProcTHOR-Train-8361">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="../media/simulation/posters/03.png"
-              aria-label="Video 03: Egg → plate, 4× playback">
-              <source src="../media/simulation/03.mp4" type="video/mp4">
-              Your browser does not support embedded video.
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/02_ProcTHOR-Train-8361_seed102_dynamic.jpg" aria-label="Mug → plate, ProcTHOR-Train-8361, seed 102, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/02_ProcTHOR-Train-8361_seed102_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
             </video>
           </div>
           <div class="video-copy">
-            <p class="eyebrow">Video 03 · 4× playback</p>
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 102 · 3:20 at 4×</span></div>
+            <h3>Mug → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-8361</p>
+            <p class="instruction">“Please pick up the mug and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>798.8 s</dd></div>
+              <div><dt>Carried distance</dt><dd>3.55 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.5 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/02_ProcTHOR-Train-8361_seed102_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/02_ProcTHOR-Train-8361_seed102_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-02_ProcTHOR-Train-8361_seed102_dynamic" aria-label="Link to 02_ProcTHOR-Train-8361_seed102_dynamic">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-03_ProcTHOR-Train-9031_seed100_dynamic" data-attempt="03_ProcTHOR-Train-9031_seed100_dynamic" data-memory="dynamic" data-scene="ProcTHOR-Train-9031">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/03_ProcTHOR-Train-9031_seed100_dynamic.jpg" aria-label="Egg → plate, ProcTHOR-Train-9031, seed 100, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/03_ProcTHOR-Train-9031_seed100_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 100 · 1:47 at 4×</span></div>
             <h3>Egg → plate</h3>
-            <p>“Please pick up the egg and place it on the plate on the wooden table.”</p>
-            <a href="../media/simulation/03.mp4" download>Download 4× video</a>
+            <p class="scene-name">ProcTHOR-Train-9031</p>
+            <p class="instruction">“Please pick up the egg and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>427.8 s</dd></div>
+              <div><dt>Carried distance</dt><dd>4.24 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.7 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/03_ProcTHOR-Train-9031_seed100_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/03_ProcTHOR-Train-9031_seed100_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-03_ProcTHOR-Train-9031_seed100_dynamic" aria-label="Link to 03_ProcTHOR-Train-9031_seed100_dynamic">Link to run</a></div>
           </div>
         </article>
-        <article class="video-card" id="case-04">
+        <article class="video-card" id="run-03_ProcTHOR-Train-9031_seed101_dynamic" data-attempt="03_ProcTHOR-Train-9031_seed101_dynamic" data-memory="dynamic" data-scene="ProcTHOR-Train-9031">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="../media/simulation/posters/04.png"
-              aria-label="Video 04: Mug → plate, 4× playback">
-              <source src="../media/simulation/04.mp4" type="video/mp4">
-              Your browser does not support embedded video.
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/03_ProcTHOR-Train-9031_seed101_dynamic.jpg" aria-label="Egg → plate, ProcTHOR-Train-9031, seed 101, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/03_ProcTHOR-Train-9031_seed101_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
             </video>
           </div>
           <div class="video-copy">
-            <p class="eyebrow">Video 04 · 4× playback</p>
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 101 · 1:42 at 4×</span></div>
+            <h3>Egg → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-9031</p>
+            <p class="instruction">“Please pick up the egg and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>408.4 s</dd></div>
+              <div><dt>Carried distance</dt><dd>4.26 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.6 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/03_ProcTHOR-Train-9031_seed101_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/03_ProcTHOR-Train-9031_seed101_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-03_ProcTHOR-Train-9031_seed101_dynamic" aria-label="Link to 03_ProcTHOR-Train-9031_seed101_dynamic">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-03_ProcTHOR-Train-9031_seed102_dynamic" data-attempt="03_ProcTHOR-Train-9031_seed102_dynamic" data-memory="dynamic" data-scene="ProcTHOR-Train-9031">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/03_ProcTHOR-Train-9031_seed102_dynamic.jpg" aria-label="Egg → plate, ProcTHOR-Train-9031, seed 102, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/03_ProcTHOR-Train-9031_seed102_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 102 · 1:44 at 4×</span></div>
+            <h3>Egg → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-9031</p>
+            <p class="instruction">“Please pick up the egg and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>415.6 s</dd></div>
+              <div><dt>Carried distance</dt><dd>4.22 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.7 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/03_ProcTHOR-Train-9031_seed102_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/03_ProcTHOR-Train-9031_seed102_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-03_ProcTHOR-Train-9031_seed102_dynamic" aria-label="Link to 03_ProcTHOR-Train-9031_seed102_dynamic">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-04_ProcTHOR-Train-5318_seed100_dynamic" data-attempt="04_ProcTHOR-Train-5318_seed100_dynamic" data-memory="dynamic" data-scene="ProcTHOR-Train-5318">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/04_ProcTHOR-Train-5318_seed100_dynamic.jpg" aria-label="Mug → plate, ProcTHOR-Train-5318, seed 100, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/04_ProcTHOR-Train-5318_seed100_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 100 · 1:41 at 4×</span></div>
             <h3>Mug → plate</h3>
-            <p>“Please pick up the mug and place it on the plate on the wooden table.”</p>
-            <a href="../media/simulation/04.mp4" download>Download 4× video</a>
+            <p class="scene-name">ProcTHOR-Train-5318</p>
+            <p class="instruction">“Please pick up the mug and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>404.2 s</dd></div>
+              <div><dt>Carried distance</dt><dd>3.69 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.6 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/04_ProcTHOR-Train-5318_seed100_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/04_ProcTHOR-Train-5318_seed100_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-04_ProcTHOR-Train-5318_seed100_dynamic" aria-label="Link to 04_ProcTHOR-Train-5318_seed100_dynamic">Link to run</a></div>
           </div>
         </article>
-        <article class="video-card" id="case-05">
+        <article class="video-card" id="run-04_ProcTHOR-Train-5318_seed101_dynamic" data-attempt="04_ProcTHOR-Train-5318_seed101_dynamic" data-memory="dynamic" data-scene="ProcTHOR-Train-5318">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="../media/simulation/posters/05.png"
-              aria-label="Video 05: Bread → plate, 4× playback">
-              <source src="../media/simulation/05.mp4" type="video/mp4">
-              Your browser does not support embedded video.
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/04_ProcTHOR-Train-5318_seed101_dynamic.jpg" aria-label="Mug → plate, ProcTHOR-Train-5318, seed 101, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/04_ProcTHOR-Train-5318_seed101_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
             </video>
           </div>
           <div class="video-copy">
-            <p class="eyebrow">Video 05 · 4× playback</p>
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 101 · 1:37 at 4×</span></div>
+            <h3>Mug → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-5318</p>
+            <p class="instruction">“Please pick up the mug and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>389.4 s</dd></div>
+              <div><dt>Carried distance</dt><dd>3.68 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.6 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/04_ProcTHOR-Train-5318_seed101_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/04_ProcTHOR-Train-5318_seed101_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-04_ProcTHOR-Train-5318_seed101_dynamic" aria-label="Link to 04_ProcTHOR-Train-5318_seed101_dynamic">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-04_ProcTHOR-Train-5318_seed102_dynamic" data-attempt="04_ProcTHOR-Train-5318_seed102_dynamic" data-memory="dynamic" data-scene="ProcTHOR-Train-5318">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/04_ProcTHOR-Train-5318_seed102_dynamic.jpg" aria-label="Mug → plate, ProcTHOR-Train-5318, seed 102, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/04_ProcTHOR-Train-5318_seed102_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 102 · 1:43 at 4×</span></div>
+            <h3>Mug → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-5318</p>
+            <p class="instruction">“Please pick up the mug and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>413.6 s</dd></div>
+              <div><dt>Carried distance</dt><dd>3.68 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.6 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/04_ProcTHOR-Train-5318_seed102_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/04_ProcTHOR-Train-5318_seed102_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-04_ProcTHOR-Train-5318_seed102_dynamic" aria-label="Link to 04_ProcTHOR-Train-5318_seed102_dynamic">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-05_ArchitecTHOR-Test-02_seed100_dynamic" data-attempt="05_ArchitecTHOR-Test-02_seed100_dynamic" data-memory="dynamic" data-scene="ArchitecTHOR-Test-02">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/05_ArchitecTHOR-Test-02_seed100_dynamic.jpg" aria-label="Bread → plate, ArchitecTHOR-Test-02, seed 100, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/05_ArchitecTHOR-Test-02_seed100_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 100 · 4:51 at 4×</span></div>
             <h3>Bread → plate</h3>
-            <p>“Please pick up the bread and put it on the plate on the white table.”</p>
-            <a href="../media/simulation/05.mp4" download>Download 4× video</a>
+            <p class="scene-name">ArchitecTHOR-Test-02</p>
+            <p class="instruction">“Please pick up the bread and put it on the plate on the white table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>1162.8 s</dd></div>
+              <div><dt>Carried distance</dt><dd>5.36 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.3 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/05_ArchitecTHOR-Test-02_seed100_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/05_ArchitecTHOR-Test-02_seed100_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-05_ArchitecTHOR-Test-02_seed100_dynamic" aria-label="Link to 05_ArchitecTHOR-Test-02_seed100_dynamic">Link to run</a></div>
           </div>
         </article>
-        <article class="video-card" id="case-06">
+        <article class="video-card" id="run-06_ProcTHOR-Train-5080_seed100_dynamic" data-attempt="06_ProcTHOR-Train-5080_seed100_dynamic" data-memory="dynamic" data-scene="ProcTHOR-Train-5080">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="../media/simulation/posters/06.png"
-              aria-label="Video 06: Egg → plate, 4× playback">
-              <source src="../media/simulation/06.mp4" type="video/mp4">
-              Your browser does not support embedded video.
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/06_ProcTHOR-Train-5080_seed100_dynamic.jpg" aria-label="Egg → plate, ProcTHOR-Train-5080, seed 100, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/06_ProcTHOR-Train-5080_seed100_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
             </video>
           </div>
           <div class="video-copy">
-            <p class="eyebrow">Video 06 · 4× playback</p>
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 100 · 1:37 at 4×</span></div>
             <h3>Egg → plate</h3>
-            <p>“Please pick up the egg and place it on the plate on the wooden table.”</p>
-            <a href="../media/simulation/06.mp4" download>Download 4× video</a>
+            <p class="scene-name">ProcTHOR-Train-5080</p>
+            <p class="instruction">“Please pick up the egg and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>389.2 s</dd></div>
+              <div><dt>Carried distance</dt><dd>3.65 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.1 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/06_ProcTHOR-Train-5080_seed100_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/06_ProcTHOR-Train-5080_seed100_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-06_ProcTHOR-Train-5080_seed100_dynamic" aria-label="Link to 06_ProcTHOR-Train-5080_seed100_dynamic">Link to run</a></div>
           </div>
         </article>
-        <article class="video-card" id="case-07">
+        <article class="video-card" id="run-06_ProcTHOR-Train-5080_seed101_dynamic" data-attempt="06_ProcTHOR-Train-5080_seed101_dynamic" data-memory="dynamic" data-scene="ProcTHOR-Train-5080">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="../media/simulation/posters/07.png"
-              aria-label="Video 07: Egg → bowl, 4× playback">
-              <source src="../media/simulation/07.mp4" type="video/mp4">
-              Your browser does not support embedded video.
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/06_ProcTHOR-Train-5080_seed101_dynamic.jpg" aria-label="Egg → plate, ProcTHOR-Train-5080, seed 101, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/06_ProcTHOR-Train-5080_seed101_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
             </video>
           </div>
           <div class="video-copy">
-            <p class="eyebrow">Video 07 · 4× playback</p>
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 101 · 1:36 at 4×</span></div>
+            <h3>Egg → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-5080</p>
+            <p class="instruction">“Please pick up the egg and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>385.6 s</dd></div>
+              <div><dt>Carried distance</dt><dd>3.67 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.0 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/06_ProcTHOR-Train-5080_seed101_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/06_ProcTHOR-Train-5080_seed101_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-06_ProcTHOR-Train-5080_seed101_dynamic" aria-label="Link to 06_ProcTHOR-Train-5080_seed101_dynamic">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-06_ProcTHOR-Train-5080_seed102_dynamic" data-attempt="06_ProcTHOR-Train-5080_seed102_dynamic" data-memory="dynamic" data-scene="ProcTHOR-Train-5080">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/06_ProcTHOR-Train-5080_seed102_dynamic.jpg" aria-label="Egg → plate, ProcTHOR-Train-5080, seed 102, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/06_ProcTHOR-Train-5080_seed102_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 102 · 1:39 at 4×</span></div>
+            <h3>Egg → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-5080</p>
+            <p class="instruction">“Please pick up the egg and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>394.2 s</dd></div>
+              <div><dt>Carried distance</dt><dd>3.67 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.6 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/06_ProcTHOR-Train-5080_seed102_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/06_ProcTHOR-Train-5080_seed102_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-06_ProcTHOR-Train-5080_seed102_dynamic" aria-label="Link to 06_ProcTHOR-Train-5080_seed102_dynamic">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-07_ProcTHOR-Test-244_seed100_dynamic" data-attempt="07_ProcTHOR-Test-244_seed100_dynamic" data-memory="dynamic" data-scene="ProcTHOR-Test-244">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/07_ProcTHOR-Test-244_seed100_dynamic.jpg" aria-label="Egg → bowl, ProcTHOR-Test-244, seed 100, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/07_ProcTHOR-Test-244_seed100_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 100 · 2:10 at 4×</span></div>
             <h3>Egg → bowl</h3>
-            <p>“Please pick up the egg and put it in the bowl on the white table.”</p>
-            <a href="../media/simulation/07.mp4" download>Download 4× video</a>
+            <p class="scene-name">ProcTHOR-Test-244</p>
+            <p class="instruction">“Please pick up the egg and put it in the bowl on the white table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>520.4 s</dd></div>
+              <div><dt>Carried distance</dt><dd>4.27 m</dd></div>
+              <div><dt>Stable placement</dt><dd>4.5 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/07_ProcTHOR-Test-244_seed100_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/07_ProcTHOR-Test-244_seed100_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-07_ProcTHOR-Test-244_seed100_dynamic" aria-label="Link to 07_ProcTHOR-Test-244_seed100_dynamic">Link to run</a></div>
           </div>
         </article>
-        <article class="video-card" id="case-08">
+        <article class="video-card" id="run-07_ProcTHOR-Test-244_seed101_dynamic" data-attempt="07_ProcTHOR-Test-244_seed101_dynamic" data-memory="dynamic" data-scene="ProcTHOR-Test-244">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="../media/simulation/posters/08.png"
-              aria-label="Video 08: Egg → bowl, 4× playback">
-              <source src="../media/simulation/08.mp4" type="video/mp4">
-              Your browser does not support embedded video.
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/07_ProcTHOR-Test-244_seed101_dynamic.jpg" aria-label="Egg → bowl, ProcTHOR-Test-244, seed 101, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/07_ProcTHOR-Test-244_seed101_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
             </video>
           </div>
           <div class="video-copy">
-            <p class="eyebrow">Video 08 · 4× playback</p>
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 101 · 1:40 at 4×</span></div>
             <h3>Egg → bowl</h3>
-            <p>“Please pick up the egg and put it in the bowl on the white table.”</p>
-            <a href="../media/simulation/08.mp4" download>Download 4× video</a>
+            <p class="scene-name">ProcTHOR-Test-244</p>
+            <p class="instruction">“Please pick up the egg and put it in the bowl on the white table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>399.8 s</dd></div>
+              <div><dt>Carried distance</dt><dd>4.31 m</dd></div>
+              <div><dt>Stable placement</dt><dd>9.6 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/07_ProcTHOR-Test-244_seed101_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/07_ProcTHOR-Test-244_seed101_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-07_ProcTHOR-Test-244_seed101_dynamic" aria-label="Link to 07_ProcTHOR-Test-244_seed101_dynamic">Link to run</a></div>
           </div>
         </article>
-        <article class="video-card" id="case-09">
+        <article class="video-card" id="run-07_ProcTHOR-Test-244_seed102_dynamic" data-attempt="07_ProcTHOR-Test-244_seed102_dynamic" data-memory="dynamic" data-scene="ProcTHOR-Test-244">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="../media/simulation/posters/09.png"
-              aria-label="Video 09: Tomato → bowl, 4× playback">
-              <source src="../media/simulation/09.mp4" type="video/mp4">
-              Your browser does not support embedded video.
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/07_ProcTHOR-Test-244_seed102_dynamic.jpg" aria-label="Egg → bowl, ProcTHOR-Test-244, seed 102, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/07_ProcTHOR-Test-244_seed102_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
             </video>
           </div>
           <div class="video-copy">
-            <p class="eyebrow">Video 09 · 4× playback</p>
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 102 · 3:16 at 4×</span></div>
+            <h3>Egg → bowl</h3>
+            <p class="scene-name">ProcTHOR-Test-244</p>
+            <p class="instruction">“Please pick up the egg and put it in the bowl on the white table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>782.2 s</dd></div>
+              <div><dt>Carried distance</dt><dd>3.97 m</dd></div>
+              <div><dt>Stable placement</dt><dd>2.8 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/07_ProcTHOR-Test-244_seed102_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/07_ProcTHOR-Test-244_seed102_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-07_ProcTHOR-Test-244_seed102_dynamic" aria-label="Link to 07_ProcTHOR-Test-244_seed102_dynamic">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-08_ArchitecTHOR-Val-01_seed100_dynamic" data-attempt="08_ArchitecTHOR-Val-01_seed100_dynamic" data-memory="dynamic" data-scene="ArchitecTHOR-Val-01">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/08_ArchitecTHOR-Val-01_seed100_dynamic.jpg" aria-label="Egg → bowl, ArchitecTHOR-Val-01, seed 100, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/08_ArchitecTHOR-Val-01_seed100_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 100 · 1:30 at 4×</span></div>
+            <h3>Egg → bowl</h3>
+            <p class="scene-name">ArchitecTHOR-Val-01</p>
+            <p class="instruction">“Please pick up the egg and put it in the bowl on the white table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>361.2 s</dd></div>
+              <div><dt>Carried distance</dt><dd>4.56 m</dd></div>
+              <div><dt>Stable placement</dt><dd>18.6 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/08_ArchitecTHOR-Val-01_seed100_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/08_ArchitecTHOR-Val-01_seed100_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-08_ArchitecTHOR-Val-01_seed100_dynamic" aria-label="Link to 08_ArchitecTHOR-Val-01_seed100_dynamic">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-08_ArchitecTHOR-Val-01_seed101_dynamic" data-attempt="08_ArchitecTHOR-Val-01_seed101_dynamic" data-memory="dynamic" data-scene="ArchitecTHOR-Val-01">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/08_ArchitecTHOR-Val-01_seed101_dynamic.jpg" aria-label="Egg → bowl, ArchitecTHOR-Val-01, seed 101, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/08_ArchitecTHOR-Val-01_seed101_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 101 · 1:26 at 4×</span></div>
+            <h3>Egg → bowl</h3>
+            <p class="scene-name">ArchitecTHOR-Val-01</p>
+            <p class="instruction">“Please pick up the egg and put it in the bowl on the white table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>345.2 s</dd></div>
+              <div><dt>Carried distance</dt><dd>4.56 m</dd></div>
+              <div><dt>Stable placement</dt><dd>5.5 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/08_ArchitecTHOR-Val-01_seed101_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/08_ArchitecTHOR-Val-01_seed101_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-08_ArchitecTHOR-Val-01_seed101_dynamic" aria-label="Link to 08_ArchitecTHOR-Val-01_seed101_dynamic">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-08_ArchitecTHOR-Val-01_seed102_dynamic" data-attempt="08_ArchitecTHOR-Val-01_seed102_dynamic" data-memory="dynamic" data-scene="ArchitecTHOR-Val-01">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/08_ArchitecTHOR-Val-01_seed102_dynamic.jpg" aria-label="Egg → bowl, ArchitecTHOR-Val-01, seed 102, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/08_ArchitecTHOR-Val-01_seed102_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 102 · 1:25 at 4×</span></div>
+            <h3>Egg → bowl</h3>
+            <p class="scene-name">ArchitecTHOR-Val-01</p>
+            <p class="instruction">“Please pick up the egg and put it in the bowl on the white table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>340.4 s</dd></div>
+              <div><dt>Carried distance</dt><dd>4.61 m</dd></div>
+              <div><dt>Stable placement</dt><dd>5.2 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/08_ArchitecTHOR-Val-01_seed102_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/08_ArchitecTHOR-Val-01_seed102_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-08_ArchitecTHOR-Val-01_seed102_dynamic" aria-label="Link to 08_ArchitecTHOR-Val-01_seed102_dynamic">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-09_ProcTHOR-Val-632_seed100_dynamic" data-attempt="09_ProcTHOR-Val-632_seed100_dynamic" data-memory="dynamic" data-scene="ProcTHOR-Val-632">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/09_ProcTHOR-Val-632_seed100_dynamic.jpg" aria-label="Tomato → bowl, ProcTHOR-Val-632, seed 100, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/09_ProcTHOR-Val-632_seed100_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 100 · 2:50 at 4×</span></div>
             <h3>Tomato → bowl</h3>
-            <p>“Please pick up the tomato and put it in the bowl on the white table.”</p>
-            <a href="../media/simulation/09.mp4" download>Download 4× video</a>
+            <p class="scene-name">ProcTHOR-Val-632</p>
+            <p class="instruction">“Please pick up the tomato and put it in the bowl on the white table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>681.0 s</dd></div>
+              <div><dt>Carried distance</dt><dd>4.61 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.0 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/09_ProcTHOR-Val-632_seed100_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/09_ProcTHOR-Val-632_seed100_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-09_ProcTHOR-Val-632_seed100_dynamic" aria-label="Link to 09_ProcTHOR-Val-632_seed100_dynamic">Link to run</a></div>
           </div>
         </article>
-        <article class="video-card" id="case-10">
+        <article class="video-card" id="run-09_ProcTHOR-Val-632_seed101_dynamic" data-attempt="09_ProcTHOR-Val-632_seed101_dynamic" data-memory="dynamic" data-scene="ProcTHOR-Val-632">
           <div class="video-frame">
-            <video controls muted playsinline preload="none" poster="../media/simulation/posters/10.png"
-              aria-label="Video 10: Bread → plate, 4× playback">
-              <source src="../media/simulation/10.mp4" type="video/mp4">
-              Your browser does not support embedded video.
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/09_ProcTHOR-Val-632_seed101_dynamic.jpg" aria-label="Tomato → bowl, ProcTHOR-Val-632, seed 101, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/09_ProcTHOR-Val-632_seed101_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
             </video>
           </div>
           <div class="video-copy">
-            <p class="eyebrow">Video 10 · 4× playback</p>
-            <h3>Bread → plate</h3>
-            <p>“Please pick up the bread and put it on the plate on the white table.”</p>
-            <a href="../media/simulation/10.mp4" download>Download 4× video</a>
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 101 · 2:19 at 4×</span></div>
+            <h3>Tomato → bowl</h3>
+            <p class="scene-name">ProcTHOR-Val-632</p>
+            <p class="instruction">“Please pick up the tomato and put it in the bowl on the white table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>554.2 s</dd></div>
+              <div><dt>Carried distance</dt><dd>4.54 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.0 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/09_ProcTHOR-Val-632_seed101_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/09_ProcTHOR-Val-632_seed101_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-09_ProcTHOR-Val-632_seed101_dynamic" aria-label="Link to 09_ProcTHOR-Val-632_seed101_dynamic">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-09_ProcTHOR-Val-632_seed102_dynamic" data-attempt="09_ProcTHOR-Val-632_seed102_dynamic" data-memory="dynamic" data-scene="ProcTHOR-Val-632">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/09_ProcTHOR-Val-632_seed102_dynamic.jpg" aria-label="Tomato → bowl, ProcTHOR-Val-632, seed 102, dynamic memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/09_ProcTHOR-Val-632_seed102_dynamic.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge dynamic">Dynamic memory</span><span>Seed 102 · 2:19 at 4×</span></div>
+            <h3>Tomato → bowl</h3>
+            <p class="scene-name">ProcTHOR-Val-632</p>
+            <p class="instruction">“Please pick up the tomato and put it in the bowl on the white table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>554.8 s</dd></div>
+              <div><dt>Carried distance</dt><dd>4.53 m</dd></div>
+              <div><dt>Stable placement</dt><dd>18.9 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/09_ProcTHOR-Val-632_seed102_dynamic.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/09_ProcTHOR-Val-632_seed102_dynamic.zip" target="_blank" rel="noopener">Task record</a><a href="#run-09_ProcTHOR-Val-632_seed102_dynamic" aria-label="Link to 09_ProcTHOR-Val-632_seed102_dynamic">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-01_ProcTHOR-Train-283_seed100_static" data-attempt="01_ProcTHOR-Train-283_seed100_static" data-memory="static" data-scene="ProcTHOR-Train-283">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/01_ProcTHOR-Train-283_seed100_static.jpg" aria-label="Mug → plate, ProcTHOR-Train-283, seed 100, static memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/01_ProcTHOR-Train-283_seed100_static.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge static">Static memory</span><span>Seed 100 · 2:44 at 4×</span></div>
+            <h3>Mug → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-283</p>
+            <p class="instruction">“Please pick up the mug and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>656.0 s</dd></div>
+              <div><dt>Carried distance</dt><dd>5.06 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.6 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/01_ProcTHOR-Train-283_seed100_static.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/01_ProcTHOR-Train-283_seed100_static.zip" target="_blank" rel="noopener">Task record</a><a href="#run-01_ProcTHOR-Train-283_seed100_static" aria-label="Link to 01_ProcTHOR-Train-283_seed100_static">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-02_ProcTHOR-Train-8361_seed101_static" data-attempt="02_ProcTHOR-Train-8361_seed101_static" data-memory="static" data-scene="ProcTHOR-Train-8361">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/02_ProcTHOR-Train-8361_seed101_static.jpg" aria-label="Mug → plate, ProcTHOR-Train-8361, seed 101, static memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/02_ProcTHOR-Train-8361_seed101_static.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge static">Static memory</span><span>Seed 101 · 2:33 at 4×</span></div>
+            <h3>Mug → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-8361</p>
+            <p class="instruction">“Please pick up the mug and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>613.6 s</dd></div>
+              <div><dt>Carried distance</dt><dd>3.61 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.5 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/02_ProcTHOR-Train-8361_seed101_static.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/02_ProcTHOR-Train-8361_seed101_static.zip" target="_blank" rel="noopener">Task record</a><a href="#run-02_ProcTHOR-Train-8361_seed101_static" aria-label="Link to 02_ProcTHOR-Train-8361_seed101_static">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-02_ProcTHOR-Train-8361_seed102_static" data-attempt="02_ProcTHOR-Train-8361_seed102_static" data-memory="static" data-scene="ProcTHOR-Train-8361">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/02_ProcTHOR-Train-8361_seed102_static.jpg" aria-label="Mug → plate, ProcTHOR-Train-8361, seed 102, static memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/02_ProcTHOR-Train-8361_seed102_static.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge static">Static memory</span><span>Seed 102 · 4:23 at 4×</span></div>
+            <h3>Mug → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-8361</p>
+            <p class="instruction">“Please pick up the mug and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>1051.8 s</dd></div>
+              <div><dt>Carried distance</dt><dd>3.24 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.5 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/02_ProcTHOR-Train-8361_seed102_static.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/02_ProcTHOR-Train-8361_seed102_static.zip" target="_blank" rel="noopener">Task record</a><a href="#run-02_ProcTHOR-Train-8361_seed102_static" aria-label="Link to 02_ProcTHOR-Train-8361_seed102_static">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-03_ProcTHOR-Train-9031_seed100_static" data-attempt="03_ProcTHOR-Train-9031_seed100_static" data-memory="static" data-scene="ProcTHOR-Train-9031">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/03_ProcTHOR-Train-9031_seed100_static.jpg" aria-label="Egg → plate, ProcTHOR-Train-9031, seed 100, static memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/03_ProcTHOR-Train-9031_seed100_static.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge static">Static memory</span><span>Seed 100 · 1:50 at 4×</span></div>
+            <h3>Egg → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-9031</p>
+            <p class="instruction">“Please pick up the egg and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>440.0 s</dd></div>
+              <div><dt>Carried distance</dt><dd>4.05 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.4 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/03_ProcTHOR-Train-9031_seed100_static.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/03_ProcTHOR-Train-9031_seed100_static.zip" target="_blank" rel="noopener">Task record</a><a href="#run-03_ProcTHOR-Train-9031_seed100_static" aria-label="Link to 03_ProcTHOR-Train-9031_seed100_static">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-03_ProcTHOR-Train-9031_seed101_static" data-attempt="03_ProcTHOR-Train-9031_seed101_static" data-memory="static" data-scene="ProcTHOR-Train-9031">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/03_ProcTHOR-Train-9031_seed101_static.jpg" aria-label="Egg → plate, ProcTHOR-Train-9031, seed 101, static memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/03_ProcTHOR-Train-9031_seed101_static.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge static">Static memory</span><span>Seed 101 · 1:48 at 4×</span></div>
+            <h3>Egg → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-9031</p>
+            <p class="instruction">“Please pick up the egg and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>434.0 s</dd></div>
+              <div><dt>Carried distance</dt><dd>4.28 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.6 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/03_ProcTHOR-Train-9031_seed101_static.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/03_ProcTHOR-Train-9031_seed101_static.zip" target="_blank" rel="noopener">Task record</a><a href="#run-03_ProcTHOR-Train-9031_seed101_static" aria-label="Link to 03_ProcTHOR-Train-9031_seed101_static">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-03_ProcTHOR-Train-9031_seed102_static" data-attempt="03_ProcTHOR-Train-9031_seed102_static" data-memory="static" data-scene="ProcTHOR-Train-9031">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/03_ProcTHOR-Train-9031_seed102_static.jpg" aria-label="Egg → plate, ProcTHOR-Train-9031, seed 102, static memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/03_ProcTHOR-Train-9031_seed102_static.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge static">Static memory</span><span>Seed 102 · 1:46 at 4×</span></div>
+            <h3>Egg → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-9031</p>
+            <p class="instruction">“Please pick up the egg and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>424.2 s</dd></div>
+              <div><dt>Carried distance</dt><dd>4.22 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.8 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/03_ProcTHOR-Train-9031_seed102_static.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/03_ProcTHOR-Train-9031_seed102_static.zip" target="_blank" rel="noopener">Task record</a><a href="#run-03_ProcTHOR-Train-9031_seed102_static" aria-label="Link to 03_ProcTHOR-Train-9031_seed102_static">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-04_ProcTHOR-Train-5318_seed100_static" data-attempt="04_ProcTHOR-Train-5318_seed100_static" data-memory="static" data-scene="ProcTHOR-Train-5318">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/04_ProcTHOR-Train-5318_seed100_static.jpg" aria-label="Mug → plate, ProcTHOR-Train-5318, seed 100, static memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/04_ProcTHOR-Train-5318_seed100_static.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge static">Static memory</span><span>Seed 100 · 1:41 at 4×</span></div>
+            <h3>Mug → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-5318</p>
+            <p class="instruction">“Please pick up the mug and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>404.2 s</dd></div>
+              <div><dt>Carried distance</dt><dd>3.69 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.6 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/04_ProcTHOR-Train-5318_seed100_static.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/04_ProcTHOR-Train-5318_seed100_static.zip" target="_blank" rel="noopener">Task record</a><a href="#run-04_ProcTHOR-Train-5318_seed100_static" aria-label="Link to 04_ProcTHOR-Train-5318_seed100_static">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-04_ProcTHOR-Train-5318_seed101_static" data-attempt="04_ProcTHOR-Train-5318_seed101_static" data-memory="static" data-scene="ProcTHOR-Train-5318">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/04_ProcTHOR-Train-5318_seed101_static.jpg" aria-label="Mug → plate, ProcTHOR-Train-5318, seed 101, static memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/04_ProcTHOR-Train-5318_seed101_static.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge static">Static memory</span><span>Seed 101 · 1:38 at 4×</span></div>
+            <h3>Mug → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-5318</p>
+            <p class="instruction">“Please pick up the mug and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>393.0 s</dd></div>
+              <div><dt>Carried distance</dt><dd>3.69 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.6 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/04_ProcTHOR-Train-5318_seed101_static.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/04_ProcTHOR-Train-5318_seed101_static.zip" target="_blank" rel="noopener">Task record</a><a href="#run-04_ProcTHOR-Train-5318_seed101_static" aria-label="Link to 04_ProcTHOR-Train-5318_seed101_static">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-04_ProcTHOR-Train-5318_seed102_static" data-attempt="04_ProcTHOR-Train-5318_seed102_static" data-memory="static" data-scene="ProcTHOR-Train-5318">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/04_ProcTHOR-Train-5318_seed102_static.jpg" aria-label="Mug → plate, ProcTHOR-Train-5318, seed 102, static memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/04_ProcTHOR-Train-5318_seed102_static.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge static">Static memory</span><span>Seed 102 · 1:43 at 4×</span></div>
+            <h3>Mug → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-5318</p>
+            <p class="instruction">“Please pick up the mug and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>413.6 s</dd></div>
+              <div><dt>Carried distance</dt><dd>3.68 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.6 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/04_ProcTHOR-Train-5318_seed102_static.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/04_ProcTHOR-Train-5318_seed102_static.zip" target="_blank" rel="noopener">Task record</a><a href="#run-04_ProcTHOR-Train-5318_seed102_static" aria-label="Link to 04_ProcTHOR-Train-5318_seed102_static">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-06_ProcTHOR-Train-5080_seed100_static" data-attempt="06_ProcTHOR-Train-5080_seed100_static" data-memory="static" data-scene="ProcTHOR-Train-5080">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/06_ProcTHOR-Train-5080_seed100_static.jpg" aria-label="Egg → plate, ProcTHOR-Train-5080, seed 100, static memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/06_ProcTHOR-Train-5080_seed100_static.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge static">Static memory</span><span>Seed 100 · 1:37 at 4×</span></div>
+            <h3>Egg → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-5080</p>
+            <p class="instruction">“Please pick up the egg and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>389.2 s</dd></div>
+              <div><dt>Carried distance</dt><dd>3.65 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.1 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/06_ProcTHOR-Train-5080_seed100_static.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/06_ProcTHOR-Train-5080_seed100_static.zip" target="_blank" rel="noopener">Task record</a><a href="#run-06_ProcTHOR-Train-5080_seed100_static" aria-label="Link to 06_ProcTHOR-Train-5080_seed100_static">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-06_ProcTHOR-Train-5080_seed101_static" data-attempt="06_ProcTHOR-Train-5080_seed101_static" data-memory="static" data-scene="ProcTHOR-Train-5080">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/06_ProcTHOR-Train-5080_seed101_static.jpg" aria-label="Egg → plate, ProcTHOR-Train-5080, seed 101, static memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/06_ProcTHOR-Train-5080_seed101_static.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge static">Static memory</span><span>Seed 101 · 1:36 at 4×</span></div>
+            <h3>Egg → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-5080</p>
+            <p class="instruction">“Please pick up the egg and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>385.6 s</dd></div>
+              <div><dt>Carried distance</dt><dd>3.67 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.0 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/06_ProcTHOR-Train-5080_seed101_static.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/06_ProcTHOR-Train-5080_seed101_static.zip" target="_blank" rel="noopener">Task record</a><a href="#run-06_ProcTHOR-Train-5080_seed101_static" aria-label="Link to 06_ProcTHOR-Train-5080_seed101_static">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-06_ProcTHOR-Train-5080_seed102_static" data-attempt="06_ProcTHOR-Train-5080_seed102_static" data-memory="static" data-scene="ProcTHOR-Train-5080">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/06_ProcTHOR-Train-5080_seed102_static.jpg" aria-label="Egg → plate, ProcTHOR-Train-5080, seed 102, static memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/06_ProcTHOR-Train-5080_seed102_static.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge static">Static memory</span><span>Seed 102 · 1:39 at 4×</span></div>
+            <h3>Egg → plate</h3>
+            <p class="scene-name">ProcTHOR-Train-5080</p>
+            <p class="instruction">“Please pick up the egg and place it on the plate on the wooden table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>394.2 s</dd></div>
+              <div><dt>Carried distance</dt><dd>3.67 m</dd></div>
+              <div><dt>Stable placement</dt><dd>19.6 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/06_ProcTHOR-Train-5080_seed102_static.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/06_ProcTHOR-Train-5080_seed102_static.zip" target="_blank" rel="noopener">Task record</a><a href="#run-06_ProcTHOR-Train-5080_seed102_static" aria-label="Link to 06_ProcTHOR-Train-5080_seed102_static">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-07_ProcTHOR-Test-244_seed101_static" data-attempt="07_ProcTHOR-Test-244_seed101_static" data-memory="static" data-scene="ProcTHOR-Test-244">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/07_ProcTHOR-Test-244_seed101_static.jpg" aria-label="Egg → bowl, ProcTHOR-Test-244, seed 101, static memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/07_ProcTHOR-Test-244_seed101_static.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge static">Static memory</span><span>Seed 101 · 1:42 at 4×</span></div>
+            <h3>Egg → bowl</h3>
+            <p class="scene-name">ProcTHOR-Test-244</p>
+            <p class="instruction">“Please pick up the egg and put it in the bowl on the white table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>408.0 s</dd></div>
+              <div><dt>Carried distance</dt><dd>4.31 m</dd></div>
+              <div><dt>Stable placement</dt><dd>12.3 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/07_ProcTHOR-Test-244_seed101_static.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/07_ProcTHOR-Test-244_seed101_static.zip" target="_blank" rel="noopener">Task record</a><a href="#run-07_ProcTHOR-Test-244_seed101_static" aria-label="Link to 07_ProcTHOR-Test-244_seed101_static">Link to run</a></div>
+          </div>
+        </article>
+        <article class="video-card" id="run-08_ArchitecTHOR-Val-01_seed100_static" data-attempt="08_ArchitecTHOR-Val-01_seed100_static" data-memory="static" data-scene="ArchitecTHOR-Val-01">
+          <div class="video-frame">
+            <video controls muted playsinline preload="none" poster="../media/simulation/recovery-v2/08_ArchitecTHOR-Val-01_seed100_static.jpg" aria-label="Egg → bowl, ArchitecTHOR-Val-01, seed 100, static memory, 4× playback">
+              <source src="../media/simulation/recovery-v2/08_ArchitecTHOR-Val-01_seed100_static.mp4" type="video/mp4">
+              Your browser does not support embedded video. Use the download link below.
+            </video>
+          </div>
+          <div class="video-copy">
+            <div class="case-meta"><span class="memory-badge static">Static memory</span><span>Seed 100 · 1:30 at 4×</span></div>
+            <h3>Egg → bowl</h3>
+            <p class="scene-name">ArchitecTHOR-Val-01</p>
+            <p class="instruction">“Please pick up the egg and put it in the bowl on the white table.”</p>
+            <dl class="case-metrics">
+              <div><dt>Simulation time</dt><dd>358.6 s</dd></div>
+              <div><dt>Carried distance</dt><dd>4.58 m</dd></div>
+              <div><dt>Stable placement</dt><dd>18.8 s</dd></div>
+            </dl>
+            <div class="case-links"><a href="../media/simulation/recovery-v2/08_ArchitecTHOR-Val-01_seed100_static.mp4" download>Download video</a><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study/attempts/08_ArchitecTHOR-Val-01_seed100_static.zip" target="_blank" rel="noopener">Task record</a><a href="#run-08_ArchitecTHOR-Val-01_seed100_static" aria-label="Link to 08_ArchitecTHOR-Val-01_seed100_static">Link to run</a></div>
           </div>
         </article>
         </div>
+        <div class="gallery-empty" id="gallery-empty" hidden><p>No successful runs for this selection. The outcome table above includes every attempt.</p><button class="filter-button" id="reset-filters" type="button">Show all videos</button></div>
+        <p class="earlier-gallery">More to explore: <a href="selected.html">ten earlier demonstrations</a> · <a href="../index.html#videos">real-robot experiments</a>.</p>
       </div>
     </section>
   </main>
-  <footer class="footer"><div class="container is-max-widescreen">
-    <p>DREAM · <a href="../index.html">Project Page</a></p>
-  </div></footer>
+  <footer class="footer"><div class="container is-max-widescreen"><p>DREAM · <a href="../index.html">Project Page</a></p></div></footer>
 </body>
 </html>
