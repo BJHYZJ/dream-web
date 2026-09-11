@@ -18,7 +18,7 @@
   <a href="https://github.com/BJHYZJ/DREAM"><strong>Code</strong></a> ·
   <a href="https://bjhyzj.github.io/dream-web/#videos"><strong>Real Robot Demos</strong></a> ·
   <a href="https://bjhyzj.github.io/dream-web/simulation/"><strong>Simulation Demos</strong></a> ·
-  <a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-study"><strong>Simulation Evaluation</strong></a>
+  <a href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study"><strong>Simulation Evaluation</strong></a>
 </p>
 
 ![DREAM exploring an indoor environment, reacquiring a relocated target, and completing mobile manipulation.](media/figures/teaser.png)
