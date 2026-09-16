@@ -1,0 +1,16 @@
+{
+  "name": "dream-research-website",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "format": "prettier --write index.html simulation/*.html simulation/*.css simulation/*.js static/css/index.css static/js/*.js tests/*.mjs",
+    "check": "prettier --check index.html simulation/*.html simulation/*.css simulation/*.js static/css/index.css static/js/*.js tests/*.mjs",
+    "test": "node --test tests/site.test.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "playwright": "1.63.0",
+    "prettier": "3.9.6"
+  }
+}

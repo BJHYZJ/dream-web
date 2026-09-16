@@ -1,79 +1,101 @@
+/* Gallery filters and stable links into recorded task sequences. */
 (() => {
-  const cards = [...document.querySelectorAll('[data-attempt]')];
-  const buttons = [...document.querySelectorAll('[data-memory-filter]')];
-  const scene = document.querySelector('#scene-filter');
-  const count = document.querySelector('#gallery-count');
-  const empty = document.querySelector('#gallery-empty');
-  let memory = 'all';
+  "use strict";
+  const legacyCase = /^#case-(0[1-9]|10)$/.test(window.location.hash);
+  if (legacyCase && !window.location.pathname.endsWith("selected.html")) {
+    window.location.replace(
+      `selected.html${window.location.search}${window.location.hash}`,
+    );
+    return;
+  }
+
+  const cards = [...document.querySelectorAll("[data-attempt]")];
+  const scene = document.getElementById("scene-filter");
+  const search = document.getElementById("search-filter");
+  const buttons = [...document.querySelectorAll("[data-outcome-filter]")];
+  let outcome = "all";
 
   function applyFilters() {
+    if (!scene || !search) return;
+    const query = search.value.trim().toLowerCase();
     let visible = 0;
-    cards.forEach(card => {
-      const show = (memory === 'all' || card.dataset.memory === memory) &&
-        (scene.value === 'all' || card.dataset.scene === scene.value);
+    cards.forEach((card) => {
+      const show =
+        (outcome === "all" || card.dataset.outcome === outcome) &&
+        (scene.value === "all" || card.dataset.scene === scene.value) &&
+        (!query || card.dataset.search.toLowerCase().includes(query));
       card.hidden = !show;
       if (show) visible += 1;
-      else card.querySelector('video').pause();
+      else card.querySelector("video")?.pause();
     });
-    buttons.forEach(button => {
-      button.setAttribute('aria-pressed', String(button.dataset.memoryFilter === memory));
+    buttons.forEach((button) => {
+      button.setAttribute(
+        "aria-pressed",
+        String(button.dataset.outcomeFilter === outcome),
+      );
     });
-    count.textContent = `${visible} of ${cards.length} successful runs`;
-    empty.hidden = visible !== 0;
+    document.getElementById("gallery-count").textContent =
+      `${visible} of ${cards.length} task recordings`;
+    document.getElementById("gallery-empty").hidden = visible !== 0;
   }
 
-  buttons.forEach(button => button.addEventListener('click', () => {
-    memory = button.dataset.memoryFilter;
+  function resetFilters() {
+    outcome = "all";
+    scene.value = "all";
+    search.value = "";
     applyFilters();
-  }));
-  scene.addEventListener('change', applyFilters);
-  document.querySelector('#reset-filters').addEventListener('click', () => {
-    memory = 'all';
-    scene.value = 'all';
-    applyFilters();
-  });
+  }
 
-  function revealLinkedRun() {
-    const card = cards.find(item => `#${item.id}` === window.location.hash);
+  if (cards.length && scene && search) {
+    buttons.forEach((button) =>
+      button.addEventListener("click", () => {
+        outcome = button.dataset.outcomeFilter;
+        applyFilters();
+      }),
+    );
+    scene.addEventListener("change", applyFilters);
+    search.addEventListener("input", applyFilters);
+    document
+      .getElementById("reset-filters")
+      .addEventListener("click", resetFilters);
+    document.getElementById("gallery-toolbar").hidden = false;
+    applyFilters();
+  }
+
+  function revealRun() {
+    const card = cards.find((item) => `#${item.id}` === window.location.hash);
     if (!card) return;
-    memory = 'all';
-    scene.value = 'all';
-    applyFilters();
-    card.scrollIntoView({ block: 'start' });
+    resetFilters();
+    card.scrollIntoView({ block: "start" });
   }
-  window.addEventListener('hashchange', revealLinkedRun);
-  document.querySelectorAll('.outcome-table a').forEach(link => {
-    link.addEventListener('click', () => {
-      memory = 'all';
-      scene.value = 'all';
-      applyFilters();
-    });
-  });
+  window.addEventListener("hashchange", revealRun);
+  document
+    .querySelectorAll(".outcome-table a")
+    .forEach((link) => link.addEventListener("click", resetFilters));
+  revealRun();
 
-  cards.forEach(card => {
-    const video = card.querySelector('video');
-    const play = document.createElement('button');
-    play.type = 'button';
-    play.className = 'video-play';
-    play.textContent = '▶';
-    play.setAttribute('aria-label', `Play ${video.getAttribute('aria-label')}`);
-    video.controls = false;
-    card.querySelector('.video-frame').append(play);
-    play.addEventListener('click', () => {
-      video.controls = true;
-      play.hidden = true;
-      video.play().catch(() => {
-        play.hidden = false;
-      });
-    });
-    video.addEventListener('play', () => {
-      video.controls = true;
-      play.hidden = true;
-      cards.forEach(other => {
-        if (other !== card) other.querySelector('video').pause();
-      });
-    });
-  });
-  document.querySelector('#gallery-toolbar').hidden = false;
-  revealLinkedRun();
+  // A figure in the paper can link to a particular time without autoplaying it.
+  const query = new URLSearchParams(window.location.search);
+  const caseId = query.get("video");
+  const seconds = Number(query.get("t"));
+  if (
+    caseId &&
+    /^(0[1-9]|10)$/.test(caseId) &&
+    query.has("t") &&
+    Number.isFinite(seconds) &&
+    seconds >= 0
+  ) {
+    const target = document.querySelector(`#case-${caseId} video`);
+    if (target) {
+      target.preload = "metadata";
+      const seek = () => {
+        target.currentTime = Math.min(
+          seconds,
+          Number.isFinite(target.duration) ? target.duration : seconds,
+        );
+      };
+      if (target.readyState >= 1) seek();
+      else target.addEventListener("loadedmetadata", seek, { once: true });
+    }
+  }
 })();
