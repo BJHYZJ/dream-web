@@ -11,10 +11,13 @@ This repository hosts the DREAM research overview, method figures, real-robot de
 | `index.html` | Research overview, method, physical experiments, resources, and citation |
 | `simulation/index.html` | Current residential outcomes and the separate recorded video cohort |
 | `simulation/selected.html` | Ten selected target-relocation demonstrations |
-| `simulation/evaluation.json` | All 50 outcomes from the 36/50 residential evaluation |
+| `simulation/evaluation.json` | All 50 outcomes from the 38/50 residential evaluation |
+| `simulation/long-search.json` | All four extended-search outcomes, reported separately from the main cohort |
 | `simulation/results.json` | Outcomes and video metadata from the separate 27/50 recorded cohort |
 
-The **72% result (36/50)** describes a fixed controller evaluated in 50 development houses. It is distinct from both the 27/50 video cohort and the selected demonstrations. Keep these protocols separate when editing the site. The [public evaluation records](https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/residential-evaluation) contain the corresponding source and outcome hashes.
+The **76% result (38/50)** describes a fixed controller evaluated in 50 development houses, with an 1800-second robot-action budget and no fixed server execution deadline. All successes pass independent physics, observation, and arm-return checks; all 12 failures remain in the denominator. It is distinct from both the 27/50 video cohort and the selected demonstrations. Keep these protocols separate when editing the site. The [public evaluation records](https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/residential-fast-return) contain the corresponding source and outcome hashes and failure evidence. The [historical compact-controller result](https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/residential-evaluation) remains 36/50 under its original protocol.
+
+The [long-search recording](https://bjhyzj.github.io/dream-web/simulation/#long-search-07) shows case 07 completing after 78.7 minutes of robot-action time. The complete timeline plays at 24×; separate grasp and placement excerpts play at 1×. This is one qualified completion among four selected follow-up cases and does not change the main 38/50 result. The `long-search-07` anchor is also referenced by the reviewer response.
 
 ## Preview
 

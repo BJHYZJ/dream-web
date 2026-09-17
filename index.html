@@ -9,11 +9,11 @@
     />
     <meta
       property="og:title"
-      content="DREAM — Mobile manipulation in a changing world"
+      content="DREAM: Dynamic Resilient Spatio-Semantic Memory with Hybrid Localization for Mobile Manipulation"
     />
     <meta
       property="og:description"
-      content="A robot explores, remembers, and finds its target again when the world changes."
+      content="Online spatial-semantic memory, hybrid localization, and mobile manipulation in dynamic indoor environments."
     />
     <meta
       property="og:image"
@@ -23,196 +23,142 @@
     <link rel="stylesheet" href="static/css/index.css" />
     <script defer src="static/js/index.js"></script>
     <script defer src="static/js/analytics.js"></script>
-    <title>DREAM · Dynamic memory for mobile manipulation</title>
+    <title>
+      DREAM: Dynamic Resilient Spatio-Semantic Memory with Hybrid Localization
+      for Mobile Manipulation
+    </title>
   </head>
+
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <nav class="topbar" aria-label="Main navigation">
       <div class="container topbar-inner">
-        <a class="brand" href="./" aria-label="DREAM home"
-          ><span class="brand-mark" aria-hidden="true">D</span>DREAM<span
-            class="brand-note"
-            >Robotics research</span
-          ></a
-        >
+        <a class="brand" href="#top">DREAM</a>
         <div class="nav-links">
-          <a href="#method">Method</a><a href="#videos">Real robot</a
-          ><a href="simulation/">Simulation</a
-          ><a href="#resources">Resources <span aria-hidden="true">↗</span></a>
+          <a href="#videos">Videos</a><a href="simulation/">Simulation</a
+          ><a href="#method">Method</a><a href="#results">Results</a
+          ><a href="#bibtex">BibTeX</a>
         </div>
       </div>
     </nav>
     <main id="main">
-      <header class="container hero" id="top">
-        <div class="hero-heading">
-          <div>
-            <p class="eyebrow">
-              <span class="status-dot" aria-hidden="true"></span> Mobile
-              manipulation · Dynamic environments
-            </p>
-            <h1>DREAM<span class="title-period">.</span></h1>
+      <header class="container paper-hero" id="top">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <h1 class="publication-title">
+              DREAM: Dynamic Resilient Spatio-Semantic Memory with Hybrid
+              Localization for Mobile Manipulation
+            </h1>
+
+            <div class="publication-authors">
+              <span class="author-block"
+                ><a
+                  href="https://bjhyzj.github.io/"
+                  target="_blank"
+                  rel="noopener"
+                  >Zhijie Yan</a
+                ><sup>1</sup></span
+              >
+              <span class="author-block"
+                ><a
+                  href="https://scholar.google.com.hk/citations?user=CpCQmkwAAAAJ&amp;hl=en"
+                  target="_blank"
+                  rel="noopener"
+                  >Shufei Li</a
+                ><sup>2</sup></span
+              >
+              <span class="author-block">Ze Zhang<sup>1</sup></span>
+              <span class="author-block">Xin Liu<sup>1</sup></span>
+              <span class="author-block"
+                ><a
+                  href="https://mrsecant.github.io/"
+                  target="_blank"
+                  rel="noopener"
+                  >Yuhang Zheng</a
+                ><sup>3</sup></span
+              >
+              <span class="author-block"
+                ><a
+                  href="https://scholar.google.com.sg/citations?user=kja7k5MAAAAJ&amp;hl=en"
+                  target="_blank"
+                  rel="noopener"
+                  >Zuoxu Wang</a
+                ><sup>1</sup></span
+              >
+            </div>
+
+            <div class="publication-affiliations">
+              <span><sup>1</sup>Beihang University</span>
+              <span><sup>2</sup>City University of Hong Kong</span>
+              <span><sup>3</sup>National University of Singapore</span>
+            </div>
+
+            <div class="actions" aria-label="Project resources">
+              <a
+                class="button button-primary"
+                href="https://arxiv.org/abs/2606.00576"
+                >Paper</a
+              >
+              <a
+                class="button"
+                href="https://github.com/BJHYZJ/DREAM/tree/realtime"
+                >Code</a
+              >
+              <a class="button" href="simulation/">Simulation</a>
+              <a
+                class="button"
+                href="https://github.com/BJHYZJ/DREAM/tree/simulation"
+                >Simulation Code</a
+              >
+              <a class="button" href="#bibtex">BibTeX</a>
+            </div>
           </div>
-          <p class="hero-statement">
-            A memory for<br /><em>a changing world.</em>
-          </p>
+          <figure class="hero-figure">
+            <img
+              src="media/figures/teaser.png"
+              width="1888"
+              height="1000"
+              alt="A mobile robot discovers an orange, updates its remembered position after relocation, and places it in a green bowl."
+              fetchpriority="high"
+            />
+            <figcaption>
+              DREAM searches for task objects, updates memory when targets move,
+              and completes mobile pick-and-place tasks.
+            </figcaption>
+          </figure>
         </div>
-        <div class="hero-intro">
-          <p class="paper-title">
-            Dynamic Resilient Spatio-Semantic Memory with Hybrid Localization
-            for Mobile Manipulation
-          </p>
-          <p class="lead">
-            From a language instruction to a completed task. DREAM builds a
-            spatial-semantic memory as a robot explores, and updates it when
-            objects move.
-          </p>
-        </div>
-        <div class="author-list">
-          <a href="https://bjhyzj.github.io/">Zhijie Yan</a><sup>1</sup
-          ><span>·</span
-          ><a
-            href="https://scholar.google.com.hk/citations?user=CpCQmkwAAAAJ&amp;hl=en"
-            >Shufei Li</a
-          ><sup>2</sup><span>·</span><span>Ze Zhang<sup>1</sup></span
-          ><span>·</span><span>Xin Liu<sup>1</sup></span
-          ><span>·</span
-          ><a href="https://mrsecant.github.io/">Yuhang Zheng<sup>3</sup></a
-          ><span>·</span
-          ><a
-            href="https://scholar.google.com.sg/citations?user=kja7k5MAAAAJ&amp;hl=en"
-            >Zuoxu Wang<sup>1</sup></a
-          >
-        </div>
-        <p class="affiliations">
-          <span><sup>1</sup> Beihang University</span
-          ><span><sup>2</sup> City University of Hong Kong</span
-          ><span><sup>3</sup> National University of Singapore</span>
-        </p>
-        <div class="actions">
-          <a
-            class="button button-primary"
-            href="https://arxiv.org/abs/2606.00576"
-            >Read the paper <span aria-hidden="true">↗</span></a
-          ><a class="button" href="#videos"
-            >Watch the robot <span aria-hidden="true">↓</span></a
-          ><a
-            class="text-link"
-            href="https://github.com/BJHYZJ/DREAM/tree/realtime"
-            >Explore the code <span aria-hidden="true">↗</span></a
-          >
-        </div>
-        <figure class="hero-figure">
-          <img
-            src="media/figures/teaser.png"
-            width="1888"
-            height="1000"
-            alt="A mobile robot discovers an orange, updates its remembered position after relocation, and places it in a green bowl."
-            fetchpriority="high"
-          />
-          <figcaption>
-            <span class="figure-label">DREAM in action</span
-            ><span
-              >Explore an unfamiliar room. Find a moved object. Continue the
-              task.</span
-            ><a
-              href="#videos"
-              aria-label="Watch the full real-robot demonstrations"
-              >Watch <span aria-hidden="true">↗</span></a
-            >
-          </figcaption>
-        </figure>
       </header>
       <section
         class="section container"
-        id="method"
-        aria-labelledby="method-title"
+        id="abstract"
+        aria-labelledby="abstract-title"
       >
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">01 / The method</p>
-            <h2 id="method-title">
-              Keep the memory<br /><em>connected to the scene.</em>
-            </h2>
-          </div>
+        <h2 id="abstract-title">Abstract</h2>
+        <div class="content paper-text">
           <p>
-            A remembered position can become stale when an object moves or SLAM
-            revises an earlier pose. DREAM updates the evidence used by
-            navigation and manipulation throughout the task.
+            Reliable mobile manipulation in dynamic indoor environments requires
+            a scene representation that remains geometrically consistent,
+            semantically queryable, and computationally manageable. As objects
+            move and camera poses are corrected, the robot must update its
+            remembered scene while controlling the cost of retained observations
+            and semantic features.
+          </p>
+          <p>
+            DREAM starts in an unfamiliar indoor environment without a pre-built
+            map. It builds spatio-semantic voxel memory from RGB-D observations
+            registered by a LiDAR-inertial-visual SLAM backend. Pose-graph-aware
+            reintegration and Redundancy-Aware Memory Pruning maintain this
+            memory, while language-conditioned retrieval, image detection, and
+            semantic verification support target search and reacquisition.
+            Navigation, grasping, and placement complete the task.
           </p>
         </div>
-        <div class="method-steps">
-          <article>
-            <span class="step-number">01</span>
-            <h3>Build from observations</h3>
-            <p>
-              Register RGB-D observations and visual-language features in an
-              online 3D voxel memory, starting without a pre-built map.
-            </p>
-          </article>
-          <article>
-            <span class="step-number">02</span>
-            <h3>Update what changed</h3>
-            <p>
-              Propagate pose corrections, remove contradicted observations, and
-              prune redundant history with Redundancy-Aware Memory Pruning.
-            </p>
-          </article>
-          <article>
-            <span class="step-number">03</span>
-            <h3>Find and act again</h3>
-            <p>
-              Combine memory retrieval, visual verification, exploration, and
-              manipulation-aware docking to reacquire the target and resume the
-              task.
-            </p>
-          </article>
-        </div>
-        <figure class="paper-figure">
-          <img
-            src="media/figures/main.png"
-            alt="DREAM system architecture connecting multi-sensor SLAM, semantic memory, hybrid localization, navigation, grasping, and placement."
-            loading="lazy"
-          />
-          <figcaption>
-            <span class="figure-label">System overview</span> A continuous loop
-            between perception, memory, and action.
-          </figcaption>
-        </figure>
-        <div class="figure-pair">
-          <figure class="paper-figure">
-            <img
-              src="media/figures/hybrid_localization.png"
-              alt="Language-conditioned memory retrieval followed by image detection and target verification."
-              loading="lazy"
-            />
-            <figcaption>
-              <strong>Hybrid localization.</strong> Retrieve a candidate from
-              memory, then verify it in the image.
-            </figcaption>
-          </figure>
-          <figure class="paper-figure">
-            <img
-              src="media/figures/task_oriented_navigation.png"
-              alt="Recency and semantic maps guide exploration and selection of a manipulation docking pose."
-              loading="lazy"
-            />
-            <figcaption>
-              <strong>Task-oriented navigation.</strong> Search promising
-              regions and approach within reach.
-            </figcaption>
-          </figure>
-        </div>
       </section>
-      <section
-        class="section section-tinted"
-        id="videos"
-        aria-labelledby="videos-title"
-      >
+      <section class="section" id="videos" aria-labelledby="videos-title">
         <div class="container">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">02 / Real-robot demonstrations</p>
-              <h2 id="videos-title">See the full task unfold.</h2>
+              <h2 id="videos-title">Real-Robot Demonstrations</h2>
             </div>
             <p>
               The reference robot combines a Ranger Mini 3.0 base, xArm6 arm,
@@ -241,8 +187,7 @@
                 </video>
               </div>
               <div class="video-copy">
-                <p class="eyebrow">Scenario 01</p>
-                <h3>Find, carry, and place</h3>
+                <h3>Scenario 01: Pick-and-place task</h3>
                 <p>
                   A complete manipulation sequence, with synchronized views of
                   the robot and its memory.
@@ -269,20 +214,16 @@
                 </video>
               </div>
               <div class="video-copy">
-                <p class="eyebrow">Scenario 02</p>
-                <h3>When the target moves</h3>
+                <h3>Scenario 02: Yellow knife to red basket</h3>
                 <p>
-                  Revisit the remembered location, reacquire the object, and
-                  continue manipulation.
+                  The target moves during approach. Fresh observations update
+                  its remembered location before manipulation continues.
                 </p>
               </div>
             </article>
           </div>
           <details class="disclosure">
-            <summary>
-              More demonstrations and individual camera views
-              <span aria-hidden="true">+</span>
-            </summary>
+            <summary>More demonstrations and individual camera views</summary>
             <div class="video-grid supplementary-videos">
               <article class="video-card">
                 <video
@@ -323,18 +264,77 @@
             <div class="view-links">
               <div>
                 <h3>Scenario 01</h3>
-                <a href="media/videos/third_person_01.mp4">Robot camera ↗</a
-                ><a href="media/videos/slam_01.mp4">SLAM view ↗</a
-                ><a href="media/videos/server_01.mp4">Memory view ↗</a>
+                <a href="media/videos/third_person_01.mp4">Robot camera</a
+                ><a href="media/videos/slam_01.mp4">SLAM view</a
+                ><a href="media/videos/server_01.mp4">Memory view</a>
               </div>
               <div>
                 <h3>Scenario 02</h3>
-                <a href="media/videos/third_peroson_02.mp4">Robot camera ↗</a
-                ><a href="media/videos/slam_02.mp4">SLAM view ↗</a
-                ><a href="media/videos/server_02.mp4">Memory view ↗</a>
+                <a href="media/videos/third_peroson_02.mp4">Robot camera</a
+                ><a href="media/videos/slam_02.mp4">SLAM view</a
+                ><a href="media/videos/server_02.mp4">Memory view</a>
               </div>
             </div>
           </details>
+        </div>
+      </section>
+      <section
+        class="section container"
+        id="method"
+        aria-labelledby="method-title"
+      >
+        <div class="section-heading">
+          <div>
+            <h2 id="method-title">Method</h2>
+          </div>
+          <p>
+            A remembered position can become stale when an object moves or SLAM
+            revises an earlier pose. DREAM updates the evidence used by
+            navigation and manipulation throughout the task.
+          </p>
+        </div>
+        <p class="method-description">
+          DREAM registers RGB-D observations and visual-language features in an
+          online 3D voxel memory. Stored observations are reintegrated after
+          pose corrections, and new depth observations remove contradicted
+          geometry. Redundancy-Aware Memory Pruning controls the retained
+          history. Memory retrieval and visual verification then guide target
+          search, navigation, and manipulation.
+        </p>
+        <figure class="paper-figure">
+          <img
+            src="media/figures/main.png"
+            alt="DREAM system architecture connecting multi-sensor SLAM, semantic memory, hybrid localization, navigation, grasping, and placement."
+            loading="lazy"
+          />
+          <figcaption>
+            <span class="figure-label">System overview</span> A continuous loop
+            between perception, memory, and action.
+          </figcaption>
+        </figure>
+        <div class="figure-pair">
+          <figure class="paper-figure">
+            <img
+              src="media/figures/hybrid_localization.png"
+              alt="Language-conditioned memory retrieval followed by image detection and target verification."
+              loading="lazy"
+            />
+            <figcaption>
+              <strong>Hybrid localization.</strong> Retrieve a candidate from
+              memory, then verify it in the image.
+            </figcaption>
+          </figure>
+          <figure class="paper-figure">
+            <img
+              src="media/figures/task_oriented_navigation.png"
+              alt="Recency and semantic maps guide exploration and selection of a manipulation docking pose."
+              loading="lazy"
+            />
+            <figcaption>
+              <strong>Task-oriented navigation.</strong> Search promising
+              regions and approach within reach.
+            </figcaption>
+          </figure>
         </div>
       </section>
       <section
@@ -344,25 +344,16 @@
       >
         <div class="section-heading">
           <div>
-            <p class="eyebrow">03 / Experimental results</p>
-            <h2 id="results-title">
-              Measured in the lab.<br /><em>Explored in simulation.</em>
-            </h2>
+            <h2 id="results-title">Experimental Results</h2>
           </div>
           <p>
-            Each experiment answers a different question. The physical tasks,
-            residential simulation, and controlled memory comparison use their
-            own protocols and denominators.
+            Results are reported separately for physical tasks, residential
+            simulation, and the controlled memory comparison.
           </p>
         </div>
-        <div class="experiment-row">
-          <div class="experiment-number">
-            62.5<span>%</span>
-            <p>50 / 80 complete tasks</p>
-          </div>
+        <article class="result-summary">
           <div>
-            <p class="eyebrow">Real robot · Four indoor laboratories</p>
-            <h3>Navigation through released placement</h3>
+            <h3>Real-robot evaluation</h3>
             <p>
               DREAM completes 50 of 80 tasks, compared with 39 of 80 for
               DynaMem. The Wilson 95% intervals are 51.5–72.3% and 38.1–59.5%,
@@ -370,39 +361,29 @@
               (Fisher p = 0.111).
             </p>
             <a class="text-link" href="https://arxiv.org/abs/2606.00576"
-              >Read the physical evaluation ↗</a
+              >Read the physical evaluation</a
             >
           </div>
-        </div>
-        <div class="experiment-row">
-          <div class="experiment-number">
-            72<span>%</span>
-            <p>36 / 50 residential tasks</p>
-          </div>
+        </article>
+        <article class="result-summary">
           <div>
-            <p class="eyebrow">ManiSkill / Fetch · Native-scale objects</p>
-            <h3>Complete tasks across 50 houses</h3>
+            <h3>Residential simulation</h3>
             <p>
-              One fixed controller, seed 42, and a 900-second robot-action
-              budget. All 36 successes pass independent physics and recording
-              checks; all 14 failures are included. These houses were used
-              during development, so this rate describes the evaluated cohort.
+              The recorded controller completes 38 of 50 tasks (76%), using seed
+              42, an 1800-second robot-action budget, and no fixed server
+              deadline. All 38 successes pass independent physics, observation,
+              and arm-return checks; all 12 failures are included. These houses
+              were used during development, so this rate describes the evaluated
+              cohort.
             </p>
             <a class="text-link" href="simulation/#evaluation"
-              >Explore every outcome ↗</a
+              >Explore every outcome</a
             >
           </div>
-        </div>
-        <div class="experiment-row">
-          <div class="experiment-number comparison-number">
-            22 <span>vs.</span> 14
-            <p>Completed / 30 tasks per variant</p>
-          </div>
+        </article>
+        <article class="result-summary">
           <div>
-            <p class="eyebrow">
-              Controlled memory comparison · Ten development houses
-            </p>
-            <h3>Dynamic and static memory, one controller</h3>
+            <h3>Dynamic and static memory</h3>
             <p>
               With perception, navigation, and Fetch manipulation held fixed,
               dynamic memory completes 22/30 tasks and static memory 14/30. The
@@ -412,84 +393,65 @@
             <a
               class="text-link"
               href="https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/recovery-v2-study"
-              >View the comparison records ↗</a
+              >View the comparison records</a
             >
           </div>
-        </div>
+        </article>
       </section>
+
       <section
-        class="section section-dark"
+        class="section container"
         id="simulation"
         aria-labelledby="simulation-title"
       >
-        <div class="container simulation-feature">
-          <div>
-            <p class="eyebrow">Inside the simulation</p>
-            <h2 id="simulation-title">
-              Follow the robot.<br /><em>See what it remembers.</em>
-            </h2>
-            <p>
-              Browse cross-room task recordings with synchronized scene, camera,
-              memory, and route views. Filter by house and outcome, or follow
-              the selected relocation demonstrations.
-            </p>
-            <a class="button button-light" href="simulation/#gallery"
-              >Open the video gallery <span aria-hidden="true">↗</span></a
+        <h2 id="simulation-title">Simulation Videos</h2>
+        <p>
+          Complete task recordings include the scene view, robot camera,
+          semantic memory, and navigation route. The simulation page provides
+          video filters, the full residential results, and links to the task
+          records.
+        </p>
+        <ul class="resource-list">
+          <li><a href="simulation/#gallery">Residential task recordings</a></li>
+          <li>
+            <a href="simulation/#long-search-07"
+              >Extended search: 78.7-minute task</a
             >
-          </div>
-          <a
-            class="simulation-preview"
-            href="simulation/selected.html#case-01"
-            aria-label="Watch the selected mug-to-plate demonstration"
-            ><img
-              src="media/simulation/posters/01.png"
-              alt="Fetch robot and its RGB-D camera, memory, and planned route during a simulated task."
-              loading="lazy"
-            /><span
-              >Explore → Reacquire → Pick → Place
-              <span aria-hidden="true">↗</span></span
-            ></a
-          >
-        </div>
+          </li>
+          <li>
+            <a href="simulation/selected.html"
+              >Selected target-relocation demonstrations</a
+            >
+          </li>
+          <li>
+            <a href="simulation/#evaluation">All 50 residential outcomes</a>
+          </li>
+        </ul>
       </section>
       <section
         class="section container"
         id="resources"
         aria-labelledby="resources-title"
       >
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">04 / Open resources</p>
-            <h2 id="resources-title">Read. Reproduce. Build.</h2>
-          </div>
-          <p>
-            Implementation, hardware setup, task definitions, and recorded
-            outcomes are available with the project.
-          </p>
-        </div>
-        <div class="resource-grid">
-          <a href="https://arxiv.org/abs/2606.00576"
-            ><span class="resource-index">01 / Paper</span>
-            <h3>The research paper <span aria-hidden="true">↗</span></h3>
-            <p>Method, physical experiments, and comparisons.</p></a
-          ><a href="https://github.com/BJHYZJ/DREAM/tree/realtime"
-            ><span class="resource-index">02 / Real robot</span>
-            <h3>ROS implementation <span aria-hidden="true">↗</span></h3>
-            <p>Hardware setup, calibration, services, and robot control.</p></a
-          ><a href="https://github.com/BJHYZJ/DREAM/tree/simulation"
-            ><span class="resource-index">03 / Simulation</span>
-            <h3>Run the experiments <span aria-hidden="true">↗</span></h3>
-            <p>
-              Fetch controller, task inputs, and reproducible evaluation.
-            </p></a
-          >
-        </div>
-        <p class="resource-note">
-          Building the robot?
-          <a href="https://github.com/BJHYZJ/DREAM/tree/realtime/docs"
-            >Find the hardware guides and CAD assets ↗</a
-          >
-        </p>
+        <h2 id="resources-title">Resources</h2>
+        <ul class="resource-list">
+          <li><a href="https://arxiv.org/abs/2606.00576">Paper on arXiv</a></li>
+          <li>
+            <a href="https://github.com/BJHYZJ/DREAM/tree/realtime"
+              >Real-robot code</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/BJHYZJ/DREAM/tree/simulation"
+              >Simulation code and reproduction instructions</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/BJHYZJ/DREAM/tree/realtime/docs"
+              >Hardware guides and CAD models</a
+            >
+          </li>
+        </ul>
       </section>
       <section
         class="section container citation-section"
@@ -498,8 +460,7 @@
       >
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Citation</p>
-            <h2 id="citation-title">Cite DREAM.</h2>
+            <h2 id="citation-title">BibTeX</h2>
           </div>
           <p>If you use this work in your research, please cite the paper.</p>
         </div>
@@ -537,11 +498,8 @@
     </main>
     <footer class="footer">
       <div class="container footer-inner">
-        <a class="brand" href="#top"
-          >DREAM<span class="title-period">.</span></a
-        >
-        <p>Dynamic memory. Mobile manipulation.</p>
-        <a href="https://github.com/BJHYZJ/dream-web">Website source ↗</a>
+        <a class="brand" href="#top">DREAM</a
+        ><a href="https://github.com/BJHYZJ/dream-web">Website source</a>
       </div>
     </footer>
   </body>

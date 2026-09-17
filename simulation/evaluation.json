@@ -1,361 +1,501 @@
 {
   "attempts": 50,
-  "completed": 36,
-  "success_rate": 0.72,
+  "completed": 38,
+  "success_rate": 0.76,
+  "controller": "continuous_return",
   "cohort": "50 development houses",
   "seed": 42,
-  "robot_action_budget_seconds": 900,
-  "record_url": "https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/residential-evaluation",
+  "robot_action_budget_seconds": 1800,
+  "execution_wall_timeout_seconds": 0,
+  "endpoint": "audit-qualified task completion",
+  "protocol_sha256": "00c8fa73e832ba15dece7ed3cced0eb539bf115303c0025dd894369089c23bbe",
+  "record_url": "https://github.com/BJHYZJ/DREAM/tree/simulation/reproducibility/evidence/residential-fast-return",
   "results": [
     {
       "name": "01_ProcTHOR-Test-722_seed42_dynamic",
       "scene": "ProcTHOR-Test-722",
       "strict_pass": true,
-      "robot_action_seconds": 336.05,
-      "failure_category": null
+      "robot_action_seconds": 318.45,
+      "pickup_object": "Mug",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "02_ProcTHOR-Train-8471_seed42_dynamic",
       "scene": "ProcTHOR-Train-8471",
       "strict_pass": true,
-      "robot_action_seconds": 243.25,
-      "failure_category": null
+      "robot_action_seconds": 251.3,
+      "pickup_object": "Tomato",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "03_ProcTHOR-Train-6452_seed42_dynamic",
       "scene": "ProcTHOR-Train-6452",
       "strict_pass": false,
-      "robot_action_seconds": 900.0,
-      "failure_category": "pickup_search_action_timeout"
+      "robot_action_seconds": 1518.4,
+      "pickup_object": "Mug",
+      "failure_category": "pickup_search_failure",
+      "failure_reason": "Pickup search or navigation incomplete",
+      "final_stage": "pickup_search",
+      "server_execution_seconds": 3237.5487473011017,
+      "failure_evidence_status": "recorded events and evaluator outcome"
     },
     {
       "name": "04_ProcTHOR-Train-2043_seed42_dynamic",
       "scene": "ProcTHOR-Train-2043",
       "strict_pass": true,
-      "robot_action_seconds": 319.5,
-      "failure_category": null
+      "robot_action_seconds": 329.35,
+      "pickup_object": "Tomato",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "05_ProcTHOR-Test-288_seed42_dynamic",
       "scene": "ProcTHOR-Test-288",
       "strict_pass": false,
-      "robot_action_seconds": 900.0,
-      "failure_category": "pickup_search_action_timeout"
+      "robot_action_seconds": 1511.9,
+      "pickup_object": "Egg",
+      "failure_category": "navigation_iteration_limit_inferred",
+      "failure_reason": "Navigation iteration limit (inferred)",
+      "final_stage": "pickup_search",
+      "server_execution_seconds": 3532.3778326511383,
+      "failure_evidence_status": "inferred"
     },
     {
       "name": "06_ProcTHOR-Train-4300_seed42_dynamic",
       "scene": "ProcTHOR-Train-4300",
       "strict_pass": true,
-      "robot_action_seconds": 271.55,
-      "failure_category": null
+      "robot_action_seconds": 281.5,
+      "pickup_object": "Soap bottle",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "07_ProcTHOR-Train-1402_seed42_dynamic",
       "scene": "ProcTHOR-Train-1402",
       "strict_pass": false,
-      "robot_action_seconds": 900.0,
-      "failure_category": "placement_search_action_timeout"
+      "robot_action_seconds": 1444.1,
+      "pickup_object": "Candle",
+      "failure_category": "navigation_iteration_limit_inferred",
+      "failure_reason": "Navigation iteration limit (inferred)",
+      "final_stage": "placement_search",
+      "server_execution_seconds": 3926.5623302459717,
+      "failure_evidence_status": "inferred"
     },
     {
       "name": "08_ProcTHOR-Train-7473_seed42_dynamic",
       "scene": "ProcTHOR-Train-7473",
       "strict_pass": true,
-      "robot_action_seconds": 633.75,
-      "failure_category": null
+      "robot_action_seconds": 1087.95,
+      "pickup_object": "Egg",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "09_ProcTHOR-Test-166_seed42_dynamic",
       "scene": "ProcTHOR-Test-166",
       "strict_pass": true,
-      "robot_action_seconds": 632.0,
-      "failure_category": null
+      "robot_action_seconds": 662.25,
+      "pickup_object": "Mug",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "10_ProcTHOR-Test-459_seed42_dynamic",
       "scene": "ProcTHOR-Test-459",
       "strict_pass": true,
-      "robot_action_seconds": 387.85,
-      "failure_category": null
+      "robot_action_seconds": 381.65,
+      "pickup_object": "Tomato",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "11_ProcTHOR-Train-3859_seed42_dynamic",
       "scene": "ProcTHOR-Train-3859",
       "strict_pass": true,
-      "robot_action_seconds": 663.55,
-      "failure_category": null
+      "robot_action_seconds": 722.3,
+      "pickup_object": "Apple",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "12_ProcTHOR-Train-4108_seed42_dynamic",
       "scene": "ProcTHOR-Train-4108",
       "strict_pass": true,
-      "robot_action_seconds": 400.1,
-      "failure_category": null
+      "robot_action_seconds": 367.75,
+      "pickup_object": "Soap bottle",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "13_ProcTHOR-Train-7780_seed42_dynamic",
       "scene": "ProcTHOR-Train-7780",
       "strict_pass": true,
-      "robot_action_seconds": 325.9,
-      "failure_category": null
+      "robot_action_seconds": 330.9,
+      "pickup_object": "Tomato",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "14_ProcTHOR-Train-8921_seed42_dynamic",
       "scene": "ProcTHOR-Train-8921",
       "strict_pass": true,
-      "robot_action_seconds": 309.3,
-      "failure_category": null
+      "robot_action_seconds": 246.75,
+      "pickup_object": "Apple",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "15_ProcTHOR-Train-2769_seed42_dynamic",
       "scene": "ProcTHOR-Train-2769",
-      "strict_pass": false,
-      "robot_action_seconds": 900.0,
-      "failure_category": "pickup_search_action_timeout"
+      "strict_pass": true,
+      "robot_action_seconds": 1385.55,
+      "pickup_object": "Candle",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "16_ProcTHOR-Train-507_seed42_dynamic",
       "scene": "ProcTHOR-Train-507",
       "strict_pass": false,
-      "robot_action_seconds": 900.0,
-      "failure_category": "pickup_search_action_timeout"
+      "robot_action_seconds": 913.25,
+      "pickup_object": "Mug",
+      "failure_category": "pickup_search_failure",
+      "failure_reason": "Pickup search or navigation incomplete",
+      "final_stage": "pickup_search",
+      "server_execution_seconds": 1871.136771440506,
+      "failure_evidence_status": "recorded events and evaluator outcome"
     },
     {
       "name": "17_ProcTHOR-Train-9926_seed42_dynamic",
       "scene": "ProcTHOR-Train-9926",
       "strict_pass": true,
-      "robot_action_seconds": 234.4,
-      "failure_category": null
+      "robot_action_seconds": 244.4,
+      "pickup_object": "Egg",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "18_ProcTHOR-Train-3208_seed42_dynamic",
       "scene": "ProcTHOR-Train-3208",
-      "strict_pass": false,
-      "robot_action_seconds": 900.0,
-      "failure_category": "placement_search_action_timeout"
+      "strict_pass": true,
+      "robot_action_seconds": 763.85,
+      "pickup_object": "Candle",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "19_ProcTHOR-Train-4204_seed42_dynamic",
       "scene": "ProcTHOR-Train-4204",
-      "strict_pass": false,
-      "robot_action_seconds": 900.0,
-      "failure_category": "placement_search_action_timeout"
+      "strict_pass": true,
+      "robot_action_seconds": 856.95,
+      "pickup_object": "Soap bottle",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "20_ProcTHOR-Train-8432_seed42_dynamic",
       "scene": "ProcTHOR-Train-8432",
       "strict_pass": true,
-      "robot_action_seconds": 279.35,
-      "failure_category": null
+      "robot_action_seconds": 314.15,
+      "pickup_object": "Tomato",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "21_ProcTHOR-Test-308_seed42_dynamic",
       "scene": "ProcTHOR-Test-308",
       "strict_pass": true,
-      "robot_action_seconds": 344.15,
-      "failure_category": null
+      "robot_action_seconds": 355.65,
+      "pickup_object": "Apple",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "22_ProcTHOR-Train-3170_seed42_dynamic",
       "scene": "ProcTHOR-Train-3170",
       "strict_pass": true,
-      "robot_action_seconds": 316.35,
-      "failure_category": null
+      "robot_action_seconds": 378.8,
+      "pickup_object": "Candle",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "23_ProcTHOR-Val-265_seed42_dynamic",
       "scene": "ProcTHOR-Val-265",
       "strict_pass": true,
-      "robot_action_seconds": 303.0,
-      "failure_category": null
+      "robot_action_seconds": 313.45,
+      "pickup_object": "Egg",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "24_ProcTHOR-Train-9699_seed42_dynamic",
       "scene": "ProcTHOR-Train-9699",
       "strict_pass": true,
-      "robot_action_seconds": 439.25,
-      "failure_category": null
+      "robot_action_seconds": 457.7,
+      "pickup_object": "Candle",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "25_ProcTHOR-Val-605_seed42_dynamic",
       "scene": "ProcTHOR-Val-605",
       "strict_pass": true,
-      "robot_action_seconds": 355.3,
-      "failure_category": null
+      "robot_action_seconds": 348.25,
+      "pickup_object": "Mug",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "26_ProcTHOR-Train-2451_seed42_dynamic",
       "scene": "ProcTHOR-Train-2451",
       "strict_pass": false,
-      "robot_action_seconds": 392.3,
-      "failure_category": "placement_failure"
+      "robot_action_seconds": 422.15,
+      "pickup_object": "Soap bottle",
+      "failure_category": "placement_failure",
+      "failure_reason": "Released placement unstable (0.35 s)",
+      "final_stage": "finished",
+      "server_execution_seconds": 597.5058908462524,
+      "failure_evidence_status": "recorded events and evaluator outcome"
     },
     {
       "name": "27_ProcTHOR-Val-576_seed42_dynamic",
       "scene": "ProcTHOR-Val-576",
       "strict_pass": false,
-      "robot_action_seconds": 624.6,
-      "failure_category": "placement_search_failure"
+      "robot_action_seconds": 633.2,
+      "pickup_object": "Soap bottle",
+      "failure_category": "placement_search_failure",
+      "failure_reason": "Placement search or navigation incomplete",
+      "final_stage": "placement_search",
+      "server_execution_seconds": 1008.756716966629,
+      "failure_evidence_status": "recorded events and evaluator outcome"
     },
     {
       "name": "28_ProcTHOR-Train-4956_seed42_dynamic",
       "scene": "ProcTHOR-Train-4956",
       "strict_pass": true,
-      "robot_action_seconds": 812.85,
-      "failure_category": null
+      "robot_action_seconds": 822.7,
+      "pickup_object": "Tomato",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "29_ProcTHOR-Train-5013_seed42_dynamic",
       "scene": "ProcTHOR-Train-5013",
       "strict_pass": true,
-      "robot_action_seconds": 333.25,
-      "failure_category": null
+      "robot_action_seconds": 343.0,
+      "pickup_object": "Egg",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "30_ProcTHOR-Train-4732_seed42_dynamic",
       "scene": "ProcTHOR-Train-4732",
       "strict_pass": false,
-      "robot_action_seconds": 900.0,
-      "failure_category": "placement_search_action_timeout"
+      "robot_action_seconds": 1800.0,
+      "pickup_object": "Apple",
+      "failure_category": "action_timeout:placement_search",
+      "failure_reason": "Placement search reached 1800 s",
+      "final_stage": "placement_search",
+      "server_execution_seconds": 4254.73272228241,
+      "failure_evidence_status": "recorded events and evaluator outcome"
     },
     {
       "name": "31_ProcTHOR-Val-660_seed42_dynamic",
       "scene": "ProcTHOR-Val-660",
       "strict_pass": true,
-      "robot_action_seconds": 537.7,
-      "failure_category": null
+      "robot_action_seconds": 542.15,
+      "pickup_object": "Candle",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "32_ProcTHOR-Train-7199_seed42_dynamic",
       "scene": "ProcTHOR-Train-7199",
       "strict_pass": false,
-      "robot_action_seconds": 900.0,
-      "failure_category": "pickup_search_action_timeout"
+      "robot_action_seconds": 1800.0,
+      "pickup_object": "Egg",
+      "failure_category": "action_timeout:placement_search",
+      "failure_reason": "Placement search reached 1800 s",
+      "final_stage": "placement_search",
+      "server_execution_seconds": 4051.440792798996,
+      "failure_evidence_status": "recorded events and evaluator outcome"
     },
     {
       "name": "33_ProcTHOR-Train-5942_seed42_dynamic",
       "scene": "ProcTHOR-Train-5942",
       "strict_pass": false,
-      "robot_action_seconds": 451.4,
-      "failure_category": "pickup_search_failure"
+      "robot_action_seconds": 450.7,
+      "pickup_object": "Apple",
+      "failure_category": "pickup_search_failure",
+      "failure_reason": "Pickup search or navigation incomplete",
+      "final_stage": "pickup_search",
+      "server_execution_seconds": 993.0201361179352,
+      "failure_evidence_status": "recorded events and evaluator outcome"
     },
     {
       "name": "34_ProcTHOR-Train-9419_seed42_dynamic",
       "scene": "ProcTHOR-Train-9419",
       "strict_pass": true,
-      "robot_action_seconds": 871.7,
-      "failure_category": null
+      "robot_action_seconds": 873.9,
+      "pickup_object": "Mug",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "35_ProcTHOR-Train-6673_seed42_dynamic",
       "scene": "ProcTHOR-Train-6673",
-      "strict_pass": true,
-      "robot_action_seconds": 847.45,
-      "failure_category": null
+      "strict_pass": false,
+      "robot_action_seconds": 835.65,
+      "pickup_object": "Apple",
+      "failure_category": "placement_search_failure",
+      "failure_reason": "Placement search or navigation incomplete",
+      "final_stage": "placement_search",
+      "server_execution_seconds": 1679.8768763542175,
+      "failure_evidence_status": "recorded events and evaluator outcome"
     },
     {
       "name": "36_ProcTHOR-Test-959_seed42_dynamic",
       "scene": "ProcTHOR-Test-959",
       "strict_pass": true,
-      "robot_action_seconds": 261.2,
-      "failure_category": null
+      "robot_action_seconds": 243.15,
+      "pickup_object": "Mug",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "37_ProcTHOR-Train-2063_seed42_dynamic",
       "scene": "ProcTHOR-Train-2063",
       "strict_pass": true,
-      "robot_action_seconds": 839.95,
-      "failure_category": null
+      "robot_action_seconds": 1753.45,
+      "pickup_object": "Soap bottle",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "38_ProcTHOR-Train-2809_seed42_dynamic",
       "scene": "ProcTHOR-Train-2809",
       "strict_pass": true,
-      "robot_action_seconds": 306.5,
-      "failure_category": null
+      "robot_action_seconds": 382.75,
+      "pickup_object": "Egg",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "39_ProcTHOR-Train-406_seed42_dynamic",
       "scene": "ProcTHOR-Train-406",
       "strict_pass": true,
-      "robot_action_seconds": 636.75,
-      "failure_category": null
+      "robot_action_seconds": 647.55,
+      "pickup_object": "Tomato",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "40_ProcTHOR-Train-4574_seed42_dynamic",
       "scene": "ProcTHOR-Train-4574",
       "strict_pass": true,
-      "robot_action_seconds": 339.15,
-      "failure_category": null
+      "robot_action_seconds": 349.35,
+      "pickup_object": "Apple",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "41_ProcTHOR-Train-1182_seed42_dynamic",
       "scene": "ProcTHOR-Train-1182",
       "strict_pass": true,
-      "robot_action_seconds": 689.15,
-      "failure_category": null
+      "robot_action_seconds": 710.4,
+      "pickup_object": "Apple",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "42_ProcTHOR-Train-9100_seed42_dynamic",
       "scene": "ProcTHOR-Train-9100",
       "strict_pass": true,
-      "robot_action_seconds": 298.05,
-      "failure_category": null
+      "robot_action_seconds": 308.65,
+      "pickup_object": "Candle",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "43_ProcTHOR-Train-5361_seed42_dynamic",
       "scene": "ProcTHOR-Train-5361",
       "strict_pass": true,
-      "robot_action_seconds": 706.65,
-      "failure_category": null
+      "robot_action_seconds": 292.9,
+      "pickup_object": "Soap bottle",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "44_ProcTHOR-Train-2898_seed42_dynamic",
       "scene": "ProcTHOR-Train-2898",
       "strict_pass": true,
-      "robot_action_seconds": 294.4,
-      "failure_category": null
+      "robot_action_seconds": 304.3,
+      "pickup_object": "Egg",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "45_ProcTHOR-Train-6968_seed42_dynamic",
       "scene": "ProcTHOR-Train-6968",
-      "strict_pass": false,
-      "robot_action_seconds": 900.0,
-      "failure_category": "placement_search_action_timeout"
+      "strict_pass": true,
+      "robot_action_seconds": 1174.6,
+      "pickup_object": "Mug",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "46_ProcTHOR-Train-4899_seed42_dynamic",
       "scene": "ProcTHOR-Train-4899",
-      "strict_pass": true,
-      "robot_action_seconds": 306.25,
-      "failure_category": null
+      "strict_pass": false,
+      "robot_action_seconds": 894.6,
+      "pickup_object": "Soap bottle",
+      "failure_category": "aborted_grasp_recovery_failure",
+      "failure_reason": "Grasp alignment and empty-arm recovery failed",
+      "final_stage": "grasp",
+      "server_execution_seconds": 1662.4733533859253,
+      "failure_evidence_status": "recorded events and evaluator outcome"
     },
     {
       "name": "47_ProcTHOR-Val-46_seed42_dynamic",
       "scene": "ProcTHOR-Val-46",
       "strict_pass": false,
-      "robot_action_seconds": 344.85,
-      "failure_category": "pickup_search_failure"
+      "robot_action_seconds": 354.4,
+      "pickup_object": "Tomato",
+      "failure_category": "pickup_search_failure",
+      "failure_reason": "Pickup search or navigation incomplete",
+      "final_stage": "pickup_search",
+      "server_execution_seconds": 742.5513129234314,
+      "failure_evidence_status": "recorded events and evaluator outcome"
     },
     {
       "name": "48_ProcTHOR-Train-6322_seed42_dynamic",
       "scene": "ProcTHOR-Train-6322",
       "strict_pass": true,
-      "robot_action_seconds": 758.65,
-      "failure_category": null
+      "robot_action_seconds": 737.35,
+      "pickup_object": "Candle",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "49_ProcTHOR-Train-7428_seed42_dynamic",
       "scene": "ProcTHOR-Train-7428",
       "strict_pass": true,
-      "robot_action_seconds": 319.8,
-      "failure_category": null
+      "robot_action_seconds": 320.15,
+      "pickup_object": "Apple",
+      "failure_category": null,
+      "failure_reason": null
     },
     {
       "name": "50_ProcTHOR-Val-902_seed42_dynamic",
       "scene": "ProcTHOR-Val-902",
       "strict_pass": true,
-      "robot_action_seconds": 291.9,
-      "failure_category": null
+      "robot_action_seconds": 302.3,
+      "pickup_object": "Candle",
+      "failure_category": null,
+      "failure_reason": null
     }
   ]
 }

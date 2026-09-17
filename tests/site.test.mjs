@@ -147,7 +147,7 @@ test("gallery filters, reset, linked run, and complete result counts", async () 
   assert.equal(await page.locator("#evaluation tbody tr").count(), 50);
   assert.equal(
     await page.locator("#evaluation .outcome-badge.success").count(),
-    36,
+    38,
   );
   await page.locator('[data-outcome-filter="failure"]').click();
   assert.equal(await page.locator("[data-attempt]:visible").count(), 2);
@@ -215,11 +215,58 @@ test("essential page content and videos work with JavaScript disabled", async ()
   const page = await context.newPage();
   await page.goto(`${origin}/simulation/`);
   assert.equal(await page.locator("[data-attempt]:visible").count(), 29);
-  await page.locator("#evaluation summary").click();
+  await page.locator("#evaluation .outcome-details > summary").click();
   assert.equal(await page.locator("#evaluation tbody tr:visible").count(), 50);
   assert.equal(
     await page.locator("[data-attempt] video[controls]").count(),
     29,
   );
   await context.close();
+});
+
+test("long-search recording preserves its separate endpoint and supports seeking", async () => {
+  const page = await browser.newPage();
+  await page.goto(`${origin}/simulation/#long-search-07`);
+  const report = JSON.parse(
+    await readFile(path.join(root, "simulation/long-search.json"), "utf8"),
+  );
+  assert.equal(report.selected_cases, 4);
+  assert.equal(report.qualified_supplemental_successes, 1);
+  assert.equal(report.main_cohort_successes, 38);
+  assert.equal(report.main_cohort_attempts, 50);
+  assert.equal(
+    report.cases.find((row) => row.case === "07").robot_action_seconds,
+    4723.7,
+  );
+  assert.equal(await page.locator("[data-attempt]").count(), 29);
+  await page.locator("#long-search-07 video").evaluate((video) => {
+    video.preload = "auto";
+    video.load();
+  });
+  await page.waitForFunction(
+    () => document.querySelector("#long-search-07 video").readyState >= 2,
+  );
+  const duration = await page
+    .locator("#long-search-07 video")
+    .evaluate((video) => video.duration);
+  assert.ok(Math.abs(duration - 4723.7 / 24) < 0.2);
+  await page.locator("#long-search-07 video").evaluate(async (video) => {
+    video.currentTime = video.duration - 2;
+    await video.play();
+  });
+  await page.waitForFunction(() => {
+    const video = document.querySelector("#long-search-07 video");
+    return video.currentTime > video.duration - 1.5;
+  });
+  assert.equal(
+    await page
+      .locator("#long-search-07 video")
+      .evaluate((video) => video.error),
+    null,
+  );
+  const file = await stat(
+    path.join(root, "media/simulation/long_search_07.mp4"),
+  );
+  assert.ok(file.size < 50 * 1024 * 1024);
+  await page.close();
 });
