@@ -292,6 +292,22 @@ test("long-search recording preserves its separate endpoint and supports seeking
   assert.equal(report.qualified_supplemental_successes, 1);
   assert.equal(report.main_cohort_successes, 38);
   assert.equal(report.main_cohort_attempts, 50);
+  assert.equal(report.video.all_controls_replayed, true);
+  assert.equal(report.video.new_policy_execution, false);
+  assert.ok(Object.values(report.video.checks).every(Boolean));
+  assert.match(report.video.head_receipt_sha256, /^[a-f0-9]{64}$/);
+  assert.match(report.video.semantic_receipt_sha256, /^[a-f0-9]{64}$/);
+  for (const [kind, video] of Object.entries(report.video.videos)) {
+    const bytes = await readFile(
+      path.join(root, "media/simulation", video.file),
+    );
+    assert.equal(bytes.length, video.bytes);
+    assert.equal(
+      createHash("sha256").update(bytes).digest("hex"),
+      video.sha256,
+    );
+    assert.equal(video.playback_speed, kind === "overview" ? 24 : 1);
+  }
   assert.equal(
     report.cases.find((row) => row.case === "07").robot_action_seconds,
     4723.7,
