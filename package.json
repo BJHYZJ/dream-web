@@ -4,8 +4,8 @@
   "type": "module",
   "engines": { "node": ">=22" },
   "scripts": {
-    "format": "prettier --write index.html simulation/*.html simulation/*.css simulation/*.js static/css/index.css static/js/*.js tests/*.mjs",
-    "check": "prettier --check index.html simulation/*.html simulation/*.css simulation/*.js static/css/index.css static/js/*.js tests/*.mjs",
+    "format": "prettier --write index.html simulation/*.html simulation/*.css simulation/*.js static/css/*.css static/js/*.js tests/*.mjs",
+    "check": "prettier --check index.html simulation/*.html simulation/*.css simulation/*.js static/css/*.css static/js/*.js tests/*.mjs",
     "test": "node --test tests/site.test.mjs"
   },
   "devDependencies": {

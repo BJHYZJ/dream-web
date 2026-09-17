@@ -1,14 +1,6 @@
 /* Gallery filters and stable links into recorded task sequences. */
 (() => {
   "use strict";
-  const legacyCase = /^#case-(0[1-9]|10)$/.test(window.location.hash);
-  if (legacyCase && !window.location.pathname.endsWith("selected.html")) {
-    window.location.replace(
-      `selected.html${window.location.search}${window.location.hash}`,
-    );
-    return;
-  }
-
   const cards = [...document.querySelectorAll("[data-attempt]")];
   const scene = document.getElementById("scene-filter");
   const search = document.getElementById("search-filter");
@@ -80,12 +72,12 @@
   const seconds = Number(query.get("t"));
   if (
     caseId &&
-    /^(0[1-9]|10)$/.test(caseId) &&
+    /^(0[1-9]|[1-4][0-9]|50)$/.test(caseId) &&
     query.has("t") &&
     Number.isFinite(seconds) &&
     seconds >= 0
   ) {
-    const target = document.querySelector(`#case-${caseId} video`);
+    const target = document.querySelector(`#trial-${caseId} video`);
     if (target) {
       target.preload = "metadata";
       const seek = () => {

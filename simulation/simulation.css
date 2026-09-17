@@ -7,7 +7,7 @@
   margin-bottom: 20px;
 }
 .page-hero h1 {
-  font-size: 34px;
+  font-size: 32px;
 }
 .page-lead {
   max-width: 900px;
@@ -17,27 +17,25 @@
 .evaluation-section {
   padding-top: 20px;
 }
-.stats-strip {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
-  padding-block: 18px;
+.evaluation-summary {
+  margin: 18px 0;
   border-block: 1px solid var(--line);
+  font-size: 15px;
 }
-.stats-strip strong {
-  font-size: 28px;
+.evaluation-summary > div {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 20px;
+  padding: 10px 0;
+}
+.evaluation-summary > div + div {
+  border-top: 1px solid #eee;
+}
+.evaluation-summary dt {
   font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  line-height: 1.3;
 }
-.stats-strip strong span {
-  font-size: 20px;
-  margin-left: 2px;
-}
-.stats-strip p {
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 5px;
+.evaluation-summary dd {
+  margin: 0;
 }
 .scope-note {
   color: var(--muted);
@@ -78,9 +76,10 @@
   background: #eee;
 }
 .filter-button[aria-pressed="true"] {
-  color: #fff;
-  background: #333;
-  border-color: #333;
+  color: var(--ink);
+  background: #ededed;
+  border-color: #777;
+  font-weight: 600;
 }
 .search-fields {
   display: flex;
@@ -110,13 +109,23 @@
   margin-block: 16px;
 }
 .simulation-grid {
-  gap: 28px;
+  grid-template-columns: 1fr;
+  gap: 32px;
 }
-.simulation-grid video {
-  aspect-ratio: 12/5;
+.simulation-grid .video-card {
+  border-bottom: 1px solid var(--line);
+}
+.simulation-grid .video-copy {
+  padding-block: 12px 24px;
+}
+.video-card video {
+  aspect-ratio: 8/3;
 }
 .simulation-grid article {
   scroll-margin-top: 20px;
+}
+#long-search-07 figure {
+  margin-top: 20px;
 }
 .case-meta {
   display: flex;
@@ -132,17 +141,15 @@
   display: inline-block;
   font-size: 12px;
   line-height: 1.5;
-  padding: 2px 6px;
-  border-radius: 3px;
+  padding: 0;
+  font-weight: 600;
   white-space: nowrap;
 }
 .outcome-badge.success {
   color: #245336;
-  background: #edf4ef;
 }
 .outcome-badge.failure {
   color: #8c352c;
-  background: #faefed;
 }
 .video-copy .scene-name {
   font-size: 13px;
@@ -156,13 +163,8 @@
   flex-wrap: wrap;
   margin-top: 14px;
 }
-.case-links a,
-.selected-grid .video-copy > a {
+.case-links a {
   font-size: 13px;
-}
-.selected-grid .video-copy > a {
-  display: inline-block;
-  margin-top: 10px;
 }
 .gallery-empty {
   padding: 36px 16px;
@@ -215,8 +217,9 @@ tbody tr:hover {
   .page-hero h1 {
     font-size: 28px;
   }
-  .stats-strip {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .evaluation-summary > div {
+    grid-template-columns: 118px minmax(0, 1fr);
+    gap: 12px;
   }
   .filter-group {
     width: 100%;
