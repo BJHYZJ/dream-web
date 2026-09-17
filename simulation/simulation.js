@@ -6,6 +6,19 @@
   const search = document.getElementById("search-filter");
   const buttons = [...document.querySelectorAll("[data-outcome-filter]")];
   let outcome = "all";
+  const recordings = [...document.querySelectorAll(".recording")];
+
+  recordings.forEach((recording) => {
+    recording.addEventListener("toggle", () => {
+      if (recording.open) {
+        recordings.forEach((other) => {
+          if (other !== recording) other.open = false;
+        });
+      } else {
+        recording.querySelectorAll("video").forEach((video) => video.pause());
+      }
+    });
+  });
 
   function applyFilters() {
     if (!scene || !search) return;
@@ -18,7 +31,10 @@
         (!query || card.dataset.search.toLowerCase().includes(query));
       card.hidden = !show;
       if (show) visible += 1;
-      else card.querySelector("video")?.pause();
+      else {
+        card.open = false;
+        card.querySelector("video")?.pause();
+      }
     });
     buttons.forEach((button) => {
       button.setAttribute(
@@ -56,14 +72,27 @@
 
   function revealRun() {
     const card = cards.find((item) => `#${item.id}` === window.location.hash);
-    if (!card) return;
-    resetFilters();
-    card.scrollIntoView({ block: "start" });
+    if (card) {
+      resetFilters();
+      card.open = true;
+      card.scrollIntoView({ block: "start" });
+    } else if (window.location.hash === "#long-search-07") {
+      document.querySelector("#long-search-07 .recording").open = true;
+    }
   }
   window.addEventListener("hashchange", revealRun);
   document
-    .querySelectorAll(".outcome-table a")
-    .forEach((link) => link.addEventListener("click", resetFilters));
+    .querySelectorAll('a[href^="#trial-"], a[href="#long-search-07"]')
+    .forEach((link) =>
+      link.addEventListener("click", () => {
+        resetFilters();
+        const target = document.getElementById(link.hash.slice(1));
+        const recording = target?.matches(".recording")
+          ? target
+          : target?.querySelector(".recording");
+        if (recording) recording.open = true;
+      }),
+    );
   revealRun();
 
   // A figure in the paper can link to a particular time without autoplaying it.
@@ -79,6 +108,9 @@
   ) {
     const target = document.querySelector(`#trial-${caseId} video`);
     if (target) {
+      resetFilters();
+      target.closest(".recording").open = true;
+      target.closest(".recording").scrollIntoView({ block: "start" });
       target.preload = "metadata";
       const seek = () => {
         target.currentTime = Math.min(

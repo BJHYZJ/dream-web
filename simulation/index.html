@@ -10,41 +10,47 @@
     <title>DREAM · Simulation experiments</title>
     <link rel="icon" href="../static/images/favicon.ico" />
     <link rel="stylesheet" href="../static/css/index.css" />
+    <link rel="stylesheet" href="../static/css/project.css" />
     <link rel="stylesheet" href="simulation.css" />
     <script defer src="../static/js/index.js"></script>
     <script defer src="simulation.js"></script>
   </head>
-  <body>
+  <body class="simulation-page">
     <a class="skip-link" href="#main">Skip to content</a>
     <nav class="topbar" aria-label="Main navigation">
-      <div class="container topbar-inner">
-        <a class="brand" href="../">DREAM</a>
-        <div class="nav-links">
-          <a href="../#method">Method</a><a href="../#videos">Real robot</a
-          ><a href="./" aria-current="page">Simulation</a
-          ><a href="https://github.com/BJHYZJ/DREAM/tree/simulation/">Code</a>
-        </div>
+      <a class="topbar-brand" href="../">DREAM</a>
+      <div class="topbar-links">
+        <a href="../#videos">Videos</a>
+        <a href="./" aria-current="page">Simulation</a>
+        <a href="../#method">Method</a>
+        <a href="#evaluation">Results</a>
+        <a href="../#bibtex">BibTeX</a>
+        <a href="https://github.com/BJHYZJ/DREAM/tree/simulation/">Code</a>
       </div>
     </nav>
     <main id="main">
-      <header class="container page-hero">
-        <a class="breadcrumb" href="../">← Project page</a>
+      <header class="paper-hero page-hero">
+        <div class="hero-body">
+          <div class="container">
+            <a class="breadcrumb" href="../">← Project page</a>
 
-        <h1>Simulation Experiments</h1>
-        <p class="page-lead">
-          Results and task recordings for the Fetch mobile manipulator in
-          ManiSkill / SAPIEN. All 50 recordings below belong to the residential
-          evaluation reported here.
-        </p>
-        <div class="actions">
-          <a class="text-link" href="#gallery">Task recordings</a
-          ><a class="text-link" href="#evaluation">Evaluation results</a
-          ><a class="text-link" href="#long-search-07">Long-search case</a
-          ><a
-            class="text-link"
-            href="https://github.com/BJHYZJ/DREAM/tree/simulation/docs/reproduction.md"
-            >Run the simulation</a
-          >
+            <h1 class="publication-title">Simulation Experiments</h1>
+            <p class="page-lead">
+              Results and task recordings for the Fetch mobile manipulator in
+              ManiSkill / SAPIEN. All 50 recordings below belong to the
+              residential evaluation reported here.
+            </p>
+            <div class="actions">
+              <a class="text-link" href="#gallery">Task recordings</a
+              ><a class="text-link" href="#evaluation">Evaluation results</a
+              ><a class="text-link" href="#long-search-07">Long-search case</a
+              ><a
+                class="text-link"
+                href="https://github.com/BJHYZJ/DREAM/tree/simulation/docs/reproduction.md"
+                >Run the simulation</a
+              >
+            </div>
+          </div>
         </div>
       </header>
       <section
@@ -599,11 +605,15 @@
             <div><h2 id="gallery-title">All 50 Task Recordings</h2></div>
             <p>
               38 completed tasks and all 12 failures from the evaluation above.
-              Every recording covers its complete saved action sequence.
+              Every recording covers its complete saved action sequence. Select
+              a trial to open its video. Failure reasons are visible before
+              opening; the final 10 seconds of each failed recording also
+              include explanation captions.
             </p>
           </div>
-          <div class="reading-guide">
-            <span class="figure-label">Reading the video</span>
+          <details class="disclosure reading-guide">
+            <summary>How to read the video views</summary>
+
             <p>
               <strong>Left:</strong> external view from physical replay of the
               original controls and disturbances.
@@ -618,7 +628,7 @@
               rejection. Newly rendered camera images are for display only.
               Normal-speed manipulation excerpts appear below.
             </p>
-          </div>
+          </details>
           <div class="gallery-toolbar" id="gallery-toolbar" hidden>
             <div
               class="filter-group"
@@ -789,14 +799,31 @@
             50 task recordings
           </p>
           <div class="video-grid simulation-grid">
-            <article
-              class="video-card"
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-01"
               data-attempt="01_ProcTHOR-Test-722_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Test-722"
               data-search="01 ProcTHOR-Test-722 Please pick up the mug and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">01</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Mug → plate</span
+                  ><span class="trial-scene">ProcTHOR-Test-722</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>5m 18s robot · 27s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 01</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -818,12 +845,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>01 · Mug → plate</h3>
-                <p class="scene-name">ProcTHOR-Test-722</p>
                 <p class="instruction">
                   Please pick up the mug and place it on the plate on the table.
                 </p>
@@ -842,15 +863,32 @@
                   ><a href="#trial-01">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-02"
               data-attempt="02_ProcTHOR-Train-8471_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-8471"
               data-search="02 ProcTHOR-Train-8471 Please pick up the tomato and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">02</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Tomato → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-8471</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>4m 11s robot · 21s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 02</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -872,12 +910,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>02 · Tomato → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-8471</p>
                 <p class="instruction">
                   Please pick up the tomato and place it on the plate on the
                   table.
@@ -897,15 +929,36 @@
                   ><a href="#trial-02">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-03"
               data-attempt="03_ProcTHOR-Train-6452_seed42_dynamic"
               data-outcome="failure"
               data-scene="ProcTHOR-Train-6452"
-              data-search="03 ProcTHOR-Train-6452 Please pick up the mug and place it on the plate on the table."
+              data-search="03 ProcTHOR-Train-6452 Please pick up the mug and place it on the plate on the table. Pickup search or navigation incomplete"
             >
+              <summary class="recording-summary">
+                <span class="trial-number">03</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Mug → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-6452</span
+                  ><span class="trial-failure"
+                    ><strong>Failure:</strong> Pickup search or navigation
+                    incomplete</span
+                  ></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge failure">Not completed</span
+                  ><span>25m 18s robot · 2m 07s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 03</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -924,21 +977,41 @@
                     href="../media/simulation/current50/03_ProcTHOR-Train-6452_seed42_dynamic.mp4"
                     >Download recording</a
                   >.
+                  <track
+                    kind="captions"
+                    src="captions/trial-03.vtt"
+                    srclang="en"
+                    label="Failure explanation"
+                    default
+                  />
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge failure">Not completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>03 · Mug → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-6452</p>
                 <p class="instruction">
                   Please pick up the mug and place it on the plate on the table.
                 </p>
                 <p>
                   1518.40 s robot time · Pickup search or navigation incomplete
                 </p>
+                <aside class="failure-note" aria-label="Failure explanation">
+                  <h3>Why this trial did not complete</h3>
+                  <p>
+                    Pickup search or navigation did not complete; the final
+                    navigation event reports incomplete route execution. An
+                    incomplete route does not establish that no physical route
+                    exists.
+                  </p>
+                  <p>
+                    <a
+                      href="https://github.com/BJHYZJ/DREAM/blob/simulation/reproducibility/evidence/residential-fast-return/failures.json"
+                      >Recorded failure evidence</a
+                    >
+                    ·
+                    <a href="captions/trial-03.vtt" download
+                      >Download explanation captions</a
+                    >
+                  </p>
+                </aside>
                 <div class="case-links">
                   <a
                     href="../media/simulation/current50/03_ProcTHOR-Train-6452_seed42_dynamic.mp4"
@@ -950,15 +1023,32 @@
                   ><a href="#trial-03">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-04"
               data-attempt="04_ProcTHOR-Train-2043_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-2043"
               data-search="04 ProcTHOR-Train-2043 Please pick up the tomato and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">04</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Tomato → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-2043</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>5m 29s robot · 28s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 04</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -980,12 +1070,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>04 · Tomato → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-2043</p>
                 <p class="instruction">
                   Please pick up the tomato and place it on the plate on the
                   table.
@@ -1005,15 +1089,36 @@
                   ><a href="#trial-04">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-05"
               data-attempt="05_ProcTHOR-Test-288_seed42_dynamic"
               data-outcome="failure"
               data-scene="ProcTHOR-Test-288"
-              data-search="05 ProcTHOR-Test-288 Please pick up the egg and place it on the plate on the table."
+              data-search="05 ProcTHOR-Test-288 Please pick up the egg and place it on the plate on the table. Navigation iteration limit (inferred)"
             >
+              <summary class="recording-summary">
+                <span class="trial-number">05</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Egg → plate</span
+                  ><span class="trial-scene">ProcTHOR-Test-288</span
+                  ><span class="trial-failure"
+                    ><strong>Failure:</strong> Navigation iteration limit
+                    (inferred)</span
+                  ></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge failure">Not completed</span
+                  ><span>25m 12s robot · 2m 06s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 05</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -1032,21 +1137,41 @@
                     href="../media/simulation/current50/05_ProcTHOR-Test-288_seed42_dynamic.mp4"
                     >Download recording</a
                   >.
+                  <track
+                    kind="captions"
+                    src="captions/trial-05.vtt"
+                    srclang="en"
+                    label="Failure explanation"
+                    default
+                  />
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge failure">Not completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>05 · Egg → plate</h3>
-                <p class="scene-name">ProcTHOR-Test-288</p>
                 <p class="instruction">
                   Please pick up the egg and place it on the plate on the table.
                 </p>
                 <p>
                   1511.90 s robot time · Navigation iteration limit (inferred)
                 </p>
+                <aside class="failure-note" aria-label="Failure explanation">
+                  <h3>Why this trial did not complete</h3>
+                  <p>
+                    The logs and recorded controller suggest that the
+                    110-iteration navigation limit was reached during pickup
+                    search. The final iteration number was not logged, so this
+                    explanation remains an inference.
+                  </p>
+                  <p>
+                    <a
+                      href="https://github.com/BJHYZJ/DREAM/blob/simulation/reproducibility/evidence/residential-fast-return/failures.json"
+                      >Recorded failure evidence</a
+                    >
+                    ·
+                    <a href="captions/trial-05.vtt" download
+                      >Download explanation captions</a
+                    >
+                  </p>
+                </aside>
                 <div class="case-links">
                   <a
                     href="../media/simulation/current50/05_ProcTHOR-Test-288_seed42_dynamic.mp4"
@@ -1058,15 +1183,32 @@
                   ><a href="#trial-05">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-06"
               data-attempt="06_ProcTHOR-Train-4300_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-4300"
               data-search="06 ProcTHOR-Train-4300 Please pick up the soap bottle and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">06</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Soap bottle → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-4300</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>4m 42s robot · 24s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 06</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -1088,12 +1230,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>06 · Soap bottle → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-4300</p>
                 <p class="instruction">
                   Please pick up the soap bottle and place it on the plate on
                   the table.
@@ -1113,15 +1249,36 @@
                   ><a href="#trial-06">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-07"
               data-attempt="07_ProcTHOR-Train-1402_seed42_dynamic"
               data-outcome="failure"
               data-scene="ProcTHOR-Train-1402"
-              data-search="07 ProcTHOR-Train-1402 Please pick up the candle and place it on the plate on the table."
+              data-search="07 ProcTHOR-Train-1402 Please pick up the candle and place it on the plate on the table. Navigation iteration limit (inferred)"
             >
+              <summary class="recording-summary">
+                <span class="trial-number">07</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Candle → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-1402</span
+                  ><span class="trial-failure"
+                    ><strong>Failure:</strong> Navigation iteration limit
+                    (inferred)</span
+                  ></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge failure">Not completed</span
+                  ><span>24m 04s robot · 2m 00s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 07</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -1140,15 +1297,16 @@
                     href="../media/simulation/current50/07_ProcTHOR-Train-1402_seed42_dynamic.mp4"
                     >Download recording</a
                   >.
+                  <track
+                    kind="captions"
+                    src="captions/trial-07.vtt"
+                    srclang="en"
+                    label="Failure explanation"
+                    default
+                  />
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge failure">Not completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>07 · Candle → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-1402</p>
                 <p class="instruction">
                   Please pick up the candle and place it on the plate on the
                   table.
@@ -1156,6 +1314,25 @@
                 <p>
                   1444.10 s robot time · Navigation iteration limit (inferred)
                 </p>
+                <aside class="failure-note" aria-label="Failure explanation">
+                  <h3>Why this trial did not complete</h3>
+                  <p>
+                    The logs and recorded controller suggest that the
+                    110-iteration navigation limit was reached during placement
+                    search. The final iteration number was not logged, so this
+                    explanation remains an inference.
+                  </p>
+                  <p>
+                    <a
+                      href="https://github.com/BJHYZJ/DREAM/blob/simulation/reproducibility/evidence/residential-fast-return/failures.json"
+                      >Recorded failure evidence</a
+                    >
+                    ·
+                    <a href="captions/trial-07.vtt" download
+                      >Download explanation captions</a
+                    >
+                  </p>
+                </aside>
                 <div class="case-links">
                   <a
                     href="../media/simulation/current50/07_ProcTHOR-Train-1402_seed42_dynamic.mp4"
@@ -1167,15 +1344,32 @@
                   ><a href="#trial-07">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-08"
               data-attempt="08_ProcTHOR-Train-7473_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-7473"
               data-search="08 ProcTHOR-Train-7473 Please pick up the egg and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">08</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Egg → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-7473</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>18m 08s robot · 1m 31s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 08</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -1197,12 +1391,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>08 · Egg → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-7473</p>
                 <p class="instruction">
                   Please pick up the egg and place it on the plate on the table.
                 </p>
@@ -1221,15 +1409,32 @@
                   ><a href="#trial-08">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-09"
               data-attempt="09_ProcTHOR-Test-166_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Test-166"
               data-search="09 ProcTHOR-Test-166 Please pick up the mug and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">09</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Mug → plate</span
+                  ><span class="trial-scene">ProcTHOR-Test-166</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>11m 02s robot · 55s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 09</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -1251,12 +1456,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>09 · Mug → plate</h3>
-                <p class="scene-name">ProcTHOR-Test-166</p>
                 <p class="instruction">
                   Please pick up the mug and place it on the plate on the table.
                 </p>
@@ -1275,15 +1474,32 @@
                   ><a href="#trial-09">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-10"
               data-attempt="10_ProcTHOR-Test-459_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Test-459"
               data-search="10 ProcTHOR-Test-459 Please pick up the tomato and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">10</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Tomato → plate</span
+                  ><span class="trial-scene">ProcTHOR-Test-459</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>6m 22s robot · 32s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 10</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -1305,12 +1521,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>10 · Tomato → plate</h3>
-                <p class="scene-name">ProcTHOR-Test-459</p>
                 <p class="instruction">
                   Please pick up the tomato and place it on the plate on the
                   table.
@@ -1330,15 +1540,32 @@
                   ><a href="#trial-10">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-11"
               data-attempt="11_ProcTHOR-Train-3859_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-3859"
               data-search="11 ProcTHOR-Train-3859 Please pick up the apple and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">11</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Apple → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-3859</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>12m 02s robot · 1m 00s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 11</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -1360,12 +1587,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>11 · Apple → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-3859</p>
                 <p class="instruction">
                   Please pick up the apple and place it on the plate on the
                   table.
@@ -1385,15 +1606,32 @@
                   ><a href="#trial-11">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-12"
               data-attempt="12_ProcTHOR-Train-4108_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-4108"
               data-search="12 ProcTHOR-Train-4108 Please pick up the soap bottle and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">12</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Soap bottle → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-4108</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>6m 08s robot · 31s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 12</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -1415,12 +1653,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>12 · Soap bottle → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-4108</p>
                 <p class="instruction">
                   Please pick up the soap bottle and place it on the plate on
                   the table.
@@ -1440,15 +1672,32 @@
                   ><a href="#trial-12">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-13"
               data-attempt="13_ProcTHOR-Train-7780_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-7780"
               data-search="13 ProcTHOR-Train-7780 Please pick up the tomato and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">13</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Tomato → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-7780</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>5m 31s robot · 28s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 13</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -1470,12 +1719,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>13 · Tomato → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-7780</p>
                 <p class="instruction">
                   Please pick up the tomato and place it on the plate on the
                   table.
@@ -1495,15 +1738,32 @@
                   ><a href="#trial-13">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-14"
               data-attempt="14_ProcTHOR-Train-8921_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-8921"
               data-search="14 ProcTHOR-Train-8921 Please pick up the apple and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">14</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Apple → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-8921</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>4m 07s robot · 21s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 14</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -1525,12 +1785,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>14 · Apple → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-8921</p>
                 <p class="instruction">
                   Please pick up the apple and place it on the plate on the
                   table.
@@ -1550,15 +1804,32 @@
                   ><a href="#trial-14">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-15"
               data-attempt="15_ProcTHOR-Train-2769_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-2769"
               data-search="15 ProcTHOR-Train-2769 Please pick up the candle and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">15</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Candle → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-2769</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>23m 06s robot · 1m 56s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 15</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -1580,12 +1851,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>15 · Candle → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-2769</p>
                 <p class="instruction">
                   Please pick up the candle and place it on the plate on the
                   table.
@@ -1605,15 +1870,36 @@
                   ><a href="#trial-15">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-16"
               data-attempt="16_ProcTHOR-Train-507_seed42_dynamic"
               data-outcome="failure"
               data-scene="ProcTHOR-Train-507"
-              data-search="16 ProcTHOR-Train-507 Please pick up the mug and place it on the plate on the table."
+              data-search="16 ProcTHOR-Train-507 Please pick up the mug and place it on the plate on the table. Pickup search or navigation incomplete"
             >
+              <summary class="recording-summary">
+                <span class="trial-number">16</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Mug → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-507</span
+                  ><span class="trial-failure"
+                    ><strong>Failure:</strong> Pickup search or navigation
+                    incomplete</span
+                  ></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge failure">Not completed</span
+                  ><span>15m 13s robot · 1m 16s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 16</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -1632,21 +1918,41 @@
                     href="../media/simulation/current50/16_ProcTHOR-Train-507_seed42_dynamic.mp4"
                     >Download recording</a
                   >.
+                  <track
+                    kind="captions"
+                    src="captions/trial-16.vtt"
+                    srclang="en"
+                    label="Failure explanation"
+                    default
+                  />
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge failure">Not completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>16 · Mug → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-507</p>
                 <p class="instruction">
                   Please pick up the mug and place it on the plate on the table.
                 </p>
                 <p>
                   913.25 s robot time · Pickup search or navigation incomplete
                 </p>
+                <aside class="failure-note" aria-label="Failure explanation">
+                  <h3>Why this trial did not complete</h3>
+                  <p>
+                    Pickup search or navigation did not complete; the final
+                    navigation event reports incomplete route execution. An
+                    incomplete route does not establish that no physical route
+                    exists.
+                  </p>
+                  <p>
+                    <a
+                      href="https://github.com/BJHYZJ/DREAM/blob/simulation/reproducibility/evidence/residential-fast-return/failures.json"
+                      >Recorded failure evidence</a
+                    >
+                    ·
+                    <a href="captions/trial-16.vtt" download
+                      >Download explanation captions</a
+                    >
+                  </p>
+                </aside>
                 <div class="case-links">
                   <a
                     href="../media/simulation/current50/16_ProcTHOR-Train-507_seed42_dynamic.mp4"
@@ -1658,15 +1964,32 @@
                   ><a href="#trial-16">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-17"
               data-attempt="17_ProcTHOR-Train-9926_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-9926"
               data-search="17 ProcTHOR-Train-9926 Please pick up the egg and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">17</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Egg → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-9926</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>4m 04s robot · 20s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 17</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -1688,12 +2011,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>17 · Egg → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-9926</p>
                 <p class="instruction">
                   Please pick up the egg and place it on the plate on the table.
                 </p>
@@ -1712,15 +2029,32 @@
                   ><a href="#trial-17">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-18"
               data-attempt="18_ProcTHOR-Train-3208_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-3208"
               data-search="18 ProcTHOR-Train-3208 Please pick up the candle and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">18</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Candle → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-3208</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>12m 44s robot · 1m 04s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 18</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -1742,12 +2076,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>18 · Candle → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-3208</p>
                 <p class="instruction">
                   Please pick up the candle and place it on the plate on the
                   table.
@@ -1767,15 +2095,32 @@
                   ><a href="#trial-18">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-19"
               data-attempt="19_ProcTHOR-Train-4204_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-4204"
               data-search="19 ProcTHOR-Train-4204 Please pick up the soap bottle and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">19</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Soap bottle → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-4204</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>14m 17s robot · 1m 11s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 19</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -1797,12 +2142,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>19 · Soap bottle → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-4204</p>
                 <p class="instruction">
                   Please pick up the soap bottle and place it on the plate on
                   the table.
@@ -1822,15 +2161,32 @@
                   ><a href="#trial-19">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-20"
               data-attempt="20_ProcTHOR-Train-8432_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-8432"
               data-search="20 ProcTHOR-Train-8432 Please pick up the tomato and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">20</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Tomato → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-8432</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>5m 14s robot · 26s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 20</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -1852,12 +2208,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>20 · Tomato → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-8432</p>
                 <p class="instruction">
                   Please pick up the tomato and place it on the plate on the
                   table.
@@ -1877,15 +2227,32 @@
                   ><a href="#trial-20">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-21"
               data-attempt="21_ProcTHOR-Test-308_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Test-308"
               data-search="21 ProcTHOR-Test-308 Please pick up the apple and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">21</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Apple → plate</span
+                  ><span class="trial-scene">ProcTHOR-Test-308</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>5m 56s robot · 30s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 21</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -1907,12 +2274,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>21 · Apple → plate</h3>
-                <p class="scene-name">ProcTHOR-Test-308</p>
                 <p class="instruction">
                   Please pick up the apple and place it on the plate on the
                   table.
@@ -1932,15 +2293,32 @@
                   ><a href="#trial-21">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-22"
               data-attempt="22_ProcTHOR-Train-3170_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-3170"
               data-search="22 ProcTHOR-Train-3170 Please pick up the candle and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">22</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Candle → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-3170</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>6m 19s robot · 32s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 22</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -1962,12 +2340,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>22 · Candle → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-3170</p>
                 <p class="instruction">
                   Please pick up the candle and place it on the plate on the
                   table.
@@ -1987,15 +2359,32 @@
                   ><a href="#trial-22">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-23"
               data-attempt="23_ProcTHOR-Val-265_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Val-265"
               data-search="23 ProcTHOR-Val-265 Please pick up the egg and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">23</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Egg → plate</span
+                  ><span class="trial-scene">ProcTHOR-Val-265</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>5m 13s robot · 26s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 23</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2017,12 +2406,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>23 · Egg → plate</h3>
-                <p class="scene-name">ProcTHOR-Val-265</p>
                 <p class="instruction">
                   Please pick up the egg and place it on the plate on the table.
                 </p>
@@ -2041,15 +2424,32 @@
                   ><a href="#trial-23">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-24"
               data-attempt="24_ProcTHOR-Train-9699_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-9699"
               data-search="24 ProcTHOR-Train-9699 Please pick up the candle and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">24</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Candle → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-9699</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>7m 38s robot · 38s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 24</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2071,12 +2471,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>24 · Candle → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-9699</p>
                 <p class="instruction">
                   Please pick up the candle and place it on the plate on the
                   table.
@@ -2096,15 +2490,32 @@
                   ><a href="#trial-24">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-25"
               data-attempt="25_ProcTHOR-Val-605_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Val-605"
               data-search="25 ProcTHOR-Val-605 Please pick up the mug and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">25</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Mug → plate</span
+                  ><span class="trial-scene">ProcTHOR-Val-605</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>5m 48s robot · 29s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 25</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2126,12 +2537,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>25 · Mug → plate</h3>
-                <p class="scene-name">ProcTHOR-Val-605</p>
                 <p class="instruction">
                   Please pick up the mug and place it on the plate on the table.
                 </p>
@@ -2150,15 +2555,36 @@
                   ><a href="#trial-25">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-26"
               data-attempt="26_ProcTHOR-Train-2451_seed42_dynamic"
               data-outcome="failure"
               data-scene="ProcTHOR-Train-2451"
-              data-search="26 ProcTHOR-Train-2451 Please pick up the soap bottle and place it on the plate on the table."
+              data-search="26 ProcTHOR-Train-2451 Please pick up the soap bottle and place it on the plate on the table. Released placement unstable (0.35 s)"
             >
+              <summary class="recording-summary">
+                <span class="trial-number">26</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Soap bottle → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-2451</span
+                  ><span class="trial-failure"
+                    ><strong>Failure:</strong> Released placement unstable (0.35
+                    s)</span
+                  ></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge failure">Not completed</span
+                  ><span>7m 02s robot · 35s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 26</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2177,15 +2603,16 @@
                     href="../media/simulation/current50/26_ProcTHOR-Train-2451_seed42_dynamic.mp4"
                     >Download recording</a
                   >.
+                  <track
+                    kind="captions"
+                    src="captions/trial-26.vtt"
+                    srclang="en"
+                    label="Failure explanation"
+                    default
+                  />
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge failure">Not completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>26 · Soap bottle → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-2451</p>
                 <p class="instruction">
                   Please pick up the soap bottle and place it on the plate on
                   the table.
@@ -2193,6 +2620,23 @@
                 <p>
                   422.15 s robot time · Released placement unstable (0.35 s)
                 </p>
+                <aside class="failure-note" aria-label="Failure explanation">
+                  <h3>Why this trial did not complete</h3>
+                  <p>
+                    The stable-placement criterion was not met; the recorded
+                    stable-placement duration was 0.35 s.
+                  </p>
+                  <p>
+                    <a
+                      href="https://github.com/BJHYZJ/DREAM/blob/simulation/reproducibility/evidence/residential-fast-return/failures.json"
+                      >Recorded failure evidence</a
+                    >
+                    ·
+                    <a href="captions/trial-26.vtt" download
+                      >Download explanation captions</a
+                    >
+                  </p>
+                </aside>
                 <div class="case-links">
                   <a
                     href="../media/simulation/current50/26_ProcTHOR-Train-2451_seed42_dynamic.mp4"
@@ -2204,15 +2648,36 @@
                   ><a href="#trial-26">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-27"
               data-attempt="27_ProcTHOR-Val-576_seed42_dynamic"
               data-outcome="failure"
               data-scene="ProcTHOR-Val-576"
-              data-search="27 ProcTHOR-Val-576 Please pick up the soap bottle and place it on the plate on the table."
+              data-search="27 ProcTHOR-Val-576 Please pick up the soap bottle and place it on the plate on the table. Placement search or navigation incomplete"
             >
+              <summary class="recording-summary">
+                <span class="trial-number">27</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Soap bottle → plate</span
+                  ><span class="trial-scene">ProcTHOR-Val-576</span
+                  ><span class="trial-failure"
+                    ><strong>Failure:</strong> Placement search or navigation
+                    incomplete</span
+                  ></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge failure">Not completed</span
+                  ><span>10m 33s robot · 53s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 27</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2231,15 +2696,16 @@
                     href="../media/simulation/current50/27_ProcTHOR-Val-576_seed42_dynamic.mp4"
                     >Download recording</a
                   >.
+                  <track
+                    kind="captions"
+                    src="captions/trial-27.vtt"
+                    srclang="en"
+                    label="Failure explanation"
+                    default
+                  />
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge failure">Not completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>27 · Soap bottle → plate</h3>
-                <p class="scene-name">ProcTHOR-Val-576</p>
                 <p class="instruction">
                   Please pick up the soap bottle and place it on the plate on
                   the table.
@@ -2248,6 +2714,25 @@
                   633.20 s robot time · Placement search or navigation
                   incomplete
                 </p>
+                <aside class="failure-note" aria-label="Failure explanation">
+                  <h3>Why this trial did not complete</h3>
+                  <p>
+                    Receptacle search or navigation did not complete; the final
+                    navigation event reports incomplete route execution. An
+                    incomplete route does not establish that no physical route
+                    exists.
+                  </p>
+                  <p>
+                    <a
+                      href="https://github.com/BJHYZJ/DREAM/blob/simulation/reproducibility/evidence/residential-fast-return/failures.json"
+                      >Recorded failure evidence</a
+                    >
+                    ·
+                    <a href="captions/trial-27.vtt" download
+                      >Download explanation captions</a
+                    >
+                  </p>
+                </aside>
                 <div class="case-links">
                   <a
                     href="../media/simulation/current50/27_ProcTHOR-Val-576_seed42_dynamic.mp4"
@@ -2259,15 +2744,32 @@
                   ><a href="#trial-27">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-28"
               data-attempt="28_ProcTHOR-Train-4956_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-4956"
               data-search="28 ProcTHOR-Train-4956 Please pick up the tomato and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">28</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Tomato → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-4956</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>13m 43s robot · 1m 09s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 28</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2289,12 +2791,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>28 · Tomato → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-4956</p>
                 <p class="instruction">
                   Please pick up the tomato and place it on the plate on the
                   table.
@@ -2314,15 +2810,32 @@
                   ><a href="#trial-28">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-29"
               data-attempt="29_ProcTHOR-Train-5013_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-5013"
               data-search="29 ProcTHOR-Train-5013 Please pick up the egg and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">29</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Egg → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-5013</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>5m 43s robot · 29s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 29</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2344,12 +2857,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>29 · Egg → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-5013</p>
                 <p class="instruction">
                   Please pick up the egg and place it on the plate on the table.
                 </p>
@@ -2368,15 +2875,36 @@
                   ><a href="#trial-29">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-30"
               data-attempt="30_ProcTHOR-Train-4732_seed42_dynamic"
               data-outcome="failure"
               data-scene="ProcTHOR-Train-4732"
-              data-search="30 ProcTHOR-Train-4732 Please pick up the apple and place it on the plate on the table."
+              data-search="30 ProcTHOR-Train-4732 Please pick up the apple and place it on the plate on the table. Placement search reached 1800 s"
             >
+              <summary class="recording-summary">
+                <span class="trial-number">30</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Apple → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-4732</span
+                  ><span class="trial-failure"
+                    ><strong>Failure:</strong> Placement search reached 1800
+                    s</span
+                  ></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge failure">Not completed</span
+                  ><span>30m 00s robot · 2m 30s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 30</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2395,20 +2923,39 @@
                     href="../media/simulation/current50/30_ProcTHOR-Train-4732_seed42_dynamic.mp4"
                     >Download recording</a
                   >.
+                  <track
+                    kind="captions"
+                    src="captions/trial-30.vtt"
+                    srclang="en"
+                    label="Failure explanation"
+                    default
+                  />
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge failure">Not completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>30 · Apple → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-4732</p>
                 <p class="instruction">
                   Please pick up the apple and place it on the plate on the
                   table.
                 </p>
                 <p>1800.00 s robot time · Placement search reached 1800 s</p>
+                <aside class="failure-note" aria-label="Failure explanation">
+                  <h3>Why this trial did not complete</h3>
+                  <p>
+                    The 1800-second robot-action budget expired during the
+                    search for the placement container. The trial ended before
+                    task completion.
+                  </p>
+                  <p>
+                    <a
+                      href="https://github.com/BJHYZJ/DREAM/blob/simulation/reproducibility/evidence/residential-fast-return/failures.json"
+                      >Recorded failure evidence</a
+                    >
+                    ·
+                    <a href="captions/trial-30.vtt" download
+                      >Download explanation captions</a
+                    >
+                  </p>
+                </aside>
                 <div class="case-links">
                   <a
                     href="../media/simulation/current50/30_ProcTHOR-Train-4732_seed42_dynamic.mp4"
@@ -2420,15 +2967,32 @@
                   ><a href="#trial-30">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-31"
               data-attempt="31_ProcTHOR-Val-660_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Val-660"
               data-search="31 ProcTHOR-Val-660 Please pick up the candle and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">31</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Candle → plate</span
+                  ><span class="trial-scene">ProcTHOR-Val-660</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>9m 02s robot · 45s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 31</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2450,12 +3014,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>31 · Candle → plate</h3>
-                <p class="scene-name">ProcTHOR-Val-660</p>
                 <p class="instruction">
                   Please pick up the candle and place it on the plate on the
                   table.
@@ -2475,15 +3033,36 @@
                   ><a href="#trial-31">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-32"
               data-attempt="32_ProcTHOR-Train-7199_seed42_dynamic"
               data-outcome="failure"
               data-scene="ProcTHOR-Train-7199"
-              data-search="32 ProcTHOR-Train-7199 Please pick up the egg and place it on the plate on the table."
+              data-search="32 ProcTHOR-Train-7199 Please pick up the egg and place it on the plate on the table. Placement search reached 1800 s"
             >
+              <summary class="recording-summary">
+                <span class="trial-number">32</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Egg → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-7199</span
+                  ><span class="trial-failure"
+                    ><strong>Failure:</strong> Placement search reached 1800
+                    s</span
+                  ></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge failure">Not completed</span
+                  ><span>30m 00s robot · 2m 30s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 32</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2502,19 +3081,38 @@
                     href="../media/simulation/current50/32_ProcTHOR-Train-7199_seed42_dynamic.mp4"
                     >Download recording</a
                   >.
+                  <track
+                    kind="captions"
+                    src="captions/trial-32.vtt"
+                    srclang="en"
+                    label="Failure explanation"
+                    default
+                  />
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge failure">Not completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>32 · Egg → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-7199</p>
                 <p class="instruction">
                   Please pick up the egg and place it on the plate on the table.
                 </p>
                 <p>1800.00 s robot time · Placement search reached 1800 s</p>
+                <aside class="failure-note" aria-label="Failure explanation">
+                  <h3>Why this trial did not complete</h3>
+                  <p>
+                    The 1800-second robot-action budget expired during the
+                    search for the placement container. The trial ended before
+                    task completion.
+                  </p>
+                  <p>
+                    <a
+                      href="https://github.com/BJHYZJ/DREAM/blob/simulation/reproducibility/evidence/residential-fast-return/failures.json"
+                      >Recorded failure evidence</a
+                    >
+                    ·
+                    <a href="captions/trial-32.vtt" download
+                      >Download explanation captions</a
+                    >
+                  </p>
+                </aside>
                 <div class="case-links">
                   <a
                     href="../media/simulation/current50/32_ProcTHOR-Train-7199_seed42_dynamic.mp4"
@@ -2526,15 +3124,36 @@
                   ><a href="#trial-32">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-33"
               data-attempt="33_ProcTHOR-Train-5942_seed42_dynamic"
               data-outcome="failure"
               data-scene="ProcTHOR-Train-5942"
-              data-search="33 ProcTHOR-Train-5942 Please pick up the apple and place it on the plate on the table."
+              data-search="33 ProcTHOR-Train-5942 Please pick up the apple and place it on the plate on the table. Pickup search or navigation incomplete"
             >
+              <summary class="recording-summary">
+                <span class="trial-number">33</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Apple → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-5942</span
+                  ><span class="trial-failure"
+                    ><strong>Failure:</strong> Pickup search or navigation
+                    incomplete</span
+                  ></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge failure">Not completed</span
+                  ><span>7m 31s robot · 38s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 33</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2553,15 +3172,16 @@
                     href="../media/simulation/current50/33_ProcTHOR-Train-5942_seed42_dynamic.mp4"
                     >Download recording</a
                   >.
+                  <track
+                    kind="captions"
+                    src="captions/trial-33.vtt"
+                    srclang="en"
+                    label="Failure explanation"
+                    default
+                  />
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge failure">Not completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>33 · Apple → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-5942</p>
                 <p class="instruction">
                   Please pick up the apple and place it on the plate on the
                   table.
@@ -2569,6 +3189,25 @@
                 <p>
                   450.70 s robot time · Pickup search or navigation incomplete
                 </p>
+                <aside class="failure-note" aria-label="Failure explanation">
+                  <h3>Why this trial did not complete</h3>
+                  <p>
+                    Pickup search or navigation did not complete; the final
+                    navigation event reports incomplete route execution. An
+                    incomplete route does not establish that no physical route
+                    exists.
+                  </p>
+                  <p>
+                    <a
+                      href="https://github.com/BJHYZJ/DREAM/blob/simulation/reproducibility/evidence/residential-fast-return/failures.json"
+                      >Recorded failure evidence</a
+                    >
+                    ·
+                    <a href="captions/trial-33.vtt" download
+                      >Download explanation captions</a
+                    >
+                  </p>
+                </aside>
                 <div class="case-links">
                   <a
                     href="../media/simulation/current50/33_ProcTHOR-Train-5942_seed42_dynamic.mp4"
@@ -2580,15 +3219,32 @@
                   ><a href="#trial-33">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-34"
               data-attempt="34_ProcTHOR-Train-9419_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-9419"
               data-search="34 ProcTHOR-Train-9419 Please pick up the mug and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">34</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Mug → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-9419</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>14m 34s robot · 1m 13s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 34</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2610,12 +3266,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>34 · Mug → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-9419</p>
                 <p class="instruction">
                   Please pick up the mug and place it on the plate on the table.
                 </p>
@@ -2634,15 +3284,36 @@
                   ><a href="#trial-34">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-35"
               data-attempt="35_ProcTHOR-Train-6673_seed42_dynamic"
               data-outcome="failure"
               data-scene="ProcTHOR-Train-6673"
-              data-search="35 ProcTHOR-Train-6673 Please pick up the apple and place it on the plate on the table."
+              data-search="35 ProcTHOR-Train-6673 Please pick up the apple and place it on the plate on the table. Placement search or navigation incomplete"
             >
+              <summary class="recording-summary">
+                <span class="trial-number">35</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Apple → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-6673</span
+                  ><span class="trial-failure"
+                    ><strong>Failure:</strong> Placement search or navigation
+                    incomplete</span
+                  ></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge failure">Not completed</span
+                  ><span>13m 56s robot · 1m 10s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 35</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2661,15 +3332,16 @@
                     href="../media/simulation/current50/35_ProcTHOR-Train-6673_seed42_dynamic.mp4"
                     >Download recording</a
                   >.
+                  <track
+                    kind="captions"
+                    src="captions/trial-35.vtt"
+                    srclang="en"
+                    label="Failure explanation"
+                    default
+                  />
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge failure">Not completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>35 · Apple → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-6673</p>
                 <p class="instruction">
                   Please pick up the apple and place it on the plate on the
                   table.
@@ -2678,6 +3350,25 @@
                   835.65 s robot time · Placement search or navigation
                   incomplete
                 </p>
+                <aside class="failure-note" aria-label="Failure explanation">
+                  <h3>Why this trial did not complete</h3>
+                  <p>
+                    Receptacle search or navigation did not complete; the final
+                    navigation event reports incomplete route execution. An
+                    incomplete route does not establish that no physical route
+                    exists.
+                  </p>
+                  <p>
+                    <a
+                      href="https://github.com/BJHYZJ/DREAM/blob/simulation/reproducibility/evidence/residential-fast-return/failures.json"
+                      >Recorded failure evidence</a
+                    >
+                    ·
+                    <a href="captions/trial-35.vtt" download
+                      >Download explanation captions</a
+                    >
+                  </p>
+                </aside>
                 <div class="case-links">
                   <a
                     href="../media/simulation/current50/35_ProcTHOR-Train-6673_seed42_dynamic.mp4"
@@ -2689,15 +3380,32 @@
                   ><a href="#trial-35">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-36"
               data-attempt="36_ProcTHOR-Test-959_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Test-959"
               data-search="36 ProcTHOR-Test-959 Please pick up the mug and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">36</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Mug → plate</span
+                  ><span class="trial-scene">ProcTHOR-Test-959</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>4m 03s robot · 20s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 36</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2719,12 +3427,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>36 · Mug → plate</h3>
-                <p class="scene-name">ProcTHOR-Test-959</p>
                 <p class="instruction">
                   Please pick up the mug and place it on the plate on the table.
                 </p>
@@ -2743,15 +3445,32 @@
                   ><a href="#trial-36">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-37"
               data-attempt="37_ProcTHOR-Train-2063_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-2063"
               data-search="37 ProcTHOR-Train-2063 Please pick up the soap bottle and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">37</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Soap bottle → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-2063</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>29m 13s robot · 2m 26s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 37</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2773,12 +3492,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>37 · Soap bottle → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-2063</p>
                 <p class="instruction">
                   Please pick up the soap bottle and place it on the plate on
                   the table.
@@ -2798,15 +3511,32 @@
                   ><a href="#trial-37">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-38"
               data-attempt="38_ProcTHOR-Train-2809_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-2809"
               data-search="38 ProcTHOR-Train-2809 Please pick up the egg and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">38</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Egg → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-2809</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>6m 23s robot · 32s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 38</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2828,12 +3558,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>38 · Egg → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-2809</p>
                 <p class="instruction">
                   Please pick up the egg and place it on the plate on the table.
                 </p>
@@ -2852,15 +3576,32 @@
                   ><a href="#trial-38">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-39"
               data-attempt="39_ProcTHOR-Train-406_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-406"
               data-search="39 ProcTHOR-Train-406 Please pick up the tomato and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">39</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Tomato → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-406</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>10m 48s robot · 54s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 39</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2882,12 +3623,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>39 · Tomato → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-406</p>
                 <p class="instruction">
                   Please pick up the tomato and place it on the plate on the
                   table.
@@ -2907,15 +3642,32 @@
                   ><a href="#trial-39">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-40"
               data-attempt="40_ProcTHOR-Train-4574_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-4574"
               data-search="40 ProcTHOR-Train-4574 Please pick up the apple and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">40</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Apple → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-4574</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>5m 49s robot · 29s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 40</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2937,12 +3689,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>40 · Apple → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-4574</p>
                 <p class="instruction">
                   Please pick up the apple and place it on the plate on the
                   table.
@@ -2962,15 +3708,32 @@
                   ><a href="#trial-40">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-41"
               data-attempt="41_ProcTHOR-Train-1182_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-1182"
               data-search="41 ProcTHOR-Train-1182 Please pick up the apple and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">41</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Apple → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-1182</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>11m 50s robot · 59s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 41</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -2992,12 +3755,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>41 · Apple → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-1182</p>
                 <p class="instruction">
                   Please pick up the apple and place it on the plate on the
                   table.
@@ -3017,15 +3774,32 @@
                   ><a href="#trial-41">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-42"
               data-attempt="42_ProcTHOR-Train-9100_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-9100"
               data-search="42 ProcTHOR-Train-9100 Please pick up the candle and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">42</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Candle → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-9100</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>5m 09s robot · 26s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 42</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -3047,12 +3821,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>42 · Candle → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-9100</p>
                 <p class="instruction">
                   Please pick up the candle and place it on the plate on the
                   table.
@@ -3072,15 +3840,32 @@
                   ><a href="#trial-42">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-43"
               data-attempt="43_ProcTHOR-Train-5361_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-5361"
               data-search="43 ProcTHOR-Train-5361 Please pick up the soap bottle and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">43</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Soap bottle → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-5361</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>4m 53s robot · 24s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 43</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -3102,12 +3887,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>43 · Soap bottle → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-5361</p>
                 <p class="instruction">
                   Please pick up the soap bottle and place it on the plate on
                   the table.
@@ -3127,15 +3906,32 @@
                   ><a href="#trial-43">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-44"
               data-attempt="44_ProcTHOR-Train-2898_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-2898"
               data-search="44 ProcTHOR-Train-2898 Please pick up the egg and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">44</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Egg → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-2898</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>5m 04s robot · 25s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 44</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -3157,12 +3953,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>44 · Egg → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-2898</p>
                 <p class="instruction">
                   Please pick up the egg and place it on the plate on the table.
                 </p>
@@ -3181,15 +3971,32 @@
                   ><a href="#trial-44">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-45"
               data-attempt="45_ProcTHOR-Train-6968_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-6968"
               data-search="45 ProcTHOR-Train-6968 Please pick up the mug and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">45</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Mug → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-6968</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>19m 35s robot · 1m 38s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 45</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -3211,12 +4018,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>45 · Mug → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-6968</p>
                 <p class="instruction">
                   Please pick up the mug and place it on the plate on the table.
                 </p>
@@ -3235,15 +4036,36 @@
                   ><a href="#trial-45">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-46"
               data-attempt="46_ProcTHOR-Train-4899_seed42_dynamic"
               data-outcome="failure"
               data-scene="ProcTHOR-Train-4899"
-              data-search="46 ProcTHOR-Train-4899 Please pick up the soap bottle and place it on the plate on the table."
+              data-search="46 ProcTHOR-Train-4899 Please pick up the soap bottle and place it on the plate on the table. Grasp alignment and empty-arm recovery failed"
             >
+              <summary class="recording-summary">
+                <span class="trial-number">46</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Soap bottle → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-4899</span
+                  ><span class="trial-failure"
+                    ><strong>Failure:</strong> Grasp alignment and empty-arm
+                    recovery failed</span
+                  ></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge failure">Not completed</span
+                  ><span>14m 55s robot · 1m 15s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 46</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -3262,15 +4084,16 @@
                     href="../media/simulation/current50/46_ProcTHOR-Train-4899_seed42_dynamic.mp4"
                     >Download recording</a
                   >.
+                  <track
+                    kind="captions"
+                    src="captions/trial-46.vtt"
+                    srclang="en"
+                    label="Failure explanation"
+                    default
+                  />
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge failure">Not completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>46 · Soap bottle → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-4899</p>
                 <p class="instruction">
                   Please pick up the soap bottle and place it on the plate on
                   the table.
@@ -3279,6 +4102,23 @@
                   894.60 s robot time · Grasp alignment and empty-arm recovery
                   failed
                 </p>
+                <aside class="failure-note" aria-label="Failure explanation">
+                  <h3>Why this trial did not complete</h3>
+                  <p>
+                    Grasp alignment failed and the subsequent empty-arm recovery
+                    found no feasible path.
+                  </p>
+                  <p>
+                    <a
+                      href="https://github.com/BJHYZJ/DREAM/blob/simulation/reproducibility/evidence/residential-fast-return/failures.json"
+                      >Recorded failure evidence</a
+                    >
+                    ·
+                    <a href="captions/trial-46.vtt" download
+                      >Download explanation captions</a
+                    >
+                  </p>
+                </aside>
                 <div class="case-links">
                   <a
                     href="../media/simulation/current50/46_ProcTHOR-Train-4899_seed42_dynamic.mp4"
@@ -3290,15 +4130,36 @@
                   ><a href="#trial-46">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-47"
               data-attempt="47_ProcTHOR-Val-46_seed42_dynamic"
               data-outcome="failure"
               data-scene="ProcTHOR-Val-46"
-              data-search="47 ProcTHOR-Val-46 Please pick up the tomato and place it on the plate on the table."
+              data-search="47 ProcTHOR-Val-46 Please pick up the tomato and place it on the plate on the table. Pickup search or navigation incomplete"
             >
+              <summary class="recording-summary">
+                <span class="trial-number">47</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Tomato → plate</span
+                  ><span class="trial-scene">ProcTHOR-Val-46</span
+                  ><span class="trial-failure"
+                    ><strong>Failure:</strong> Pickup search or navigation
+                    incomplete</span
+                  ></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge failure">Not completed</span
+                  ><span>5m 54s robot · 30s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 47</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -3317,15 +4178,16 @@
                     href="../media/simulation/current50/47_ProcTHOR-Val-46_seed42_dynamic.mp4"
                     >Download recording</a
                   >.
+                  <track
+                    kind="captions"
+                    src="captions/trial-47.vtt"
+                    srclang="en"
+                    label="Failure explanation"
+                    default
+                  />
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge failure">Not completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>47 · Tomato → plate</h3>
-                <p class="scene-name">ProcTHOR-Val-46</p>
                 <p class="instruction">
                   Please pick up the tomato and place it on the plate on the
                   table.
@@ -3333,6 +4195,25 @@
                 <p>
                   354.40 s robot time · Pickup search or navigation incomplete
                 </p>
+                <aside class="failure-note" aria-label="Failure explanation">
+                  <h3>Why this trial did not complete</h3>
+                  <p>
+                    Pickup search or navigation did not complete; the final
+                    navigation event reports incomplete route execution. An
+                    incomplete route does not establish that no physical route
+                    exists.
+                  </p>
+                  <p>
+                    <a
+                      href="https://github.com/BJHYZJ/DREAM/blob/simulation/reproducibility/evidence/residential-fast-return/failures.json"
+                      >Recorded failure evidence</a
+                    >
+                    ·
+                    <a href="captions/trial-47.vtt" download
+                      >Download explanation captions</a
+                    >
+                  </p>
+                </aside>
                 <div class="case-links">
                   <a
                     href="../media/simulation/current50/47_ProcTHOR-Val-46_seed42_dynamic.mp4"
@@ -3344,15 +4225,32 @@
                   ><a href="#trial-47">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-48"
               data-attempt="48_ProcTHOR-Train-6322_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-6322"
               data-search="48 ProcTHOR-Train-6322 Please pick up the candle and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">48</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Candle → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-6322</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>12m 17s robot · 1m 02s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 48</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -3374,12 +4272,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>48 · Candle → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-6322</p>
                 <p class="instruction">
                   Please pick up the candle and place it on the plate on the
                   table.
@@ -3399,15 +4291,32 @@
                   ><a href="#trial-48">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-49"
               data-attempt="49_ProcTHOR-Train-7428_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Train-7428"
               data-search="49 ProcTHOR-Train-7428 Please pick up the apple and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">49</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Apple → plate</span
+                  ><span class="trial-scene">ProcTHOR-Train-7428</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>5m 20s robot · 27s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 49</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -3429,12 +4338,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>49 · Apple → plate</h3>
-                <p class="scene-name">ProcTHOR-Train-7428</p>
                 <p class="instruction">
                   Please pick up the apple and place it on the plate on the
                   table.
@@ -3454,15 +4357,32 @@
                   ><a href="#trial-49">Link to trial</a>
                 </div>
               </div>
-            </article>
-            <article
-              class="video-card"
+            </details>
+            <details
+              class="video-card recording"
+              name="recordings"
               id="trial-50"
               data-attempt="50_ProcTHOR-Val-902_seed42_dynamic"
               data-outcome="success"
               data-scene="ProcTHOR-Val-902"
               data-search="50 ProcTHOR-Val-902 Please pick up the candle and place it on the plate on the table."
             >
+              <summary class="recording-summary">
+                <span class="trial-number">50</span>
+                <span class="trial-heading"
+                  ><span class="trial-title">Candle → plate</span
+                  ><span class="trial-scene">ProcTHOR-Val-902</span></span
+                >
+                <span class="trial-status"
+                  ><span class="outcome-badge success">Completed</span
+                  ><span>5m 02s robot · 25s video</span></span
+                >
+                <span class="trial-toggle"
+                  ><span class="when-closed">View video</span
+                  ><span class="when-open">Close video</span
+                  ><span class="sr-only"> for trial 50</span></span
+                >
+              </summary>
               <div class="video-frame">
                 <video
                   controls
@@ -3484,12 +4404,6 @@
                 </video>
               </div>
               <div class="video-copy">
-                <div class="case-meta">
-                  <span class="outcome-badge success">Completed</span
-                  ><span>Seed 42 · 12× playback</span>
-                </div>
-                <h3>50 · Candle → plate</h3>
-                <p class="scene-name">ProcTHOR-Val-902</p>
                 <p class="instruction">
                   Please pick up the candle and place it on the plate on the
                   table.
@@ -3509,7 +4423,7 @@
                   ><a href="#trial-50">Link to trial</a>
                 </div>
               </div>
-            </article>
+            </details>
           </div>
           <div class="gallery-empty" id="gallery-empty" hidden>
             <h3>No matching recordings</h3>
@@ -3538,7 +4452,17 @@
           navigation.
         </p>
         <div class="video-grid">
-          <article class="video-card">
+          <details
+            class="video-card recording excerpt-recording"
+            name="recordings"
+          >
+            <summary class="recording-summary">
+              <span class="trial-title">01 · Mug: Grasp and loaded return</span
+              ><span class="trial-toggle"
+                ><span class="when-closed">View 1× video</span
+                ><span class="when-open">Close video</span></span
+              >
+            </summary>
             <div class="video-frame">
               <video
                 controls
@@ -3555,7 +4479,6 @@
               </video>
             </div>
             <div class="video-copy">
-              <h3>01 · Mug: Grasp and loaded return</h3>
               <a href="#trial-01">Full task</a> ·
               <a
                 href="../media/simulation/current50/01_ProcTHOR-Test-722_seed42_dynamic_grasp.mp4"
@@ -3563,8 +4486,19 @@
                 >Download 1× excerpt</a
               >
             </div>
-          </article>
-          <article class="video-card">
+          </details>
+          <details
+            class="video-card recording excerpt-recording"
+            name="recordings"
+          >
+            <summary class="recording-summary">
+              <span class="trial-title"
+                >01 · Mug: Placement and empty return</span
+              ><span class="trial-toggle"
+                ><span class="when-closed">View 1× video</span
+                ><span class="when-open">Close video</span></span
+              >
+            </summary>
             <div class="video-frame">
               <video
                 controls
@@ -3581,7 +4515,6 @@
               </video>
             </div>
             <div class="video-copy">
-              <h3>01 · Mug: Placement and empty return</h3>
               <a href="#trial-01">Full task</a> ·
               <a
                 href="../media/simulation/current50/01_ProcTHOR-Test-722_seed42_dynamic_place.mp4"
@@ -3589,8 +4522,19 @@
                 >Download 1× excerpt</a
               >
             </div>
-          </article>
-          <article class="video-card">
+          </details>
+          <details
+            class="video-card recording excerpt-recording"
+            name="recordings"
+          >
+            <summary class="recording-summary">
+              <span class="trial-title"
+                >11 · Apple: Grasp and loaded return</span
+              ><span class="trial-toggle"
+                ><span class="when-closed">View 1× video</span
+                ><span class="when-open">Close video</span></span
+              >
+            </summary>
             <div class="video-frame">
               <video
                 controls
@@ -3607,7 +4551,6 @@
               </video>
             </div>
             <div class="video-copy">
-              <h3>11 · Apple: Grasp and loaded return</h3>
               <a href="#trial-11">Full task</a> ·
               <a
                 href="../media/simulation/current50/11_ProcTHOR-Train-3859_seed42_dynamic_grasp.mp4"
@@ -3615,8 +4558,19 @@
                 >Download 1× excerpt</a
               >
             </div>
-          </article>
-          <article class="video-card">
+          </details>
+          <details
+            class="video-card recording excerpt-recording"
+            name="recordings"
+          >
+            <summary class="recording-summary">
+              <span class="trial-title"
+                >11 · Apple: Placement and empty return</span
+              ><span class="trial-toggle"
+                ><span class="when-closed">View 1× video</span
+                ><span class="when-open">Close video</span></span
+              >
+            </summary>
             <div class="video-frame">
               <video
                 controls
@@ -3633,7 +4587,6 @@
               </video>
             </div>
             <div class="video-copy">
-              <h3>11 · Apple: Placement and empty return</h3>
               <a href="#trial-11">Full task</a> ·
               <a
                 href="../media/simulation/current50/11_ProcTHOR-Train-3859_seed42_dynamic_place.mp4"
@@ -3641,7 +4594,7 @@
                 >Download 1× excerpt</a
               >
             </div>
-          </article>
+          </details>
         </div>
       </section>
       <section
@@ -3661,32 +4614,46 @@
           for 32.5 seconds, and independent physics, observation and both
           arm-return checks passed.
         </p>
-        <figure>
-          <video
-            controls
-            playsinline
-            preload="none"
-            poster="../media/posters/long_search_07.jpg"
-            aria-label="Case 07 complete timeline at 24 times speed"
-          >
-            <source
-              src="../media/simulation/long_search_07.mp4"
-              type="video/mp4"
-            />
-            <a href="../media/simulation/long_search_07.mp4"
-              >Download the complete timeline</a
-            >.
-          </video>
-          <figcaption>
-            Complete timeline · 24× playback · one rendered frame per two robot
-            seconds. The on-screen clock shows robot-action time. Every saved
-            control and external force is re-executed; this is a rendered replay
-            of the recorded trial. The current first-person view appears beside
-            the saved observation. Below them, a semantic-memory heatmap is
-            reconstructed from the original RGB-D observations, with logged
-            navigation paths.
-          </figcaption>
-        </figure>
+        <details class="video-card recording long-recording" name="recordings">
+          <summary class="recording-summary">
+            <span class="trial-heading"
+              ><span class="trial-title"
+                >Case 07 · Complete extended search</span
+              ><span class="trial-scene"
+                >78.7 min robot time · 24× playback</span
+              ></span
+            ><span class="trial-toggle"
+              ><span class="when-closed">View video</span
+              ><span class="when-open">Close video</span></span
+            >
+          </summary>
+          <figure>
+            <video
+              controls
+              playsinline
+              preload="none"
+              poster="../media/posters/long_search_07.jpg"
+              aria-label="Case 07 complete timeline at 24 times speed"
+            >
+              <source
+                src="../media/simulation/long_search_07.mp4"
+                type="video/mp4"
+              />
+              <a href="../media/simulation/long_search_07.mp4"
+                >Download the complete timeline</a
+              >.
+            </video>
+            <figcaption>
+              Complete timeline · 24× playback · one rendered frame per two
+              robot seconds. The on-screen clock shows robot-action time. Every
+              saved control and external force is re-executed; this is a
+              rendered replay of the recorded trial. The current first-person
+              view appears beside the saved observation. Below them, a
+              semantic-memory heatmap is reconstructed from the original RGB-D
+              observations, with logged navigation paths.
+            </figcaption>
+          </figure>
+        </details>
         <div class="actions">
           <a
             class="text-link"

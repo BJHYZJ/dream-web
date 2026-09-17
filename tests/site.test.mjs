@@ -18,6 +18,7 @@ const types = {
   ".jpg": "image/jpeg",
   ".png": "image/png",
   ".mp4": "video/mp4",
+  ".vtt": "text/vtt",
   ".ico": "image/x-icon",
 };
 let browser;
@@ -138,8 +139,15 @@ for (const width of [390, 834, 1440]) {
 
 test("gallery filters, reset, linked run, and complete result counts", async () => {
   const page = await browser.newPage();
+  const videoRequests = [];
+  page.on("request", (request) => {
+    if (request.url().endsWith(".mp4")) videoRequests.push(request.url());
+  });
   await page.goto(`${origin}/simulation/`);
   assert.equal(await page.locator("[data-attempt]:visible").count(), 50);
+  assert.equal(await page.locator(".recording[open]").count(), 0);
+  assert.equal(await page.locator("[data-attempt] video:visible").count(), 0);
+  assert.deepEqual(videoRequests, [], "Collapsed videos must not preload MP4s");
   assert.equal(await page.locator("#evaluation tbody tr").count(), 50);
   assert.equal(
     await page.locator("#evaluation .outcome-badge.success").count(),
@@ -166,6 +174,7 @@ test("gallery filters, reset, linked run, and complete result counts", async () 
     (id) => !document.getElementById(id).hidden,
     target,
   );
+  assert.equal(await page.locator(`#${target} video`).isVisible(), true);
   assert.equal(await page.locator("[data-attempt]:visible").count(), 50);
   const report = JSON.parse(
     await readFile(path.join(root, "simulation/evaluation.json"), "utf8"),
@@ -245,6 +254,18 @@ test("citation copy, playback, and current trial video links", async () => {
   });
   const page = await context.newPage();
   await page.goto(origin);
+  assert.equal(
+    await page
+      .getByRole("link", { name: "Simulation code", exact: true })
+      .getAttribute("href"),
+    "https://github.com/BJHYZJ/DREAM/tree/simulation",
+  );
+  assert.equal(
+    await page
+      .getByRole("link", { name: "Simulation demos", exact: true })
+      .getAttribute("href"),
+    "simulation/#gallery",
+  );
   await page.locator("[data-copy-target]").click();
   assert.match(
     await page.evaluate(() => navigator.clipboard.readText()),
@@ -259,12 +280,19 @@ test("citation copy, playback, and current trial video links", async () => {
     const v = document.querySelector("#trial-01 video");
     return !v.paused && v.currentTime > 2;
   });
+  await page.locator("#trial-02 > summary").click();
+  assert.equal(await page.locator("#trial-01 video").isVisible(), false);
   await page.locator("#trial-02 .video-play").click();
   await page.waitForFunction(
     () =>
       document.querySelector("#trial-01 video").paused &&
       !document.querySelector("#trial-02 video").paused,
   );
+  await page.locator("#trial-02 > summary").click();
+  await page.waitForFunction(
+    () => document.querySelector("#trial-02 video").paused,
+  );
+  assert.equal(await page.locator(".recording[open]").count(), 0);
   await context.close();
 });
 
@@ -279,6 +307,81 @@ test("essential page content and videos work with JavaScript disabled", async ()
     await page.locator("[data-attempt] video[controls]").count(),
     50,
   );
+  assert.equal(await page.locator("[data-attempt] video:visible").count(), 0);
+  await page.locator("#trial-03 > summary").click();
+  assert.equal(await page.locator("#trial-03 video").isVisible(), true);
+  assert.equal(await page.locator("#trial-03 .failure-note").isVisible(), true);
+  await context.close();
+});
+
+test("failed trials explain their outcomes in collapsed rows and video captions", async () => {
+  const report = JSON.parse(
+    await readFile(path.join(root, "simulation/evaluation.json"), "utf8"),
+  );
+  const context = await browser.newContext({
+    viewport: { width: 390, height: 844 },
+  });
+  const page = await context.newPage();
+  await page.goto(`${origin}/simulation/`);
+  for (const row of report.results.filter((row) => !row.strict_pass)) {
+    const card = page.locator(`[data-attempt="${row.name}"]`);
+    const reason = card.locator("summary .trial-failure");
+    assert.equal(await reason.isVisible(), true);
+    assert.ok(
+      (await reason.textContent())
+        .replace(/\s+/g, " ")
+        .includes(row.failure_reason),
+    );
+    const track = card.locator('track[kind="captions"][default]');
+    const response = await page.request.get(
+      `${origin}/simulation/${await track.getAttribute("src")}`,
+    );
+    assert.equal(response.status(), 200);
+    assert.match(response.headers()["content-type"], /text\/vtt/);
+    assert.ok((await response.text()).includes(row.failure_reason));
+  }
+  await page.locator("#trial-03 > summary").click();
+  await page.locator("#trial-03 video").evaluate((video) => video.load());
+  await page.waitForFunction(() => {
+    const video = document.querySelector("#trial-03 video");
+    return video.readyState >= 1 && video.textTracks[0]?.cues?.length === 1;
+  });
+  await page.locator("#trial-03 video").evaluate((video) => {
+    const cue = video.textTracks[0].cues[0];
+    video.currentTime = cue.startTime + 1;
+  });
+  await page.waitForFunction(
+    () =>
+      document.querySelector("#trial-03 video").textTracks[0].activeCues
+        ?.length === 1,
+  );
+  assert.equal(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth > innerWidth + 1,
+    ),
+    false,
+  );
+  const analysis = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
+    .analyze();
+  assert.deepEqual(
+    analysis.violations.map(({ id }) => id),
+    [],
+  );
+  if (process.env.DREAM_SCREENSHOT_DIR) {
+    await page.locator("#trial-03").screenshot({
+      path: path.join(process.env.DREAM_SCREENSHOT_DIR, "failure-mobile.png"),
+    });
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await page.locator("#trial-03").screenshot({
+      path: path.join(process.env.DREAM_SCREENSHOT_DIR, "failure-desktop.png"),
+    });
+    await page.locator("#trial-03 > summary").click();
+    await page.locator("#gallery").scrollIntoViewIfNeeded();
+    await page.screenshot({
+      path: path.join(process.env.DREAM_SCREENSHOT_DIR, "gallery-desktop.png"),
+    });
+  }
   await context.close();
 });
 
