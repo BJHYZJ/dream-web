@@ -177,13 +177,58 @@ video {
 .publication-links {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-end;
   gap: 10px;
   margin-top: 28px;
 }
 
+.publication-link-group {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.publication-link-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  font-weight: 650;
+}
+
+.publication-link-label svg {
+  width: 1em;
+  height: 1em;
+}
+
+.paper-button-group {
+  display: inline-flex;
+}
+
+.publication-secondary-links {
+  display: inline-flex;
+  gap: inherit;
+}
+
+.paper-button-group .paper-button:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.paper-button-group .paper-button:last-child {
+  border-left-color: #737373;
+  border-radius: 0 8px 8px 0;
+}
+
+.paper-button-group .paper-button:focus-visible {
+  position: relative;
+  z-index: 1;
+}
+
 .paper-button {
   min-height: 42px;
-  padding-inline: 12px;
+  padding-inline: 10px;
   border-radius: 8px;
   gap: 7px;
   font-size: 0.9375rem;
