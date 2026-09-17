@@ -256,13 +256,13 @@ test("citation copy, playback, and current trial video links", async () => {
   await page.goto(origin);
   assert.equal(
     await page
-      .getByRole("link", { name: "Simulation code", exact: true })
+      .getByRole("link", { name: "Sim code", exact: true })
       .getAttribute("href"),
     "https://github.com/BJHYZJ/DREAM/tree/simulation",
   );
   assert.equal(
     await page
-      .getByRole("link", { name: "Simulation demos", exact: true })
+      .getByRole("link", { name: "Sim demos", exact: true })
       .getAttribute("href"),
     "simulation/#gallery",
   );
